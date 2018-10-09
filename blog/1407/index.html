@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <title>GSoC Report #6 and #7</title>
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/fonts.css" />
+    
+  </head>
+
+  <body>
+    <nav>
+    <ul class="menu">
+      
+      <li><a href="/">Home</a></li>
+      
+      <li><a href="/about/">About</a></li>
+      
+      <li><a href="/talks/">Talks</a></li>
+      
+      <li><a href="/tags/">Tags</a></li>
+      
+    </ul>
+    <hr/>
+    </nav>
+
+<div class="article-meta">
+<h1><span class="title">GSoC Report #6 and #7</span></h1>
+
+<h2 class="date">2014/07/15</h2>
+</div>
+
+<main>
+
+
+<h2 id="tuesday">Tuesday&hellip;</h2>
+
+<p>Two weeks without posting again! Can I use as an excuse <a href="http://sadbrazilians.tumblr.com/">my
+grief</a> for Brazil in this World Cup!?
+:) Well, actually I was somewhat busy studying&hellip; I&rsquo;ll share what in a
+moment.</p>
+
+<p>In order to talk about what I&rsquo;m working on I would like to explain one
+interesting feature that Grilo has.</p>
+
+<h2 id="cool-thing-in-grilo">Cool thing in Grilo?</h2>
+
+<p>You may know that Grilo uses plugins to fetch useful data to your
+application! Great. What you may not know is that Grilo can combine the
+use of its plugins to resolve what the application want!</p>
+
+<p>Let me explain.</p>
+
+<p>The TVDB can provide tons of interesting metadata for your TV Shows but
+to do so, It needs some keys in order to find your TV Show in its
+database like the name of the show the season and the episode that you
+are watching.</p>
+
+<p>Cool thing that there is a Grilo plugin called local-metadata which try
+to get as much data as possible from the file name. For instance, It is
+easy to local-metadata to gather all metadata necessary to The TVDB from
+files like:</p>
+
+<p>Boardwalk.Empire.S04E01.HDTV.x264-2HD.mp4; Adventure Time - 2x01 - It
+Came from the Nightosphere.mp4 etc&hellip;</p>
+
+<h2 id="musicbrainz">MusicBrainz</h2>
+
+<p>Well, I&rsquo;ll be working in a <a href="https://musicbrainz.org/">MusicBrainz</a>
+plugin to Grilo which will be very useful for several applications
+indeed. But from a music file, how you identify Author, Artist or
+anything?</p>
+
+<p>One cool way is checking the audio fingerprint!</p>
+
+<p><a href="http://acoustid.org/">AcoustID</a> has an Open database accessible through
+a webservice to get the MusicBrainz Track ID from your audio
+fingerprint!</p>
+
+<p>So, this is pretty much similar of the example above with the TVDB and
+local-metadata. The AcoustID will provide the MusicBrainz ID of the
+track and the MusicBrainz plugin will use this to get all metadata
+necessary. Cool, right?</p>
+
+<p>Out of curiosity I read this awesome blog post which explains how the
+fingerprint are calculated and how the AcoustID use that to search in
+its database. <a href="https://oxygene.sk/2011/01/how-does-chromaprint-work/">Check it
+out!</a></p>
+
+<h2 id="acoustid-1-2">AcoustID <sup>1</sup>&frasl;<sub>2</sub></h2>
+
+<p>So, in order to generate the fingerprint as AcoustID needs, It is
+necessary to read the entire music file while providing the raw data to
+the chromaprint library.</p>
+
+<p>My first attempt to do that was using the libraries of ffmpeg as I
+already had some background with it and also a
+<a href="https://bitbucket.org/acoustid/chromaprint/src/master/examples/fpcalc.c">functional-example</a>
+in hands.</p>
+
+<p>Of course it was a bad decision to implement such thing without talking
+with Bastien first :)</p>
+
+<p>He has explained a bit of the problems of having ffmpeg as dependency&hellip;</p>
+
+<h2 id="acoustid-2-2">AcoustID <sup>2</sup>&frasl;<sub>2</sub></h2>
+
+<p>Then I started doing one thing that I was postponing for some time:
+learning <a href="http://gstreamer.freedesktop.org/">GStreamer</a>.</p>
+
+<p>I read the
+<a href="http://gstreamer.freedesktop.org/data/doc/gstreamer/head/manual/html">manual</a>
+and in its examples in order to understand how it works and what would
+be the best way to implement the AcoustID.</p>
+
+<p>In the end, there was already a <a href="https://oxygene.sk/2011/01/chromaprint-plug-in-for-gstreamer/">Chromaprint
+plugin</a>!</p>
+
+<p>The result is smaller but faster application then my previous work with
+ffmpeg :-)</p>
+
+<p>You can check the current AcoustID plugin
+<a href="https://bugzilla.gnome.org/show_bug.cgi?id=732879">here</a>.</p>
+
+<h2 id="okay-and-what-about-that-gnome-video-ui">Okay and what about that GNOME Video UI</h2>
+
+<p>Well, yes. I&rsquo;m trying.</p>
+
+<p>The current code <a href="https://github.com/victortoso/totem-tvshows">is here</a>,
+seriously, I want to make this work with CSS but somehow it is not
+working properly.</p>
+
+<p>For instance, I can change the attributes for all GtkLabel but I can&rsquo;t
+change a specific GtkLabel alone.</p>
+
+<p>I can&rsquo;t tell how glad I was after checking the GUADEC schedule and see
+the &quot;GTK and CSS&quot; talk from Benjamin Otte. I&rsquo;ll be there, for
+sure!</p>
+
+<p>I think that&rsquo;s all folks,</p>
+
+</main>
+
+  <footer>
+  
+  
+  <hr/>
+  <a href="https://keybase.io/toso/"><img src="/images/about-logo-keybase-16x16.png" alt="keybase-logo" /></a> <a href="https://twitter.com/victortoso/"><img src="/images/about-logo-twitter-16x16.png" alt="twitter-logo" /></a> <a href="https://gitlab.com/victortoso"><img src="/images/about-logo-gitlab-16x16.png" alt="gitlab-logo" /></a> <a href="https://github.com/victortoso"><img src="/images/about-logo-github-16x16.png" alt="github-logo" /></a> <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/"><img src="/images/about-logo-creative-commons-16x16.png" alt="cc-logo" /></a>
+  
+  </footer>
+  </body>
+</html>
+

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Lua Factory on Victor Toso</title>
+    <link>http://victortoso.com/tags/lua-factory/</link>
+    <description>Recent content in Lua Factory on Victor Toso</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 25 Feb 2014 00:19:00 -0300</lastBuildDate>
+    
+	<atom:link href="http://victortoso.com/tags/lua-factory/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Lua-Factory available upstream</title>
+      <link>http://victortoso.com/blog/1401/</link>
+      <pubDate>Tue, 25 Feb 2014 00:19:00 -0300</pubDate>
+      
+      <guid>http://victortoso.com/blog/1401/</guid>
+      <description>It has been four months since the GSoC 2013 code submission. At that time the Lua-Factory Plugin was usable but yet with some issues to be dealt.
+It was in the last two weeks that most of those issues were solved together with a few recommendations from Juan and Bastien and tonight it was merged upstream in Grilo-Plugins repository.
+Hooray!
+The documentation for implementing a Lua sources will come soon.</description>
+    </item>
+    
+  </channel>
+</rss>

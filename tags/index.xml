@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on Victor Toso</title>
+    <link>http://victortoso.com/tags/</link>
+    <description>Recent content in Tags on Victor Toso</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 15 Jul 2014 02:58:00 -0300</lastBuildDate>
+    
+	<atom:link href="http://victortoso.com/tags/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Acoustid</title>
+      <link>http://victortoso.com/tags/acoustid/</link>
+      <pubDate>Tue, 15 Jul 2014 02:58:00 -0300</pubDate>
+      
+      <guid>http://victortoso.com/tags/acoustid/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Brno</title>
+      <link>http://victortoso.com/tags/brno/</link>
+      <pubDate>Sun, 26 Oct 2014 21:03:00 +0200</pubDate>
+      
+      <guid>http://victortoso.com/tags/brno/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Devconf</title>
+      <link>http://victortoso.com/tags/devconf/</link>
+      <pubDate>Mon, 06 Feb 2017 12:20:00 +0200</pubDate>
+      
+      <guid>http://victortoso.com/tags/devconf/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Flickr</title>
+      <link>http://victortoso.com/tags/flickr/</link>
+      <pubDate>Sat, 21 Sep 2013 00:34:00 -0300</pubDate>
+      
+      <guid>http://victortoso.com/tags/flickr/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Gnome</title>
+      <link>http://victortoso.com/tags/gnome/</link>
+      <pubDate>Sat, 06 Feb 2016 12:20:00 +0200</pubDate>
+      
+      <guid>http://victortoso.com/tags/gnome/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Gom</title>
+      <link>http://victortoso.com/tags/gom/</link>
+      <pubDate>Tue, 10 Jun 2014 02:04:00 -0300</pubDate>
+      
+      <guid>http://victortoso.com/tags/gom/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Grilo</title>
+      <link>http://victortoso.com/tags/grilo/</link>
+      <pubDate>Thu, 09 Jun 2016 00:42:00 +0200</pubDate>
+      
+      <guid>http://victortoso.com/tags/grilo/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Gsoc</title>
+      <link>http://victortoso.com/tags/gsoc/</link>
+      <pubDate>Thu, 09 Jun 2016 00:42:00 +0200</pubDate>
+      
+      <guid>http://victortoso.com/tags/gsoc/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Gstreamer</title>
+      <link>http://victortoso.com/tags/gstreamer/</link>
+      <pubDate>Mon, 06 Feb 2017 12:20:00 +0200</pubDate>
+      
+      <guid>http://victortoso.com/tags/gstreamer/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Gtk</title>
+      <link>http://victortoso.com/tags/gtk/</link>
+      <pubDate>Wed, 25 Jun 2014 23:34:00 -0300</pubDate>
+      
+      <guid>http://victortoso.com/tags/gtk/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Guadec</title>
+      <link>http://victortoso.com/tags/guadec/</link>
+      <pubDate>Sun, 27 Jul 2014 17:00:00 +0200</pubDate>
+      
+      <guid>http://victortoso.com/tags/guadec/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Lua</title>
+      <link>http://victortoso.com/tags/lua/</link>
+      <pubDate>Mon, 24 Jun 2013 02:14:00 -0300</pubDate>
+      
+      <guid>http://victortoso.com/tags/lua/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Lua Factory</title>
+      <link>http://victortoso.com/tags/lua-factory/</link>
+      <pubDate>Tue, 25 Feb 2014 00:19:00 -0300</pubDate>
+      
+      <guid>http://victortoso.com/tags/lua-factory/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Magnatune</title>
+      <link>http://victortoso.com/tags/magnatune/</link>
+      <pubDate>Tue, 10 Jun 2014 02:04:00 -0300</pubDate>
+      
+      <guid>http://victortoso.com/tags/magnatune/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Metrolyrics</title>
+      <link>http://victortoso.com/tags/metrolyrics/</link>
+      <pubDate>Sat, 21 Sep 2013 00:34:00 -0300</pubDate>
+      
+      <guid>http://victortoso.com/tags/metrolyrics/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Musicbrainz</title>
+      <link>http://victortoso.com/tags/musicbrainz/</link>
+      <pubDate>Tue, 15 Jul 2014 02:58:00 -0300</pubDate>
+      
+      <guid>http://victortoso.com/tags/musicbrainz/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Red Hat</title>
+      <link>http://victortoso.com/tags/red-hat/</link>
+      <pubDate>Sun, 26 Oct 2014 21:03:00 +0200</pubDate>
+      
+      <guid>http://victortoso.com/tags/red-hat/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Red Hat Life</title>
+      <link>http://victortoso.com/tags/red-hat-life/</link>
+      <pubDate>Thu, 15 Oct 2015 23:34:00 +0200</pubDate>
+      
+      <guid>http://victortoso.com/tags/red-hat-life/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Spice</title>
+      <link>http://victortoso.com/tags/spice/</link>
+      <pubDate>Mon, 06 Feb 2017 12:20:00 +0200</pubDate>
+      
+      <guid>http://victortoso.com/tags/spice/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Spice Console Kit Systemd Windows</title>
+      <link>http://victortoso.com/tags/spice-console-kit-systemd-windows/</link>
+      <pubDate>Sat, 25 Jun 2016 15:10:00 +0200</pubDate>
+      
+      <guid>http://victortoso.com/tags/spice-console-kit-systemd-windows/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Talks</title>
+      <link>http://victortoso.com/tags/talks/</link>
+      <pubDate>Mon, 06 Feb 2017 12:20:00 +0200</pubDate>
+      
+      <guid>http://victortoso.com/tags/talks/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>The Tvdb</title>
+      <link>http://victortoso.com/tags/the-tvdb/</link>
+      <pubDate>Wed, 25 Jun 2014 23:34:00 -0300</pubDate>
+      
+      <guid>http://victortoso.com/tags/the-tvdb/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Totem</title>
+      <link>http://victortoso.com/tags/totem/</link>
+      <pubDate>Wed, 25 Jun 2014 23:34:00 -0300</pubDate>
+      
+      <guid>http://victortoso.com/tags/totem/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

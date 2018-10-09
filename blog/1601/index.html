@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <title>Grilo updates!</title>
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/fonts.css" />
+    
+  </head>
+
+  <body>
+    <nav>
+    <ul class="menu">
+      
+      <li><a href="/">Home</a></li>
+      
+      <li><a href="/about/">About</a></li>
+      
+      <li><a href="/talks/">Talks</a></li>
+      
+      <li><a href="/tags/">Tags</a></li>
+      
+    </ul>
+    <hr/>
+    </nav>
+
+<div class="article-meta">
+<h1><span class="title">Grilo updates!</span></h1>
+
+<h2 class="date">2016/06/09</h2>
+</div>
+
+<main>
+
+
+<p>Nothing like talking about Grilo to keep the blog going and to be honest
+I have some interesting things to talk about.</p>
+
+<h2 id="grilo-0-3">Grilo 0.3</h2>
+
+<p>The major release happened almost 6 months ago and it has brought some
+API/ABI changes being my favourite the merge of all Grilo media types
+into GrlMedia
+(<a href="https://bugzilla.gnome.org/show_bug.cgi?id=755551">#755551</a>); This
+introduces support from Grilo to different types of media!</p>
+
+<p>Well, to be pedantic, it was always possible to have different media
+types in Grilo on GrlMedia but it is more clear to applications by
+merging GrlMedia{Audio,Video,Image,Box} in GrlMedia; It should also help
+us to identify problems with media types that were not originally
+supported, such as
+<a href="https://bugzilla.gnome.org/show_bug.cgi?id=767182">#767182</a></p>
+
+<p>I expect this change will increase the interest in Grilo for a whole new
+set of applications. For instance, with
+<a href="http://thegamesdb.net/">TheGamesDB</a> source we got support to metadata
+for Games
+(<a href="https://bugzilla.gnome.org/show_bug.cgi?id=766678">#766678</a>) and I&rsquo;m
+excited to see how <a href="http://bytesgnomeschozo.blogspot.cz/">Kekun</a> will be
+using this in the gnome-games project!</p>
+
+<h2 id="plugins">Plugins</h2>
+
+<p>A few other plugins have landed upstream as well. I&rsquo;ve mentioned
+TheGamesDB before but we also have iTunes Podcast, both written by
+<a href="http://www.hadess.net/">Bastien</a>.</p>
+
+<p>I was able to finally finish a plugin related to my GSoC in 2014:
+<a href="https://bugzilla.gnome.org/show_bug.cgi?id=732879">AcoustID</a>. In the
+end, we decided to split the audio decoding and the audio&rsquo;s fingerprint
+generation in one plugin called Chromaprint and another plugin that
+actually fetch data on AcoustID web service.</p>
+
+<p>It took some time and the learning process was quite great by learning
+GStreamer from scratch. As always, many thanks to Bastien for the
+guidance and also to <a href="https://twitter.com/thgss">thiagoss</a> by helping
+out with the GStreamer bits :-)</p>
+
+<p>PS: Three of the four plugins above were written in Lua :-)</p>
+
+<h2 id="google-summer-of-code-2016">Google Summer of Code 2016</h2>
+
+<p>And we already are in the development phase of GSoC 2016! As always,
+<a href="https://wiki.gnome.org/Outreach/SummerOfCode/2016/Projects/">exciting
+projects</a>
+in GNOME.</p>
+
+<p>I&rsquo;m particularly interested in
+<a href="https://wiki.gnome.org/Apps/Music">Music</a> this year. <a href="https://gnarula.com/">Gaurav
+Narula</a> is working to have <a href="https://wiki.gnome.org/Outreach/SummerOfCode/2016/Projects/GauravNarula_MusicOwnCloud">ownCloud
+Support</a>
+and <a href="https://saifulbkhan.wordpress.com/">Saiful Khan</a> will be making
+<a href="https://wiki.gnome.org/Outreach/SummerOfCode/2016/Projects/SaifulBariKhan_MusicTagEditing">Audio Tag
+Editing</a>
+possible from Music. The #gnome-music channel has been quite active by
+having interesting and amusing discussions. I guess this will be a good
+year for Music.</p>
+
+<p>Big expectations as well with <a href="https://alexandruvisarion.wordpress.com/">Alexandru
+Visarion</a> working on Boxes in
+order to have <a href="https://wiki.gnome.org/Outreach/SummerOfCode/2016/Projects/AlexandruVisarion_BoxesSpiceFeatures">More Spice
+Features</a>
+- Yay! It was sheer coincidence as today we were discussing about shared
+folders with Spice&rsquo;s webdav. That will be great to land in Boxes!</p>
+
+<p>I wish all the students a great learning experience.</p>
+
+<h2 id="other-news">Other news</h2>
+
+<p>Grilo has piqued my interest since before 2013 as neat project that I
+could be using in one Set-Top Box that I had in hands; it then became
+the project for my first free software contribution; it has been nearly
+two years since my second GSoC but I&rsquo;m still having fun with Grilo.</p>
+
+<p>So, you could imagine how happy I am to become
+<a href="https://twitter.com/victortoso/status/740079518984118272">co-maintainer</a>
+to this great project :)</p>
+
+</main>
+
+  <footer>
+  
+  
+  <hr/>
+  <a href="https://keybase.io/toso/"><img src="/images/about-logo-keybase-16x16.png" alt="keybase-logo" /></a> <a href="https://twitter.com/victortoso/"><img src="/images/about-logo-twitter-16x16.png" alt="twitter-logo" /></a> <a href="https://gitlab.com/victortoso"><img src="/images/about-logo-gitlab-16x16.png" alt="gitlab-logo" /></a> <a href="https://github.com/victortoso"><img src="/images/about-logo-github-16x16.png" alt="github-logo" /></a> <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/"><img src="/images/about-logo-creative-commons-16x16.png" alt="cc-logo" /></a>
+  
+  </footer>
+  </body>
+</html>
+

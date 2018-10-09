@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Talks on Victor Toso</title>
+    <link>http://victortoso.com/talks/</link>
+    <description>Recent content in Talks on Victor Toso</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 06 Feb 2017 12:20:00 +0200</lastBuildDate>
+    
+	<atom:link href="http://victortoso.com/talks/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>New ways to remote desktops with GStreamer integration</title>
+      <link>http://victortoso.com/talks/1701/</link>
+      <pubDate>Mon, 06 Feb 2017 12:20:00 +0200</pubDate>
+      
+      <guid>http://victortoso.com/talks/1701/</guid>
+      <description>Once again at DevConf CZ but now to talk about SPICE and its integration with GStreamer. Together with my friend and colleague Pavel Grunt we give a brief explanation about how SPICE works and then we focus on the image display and video streaming part of SPICE protocol while trying to clarify why streaming is so important to remote desktops.</description>
+    </item>
+    
+    <item>
+      <title>Grilo framework and Lua</title>
+      <link>http://victortoso.com/talks/1601/</link>
+      <pubDate>Sat, 06 Feb 2016 12:20:00 +0200</pubDate>
+      
+      <guid>http://victortoso.com/talks/1601/</guid>
+      <description>The DevConf CZ is a three-day conference that brings different communities of developers together in Brno, Czech Republic. Organized by Red Hat, this conference offers several interesting topics on talks or workshops. Great to keep yourself up-to-date on fast evolving technologies.
+My collegues presented Spice on Windows describing the process to deliver Windows builds of SPICE components from a Linux machine. As extra, Virgl + Spice (Linux-only) was showed in the end, check it out!</description>
+    </item>
+    
+    <item>
+      <title>Another GSoC on Grilo!</title>
+      <link>http://victortoso.com/talks/1401/</link>
+      <pubDate>Sun, 27 Jul 2014 17:00:00 +0200</pubDate>
+      
+      <guid>http://victortoso.com/talks/1401/</guid>
+      <description>GUADEC 2014 took place in Strasbourg, France and that was my first time in this beautiful country. My friend Watson Sato was also enrolled in the GSoC on GNOME and we were able to travel and attend the conference together.
+The time slot per intern for the light talk was very short once again but everybody was able to summarize their work very well. Sadly the video was not uploaded.</description>
+    </item>
+    
+    <item>
+      <title>My GSOC on Grilo!</title>
+      <link>http://victortoso.com/talks/1301/</link>
+      <pubDate>Sun, 04 Aug 2013 16:20:00 +0200</pubDate>
+      
+      <guid>http://victortoso.com/talks/1301/</guid>
+      <description>GUADEC 2013 was hosted in Brno, Czech Republic and it was my first time doing a talk for a big audience, quite an experience! I can see how nervous I got in the two minutes I had for the interns lightning talk.
+Not super instructive video to watch but quite funny to me :)
+Also, It is very interesting that a little bit more then a year later, I would be moving to Brno to start a new phase of my life.</description>
+    </item>
+    
+  </channel>
+</rss>

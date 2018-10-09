@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Gstreamer on Victor Toso</title>
+    <link>http://victortoso.com/tags/gstreamer/</link>
+    <description>Recent content in Gstreamer on Victor Toso</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 06 Feb 2017 12:20:00 +0200</lastBuildDate>
+    
+	<atom:link href="http://victortoso.com/tags/gstreamer/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>New ways to remote desktops with GStreamer integration</title>
+      <link>http://victortoso.com/talks/1701/</link>
+      <pubDate>Mon, 06 Feb 2017 12:20:00 +0200</pubDate>
+      
+      <guid>http://victortoso.com/talks/1701/</guid>
+      <description>Once again at DevConf CZ but now to talk about SPICE and its integration with GStreamer. Together with my friend and colleague Pavel Grunt we give a brief explanation about how SPICE works and then we focus on the image display and video streaming part of SPICE protocol while trying to clarify why streaming is so important to remote desktops.</description>
+    </item>
+    
+  </channel>
+</rss>

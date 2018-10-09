@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Brno on Victor Toso</title>
+    <link>http://victortoso.com/tags/brno/</link>
+    <description>Recent content in Brno on Victor Toso</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 26 Oct 2014 21:03:00 +0200</lastBuildDate>
+    
+	<atom:link href="http://victortoso.com/tags/brno/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Hello new life</title>
+      <link>http://victortoso.com/blog/1408/</link>
+      <pubDate>Sun, 26 Oct 2014 21:03:00 +0200</pubDate>
+      
+      <guid>http://victortoso.com/blog/1408/</guid>
+      <description>Since the end of the Google Summer of Code 2014 so many things have happened that It is really hard to make a simple blog post about it&amp;hellip; but I must try :)
+New job Well, along with the GSoC I&amp;rsquo;ve applied to a job at Red Hat and the process ended in August. Since October 15th I am part of the Spice team and I will be working at the Brno office in Czech Republic.</description>
+    </item>
+    
+    <item>
+      <title>Brno, GUADEC and Grilo</title>
+      <link>http://victortoso.com/blog/1306/</link>
+      <pubDate>Mon, 05 Aug 2013 22:21:00 -0300</pubDate>
+      
+      <guid>http://victortoso.com/blog/1306/</guid>
+      <description>Brno is amazing. Just amazing. The people from here try to be helpfull even if they don&amp;rsquo;t speak a single word in English. The food is really good and quite cheap and the city is beautiful! I&amp;rsquo;m glad that I still have time for another tour around!
+Well, travelling without many concerns, meeting amazing people and with the opportunity to learn things you love&amp;hellip; GUADEC has been an amazing experience.</description>
+    </item>
+    
+  </channel>
+</rss>

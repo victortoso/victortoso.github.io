@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <title>GSoC Report #4 and #5</title>
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/fonts.css" />
+    
+  </head>
+
+  <body>
+    <nav>
+    <ul class="menu">
+      
+      <li><a href="/">Home</a></li>
+      
+      <li><a href="/about/">About</a></li>
+      
+      <li><a href="/talks/">Talks</a></li>
+      
+      <li><a href="/tags/">Tags</a></li>
+      
+    </ul>
+    <hr/>
+    </nav>
+
+<div class="article-meta">
+<h1><span class="title">GSoC Report #4 and #5</span></h1>
+
+<h2 class="date">2014/06/25</h2>
+</div>
+
+<main>
+
+
+<h2 id="hey">Hey :)</h2>
+
+<p>I usually write my posts in the weekend when I do have more time to
+think about what I&rsquo;ve done and what It is interesting to share. Sadly,
+two weekends ago I was ill due something I&rsquo;ve eaten and now I&rsquo;ll try to
+summarize two weeks in one post!</p>
+
+<h2 id="the-tvdb">The TVDB</h2>
+
+<p>Is <a href="https://git.gnome.org/browse/grilo-plugins/commit/?id=b2b937413a26a0fe2ad18891a27a30a35b12b26b">now
+upstream</a>.
+Yay!</p>
+
+<p>The main care after implementing the cache with Gom was handling
+multiple requests of the same TV Show in a short period of time
+(concurrency).</p>
+
+<p>For instance, you are browsing some TV Show using some application that
+uses Grilo to requests metadata. It may occur several requests of the
+same tv show like, episode 01, episode 02, etc.</p>
+
+<p>We are handling this by fetching the TVDB only once to gather all
+existing data and then resolve the later requests with the cache.</p>
+
+<p>Quite nice, lots of fun implementing it.</p>
+
+<h2 id="the-integration-with-the-ui">The Integration with the UI</h2>
+
+<p>I have realized I&rsquo;m really bad at building UIs and I&rsquo;m also recognizing
+how much effort it is necessary to make a good UI (a lot).</p>
+
+<p>For that, I would like to thank the folks from
+<a href="https://glade.gnome.org/">Glade</a> with the awesome and helpful software.</p>
+
+<p>Well, at the moment I&rsquo;m implementing a simple program that creates a
+Widget to show all interesting information we will be providing on GNOME
+Videos. You may check the application
+<a href="https://github.com/victortoso/totem-tvshows">here</a>.</p>
+
+<h2 id="the-goal">The goal:</h2>
+
+<p><img src="/images/1406-01-totem-widget-goal.png" alt="Screenshot of goal" /></p>
+
+<h2 id="current-status">Current status</h2>
+
+<p><img src="/images/1406-02-totem-widget-status.png" alt="Screenshot of current status" /></p>
+
+<h2 id="life">Life</h2>
+
+<p>World cup is going on, traffic jam everywhere but people are in quite
+good mood here in Brazil. I&rsquo;m happier mostly because of my new great
+friend, Marvin.</p>
+
+<p><img src="/images/1406-03-marvin.png" alt="Marvin is my dog :)" /></p>
+
+</main>
+
+  <footer>
+  
+  
+  <hr/>
+  <a href="https://keybase.io/toso/"><img src="/images/about-logo-keybase-16x16.png" alt="keybase-logo" /></a> <a href="https://twitter.com/victortoso/"><img src="/images/about-logo-twitter-16x16.png" alt="twitter-logo" /></a> <a href="https://gitlab.com/victortoso"><img src="/images/about-logo-gitlab-16x16.png" alt="gitlab-logo" /></a> <a href="https://github.com/victortoso"><img src="/images/about-logo-github-16x16.png" alt="github-logo" /></a> <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/"><img src="/images/about-logo-creative-commons-16x16.png" alt="cc-logo" /></a>
+  
+  </footer>
+  </body>
+</html>
+

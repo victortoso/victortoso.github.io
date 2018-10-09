@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Red Hat on Victor Toso</title>
+    <link>http://victortoso.com/tags/red-hat/</link>
+    <description>Recent content in Red Hat on Victor Toso</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 26 Oct 2014 21:03:00 +0200</lastBuildDate>
+    
+	<atom:link href="http://victortoso.com/tags/red-hat/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Hello new life</title>
+      <link>http://victortoso.com/blog/1408/</link>
+      <pubDate>Sun, 26 Oct 2014 21:03:00 +0200</pubDate>
+      
+      <guid>http://victortoso.com/blog/1408/</guid>
+      <description>Since the end of the Google Summer of Code 2014 so many things have happened that It is really hard to make a simple blog post about it&amp;hellip; but I must try :)
+New job Well, along with the GSoC I&amp;rsquo;ve applied to a job at Red Hat and the process ended in August. Since October 15th I am part of the Spice team and I will be working at the Brno office in Czech Republic.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <title>GSoC last week, GNOME final report! :)</title>
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/fonts.css" />
+    
+  </head>
+
+  <body>
+    <nav>
+    <ul class="menu">
+      
+      <li><a href="/">Home</a></li>
+      
+      <li><a href="/about/">About</a></li>
+      
+      <li><a href="/talks/">Talks</a></li>
+      
+      <li><a href="/tags/">Tags</a></li>
+      
+    </ul>
+    <hr/>
+    </nav>
+
+<div class="article-meta">
+<h1><span class="title">GSoC last week, GNOME final report! :)</span></h1>
+
+<h2 class="date">2013/09/21</h2>
+</div>
+
+<main>
+
+
+<p>It&rsquo;s been a while since my last post just after GUADEC. I&rsquo;ve lost some
+time in August due moving to a new place in Campinas with two friends of
+mine. It was three weeks ago and I&rsquo;m still feeling tired (I&rsquo;m taking
+some time to get used with this new place).</p>
+
+<p>Since then, I&rsquo;m working on grilo-plugins and this post is all about what
+I&rsquo;ve accomplished and what are the next steps after GSoC.</p>
+
+<h3 id="the-post-is-bigger-then-usual-so-grab-a-cup-of-coffee"><em>(The post is bigger then usual so&hellip; grab a cup of coffee !)</em></h3>
+
+<p>As <a href="http://www.victortoso.com/planet-gsoc-project-and-brazil.html">I told
+before</a>,
+Grilo has some commands that are translated to the source like Search
+and Browse operations. Good part of my project was translating this
+commands from Grilo to the Lua source and the result of this work was
+the lua-factory plugin.</p>
+
+<p>The subset of commands available to Lua sources are: Search, Browse,
+Query, Resolve, May Resolve, Store and Remove. I&rsquo;ve developed two Lua
+sources that implement those commands besides the last two (Store and
+Remove) due a library dependency that will be commented bellow.</p>
+
+<p>Those Lua sources are <a href="http://www.metrolyrics.com/">Metrolyrics</a> and
+<a href="https://www.flickr.com/">Flickr</a> which already exists as C source.</p>
+
+<p>Due the limitations of the standards libraries of Lua and the need of
+interaction with Grilo itself the lua library was created. This is a set
+of lua modules that are helpful for the developers. Those modules could
+be wrappers of C librarys or custom functions.</p>
+
+<p>For instance, to be able to interact with Flickr web service a wrapper
+of <a href="http://en.wikipedia.org/wiki/OAuth">oauth</a> library was created;</p>
+
+<p>And all this were just the first steps;</p>
+
+<h2 id="current-issues-that-should-be-improved">Current issues that should be improved</h2>
+
+<p>The main goal of the GSoC project was being able to write plugins with
+Lua and them should be transparent to Grilo, making no difference
+between a C or Lua source. I feel that was accomplished but no without
+problems, lets check some of them <sup class="footnote-ref" id="fnref:1"><a href="#fn:1">1</a></sup>:</p>
+
+<ul>
+<li><p>The annoying userdata: To perform the callback from Lua source to
+the Application, we need to store the userdata passed from
+lua-factory somehow. There are a couple of ways of doing it but I
+didn&rsquo;t made it work before GUADEC and it was kind of low priority
+after; For instance, the Search operation in Lua should be a
+function called grl_source_search() wich have two parameters:
+(1) a Table with the data that the functions need; (2) An userdata which
+is a pointer to a structure in C (which is no useful for Lua code); A
+better approach is storing this in the Lua stack, hiding from lua code;</p></li>
+
+<li><p>Improving the GrlNet library with the possibility to POST content to
+the web. This was the reason that I didn&rsquo;t implement Store and
+Remove in the Lua Flickr source :(</p></li>
+
+<li><p>A better callback implementation (or a totally different one). This
+is one of the topics I talked with
+<a href="http://www.igalia.com/nc/igalia-247/igalian/item/jasuarez/">Juan</a>
+in GUADEC and this could actually be expanded to Grilo itself so,
+I&rsquo;ll keep it to another post;</p></li>
+
+<li><p>More sources! In order to be sure that this code is trustable a few
+more sources are needed; They will be implemented after the two
+first topics! <sup class="footnote-ref" id="fnref:2"><a href="#fn:2">2</a></sup>)</p></li>
+</ul>
+
+<h2 id="the-last-week-of-gsoc-period">The last week of GSoC Period</h2>
+
+<p>This week I&rsquo;m not writing much code but trying to make a useful
+documentation to help other developers.</p>
+
+<p>But as we can see in google&rsquo;s
+<a href="http://www.google-melange.com/gsoc/events/google/gsoc2013">timeline</a>,
+next week I&rsquo;ll be submitting the source code I&rsquo;ve developed so far.</p>
+
+<p>It will be the last week of GSoC but not my last in Grilo or in this
+project. Hopefully, I&rsquo;ll have a few more improvements in the end of
+October!</p>
+
+<p>A big thanks to Juan for all the feedback, help and insights! I&rsquo;ve made
+big steps these last three months and you help me out everytime :)</p>
+
+<h2 id="final-considerations">Final considerations</h2>
+
+<p>I&rsquo;ve enjoyed a lot this period! I&rsquo;ve learnt a lot! I&rsquo;ve met amazing
+people! I&rsquo;ve traveled more then 10&rsquo;000Km to a beautiful city to attend a
+super conference! I&rsquo;ve learnt Lua (and loving it!)</p>
+
+<p>I&rsquo;m lucky. Thanks to GNOME and Google for that!</p>
+
+<p>Wow, you made it till here. You can reclaim a beer in the next GUADEC!</p>
+
+<p>Did you know ? Grilo is a type of bug in Brazil ? A Cricket !</p>
+
+<p><img src="/images/1307-01-grilo-cricket.png" alt="Grilo is a bug!" /></p>
+<div class="footnotes">
+
+<hr />
+
+<ol>
+<li id="fn:1">If the reader see more problems not listed, feel free to comment it!
+ <a class="footnote-return" href="#fnref:1">↩</a></li>
+
+<li id="fn:2"><p>If the reader want to see a source implemented to Grilo,
+  tell me! I&rsquo;m kind of building a small list :)</p>
+ <a class="footnote-return" href="#fnref:2">↩</a></li>
+</ol>
+</div>
+
+</main>
+
+  <footer>
+  
+  
+  <hr/>
+  <a href="https://keybase.io/toso/"><img src="/images/about-logo-keybase-16x16.png" alt="keybase-logo" /></a> <a href="https://twitter.com/victortoso/"><img src="/images/about-logo-twitter-16x16.png" alt="twitter-logo" /></a> <a href="https://gitlab.com/victortoso"><img src="/images/about-logo-gitlab-16x16.png" alt="gitlab-logo" /></a> <a href="https://github.com/victortoso"><img src="/images/about-logo-github-16x16.png" alt="github-logo" /></a> <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/"><img src="/images/about-logo-creative-commons-16x16.png" alt="cc-logo" /></a>
+  
+  </footer>
+  </body>
+</html>
+

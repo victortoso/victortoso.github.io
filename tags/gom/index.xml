@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Gom on Victor Toso</title>
+    <link>http://victortoso.com/tags/gom/</link>
+    <description>Recent content in Gom on Victor Toso</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 10 Jun 2014 02:04:00 -0300</lastBuildDate>
+    
+	<atom:link href="http://victortoso.com/tags/gom/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>GSoC 2014 Report #3 - gom</title>
+      <link>http://victortoso.com/blog/1405/</link>
+      <pubDate>Tue, 10 Jun 2014 02:04:00 -0300</pubDate>
+      
+      <guid>http://victortoso.com/blog/1405/</guid>
+      <description>gom Most of the work I&amp;rsquo;ve being doing since last report is improving the TVDB source in Grilo Plugins in order to have a cache for all data that you have once downloaded from thetvdb.com.
+I&amp;rsquo;m doing that with gom.
+At first I thought it was a bit complicated as creating sql queries directly is easier. But under the hood gom does a lot of useful things that you don&amp;rsquo;t even need to bother thinking.</description>
+    </item>
+    
+  </channel>
+</rss>

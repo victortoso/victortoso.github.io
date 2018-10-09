@@ -1,0 +1,55 @@
+==================================================================
+https://keybase.io/toso
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of http://victortoso.com
+  * I am toso (https://keybase.io/toso) on keybase.
+  * I have a public key ASCV74hfrWun9SnJxoHoyyImOgZszCHBMOwvPgeeIX7ZOgo
+
+To do so, I am signing this object:
+
+{
+  "body": {
+    "key": {
+      "eldest_kid": "01201ffbf39f4960b495bfeab61a6beffc3a4d9dfd283217b7fab986ec573716c1670a",
+      "host": "keybase.io",
+      "kid": "012095ef885fad6ba7f529c9c681e8cb22263a066ccc21c130ec2f3e079e217ed93a0a",
+      "uid": "026d206831cd0b060dafb24967674519",
+      "username": "toso"
+    },
+    "merkle_root": {
+      "ctime": 1505042489,
+      "hash": "ac72e07dff2cc0cf8ab666b6c68c62a6af37d2ae439a1b9f10d0771d48d7f9377308c8d6d55d9b1c5a08d81aaa5c5d8c1976a4197e9c9a9c963e94370ee71030",
+      "hash_meta": "e87c7a80fb0ec45d4892ac35cc1d42b222b23a7d11b752103d1554d766153ced",
+      "seqno": 1378116
+    },
+    "service": {
+      "hostname": "victortoso.com",
+      "protocol": "http:"
+    },
+    "type": "web_service_binding",
+    "version": 1
+  },
+  "client": {
+    "name": "keybase.io go client",
+    "version": "1.0.29"
+  },
+  "ctime": 1505042519,
+  "expire_in": 504576000,
+  "prev": "d75789a2bad034a9bdf28dd91ee64dc0d789b96066960448fd704ee5b3dca9c6",
+  "seqno": 36,
+  "tag": "signature"
+}
+
+which yields the signature:
+
+hKRib2R5hqhkZXRhY2hlZMOpaGFzaF90eXBlCqNrZXnEIwEgle+IX61rp/UpycaB6MsiJjoGbMwhwTDsLz4HniF+2ToKp3BheWxvYWTFA0J7ImJvZHkiOnsia2V5Ijp7ImVsZGVzdF9raWQiOiIwMTIwMWZmYmYzOWY0OTYwYjQ5NWJmZWFiNjFhNmJlZmZjM2E0ZDlkZmQyODMyMTdiN2ZhYjk4NmVjNTczNzE2YzE2NzBhIiwiaG9zdCI6ImtleWJhc2UuaW8iLCJraWQiOiIwMTIwOTVlZjg4NWZhZDZiYTdmNTI5YzljNjgxZThjYjIyMjYzYTA2NmNjYzIxYzEzMGVjMmYzZTA3OWUyMTdlZDkzYTBhIiwidWlkIjoiMDI2ZDIwNjgzMWNkMGIwNjBkYWZiMjQ5Njc2NzQ1MTkiLCJ1c2VybmFtZSI6InRvc28ifSwibWVya2xlX3Jvb3QiOnsiY3RpbWUiOjE1MDUwNDI0ODksImhhc2giOiJhYzcyZTA3ZGZmMmNjMGNmOGFiNjY2YjZjNjhjNjJhNmFmMzdkMmFlNDM5YTFiOWYxMGQwNzcxZDQ4ZDdmOTM3NzMwOGM4ZDZkNTVkOWIxYzVhMDhkODFhYWE1YzVkOGMxOTc2YTQxOTdlOWM5YTljOTYzZTk0MzcwZWU3MTAzMCIsImhhc2hfbWV0YSI6ImU4N2M3YTgwZmIwZWM0NWQ0ODkyYWMzNWNjMWQ0MmIyMjJiMjNhN2QxMWI3NTIxMDNkMTU1NGQ3NjYxNTNjZWQiLCJzZXFubyI6MTM3ODExNn0sInNlcnZpY2UiOnsiaG9zdG5hbWUiOiJ2aWN0b3J0b3NvLmNvbSIsInByb3RvY29sIjoiaHR0cDoifSwidHlwZSI6IndlYl9zZXJ2aWNlX2JpbmRpbmciLCJ2ZXJzaW9uIjoxfSwiY2xpZW50Ijp7Im5hbWUiOiJrZXliYXNlLmlvIGdvIGNsaWVudCIsInZlcnNpb24iOiIxLjAuMjkifSwiY3RpbWUiOjE1MDUwNDI1MTksImV4cGlyZV9pbiI6NTA0NTc2MDAwLCJwcmV2IjoiZDc1Nzg5YTJiYWQwMzRhOWJkZjI4ZGQ5MWVlNjRkYzBkNzg5Yjk2MDY2OTYwNDQ4ZmQ3MDRlZTViM2RjYTljNiIsInNlcW5vIjozNiwidGFnIjoic2lnbmF0dXJlIn2jc2lnxEAyvK5ihSACV4Kok6+9skl00SMyN56iOtXXyexNCOaUrM+UTRR7suECCMd6eRXk59mY5kKGtH478oaW6doxSWMJqHNpZ190eXBlIKRoYXNogqR0eXBlCKV2YWx1ZcQgOj27hqzMmP3CDAnH86xzlGqeYvPe8iMM2QtQbMlhU3ejdGFnzQICp3ZlcnNpb24B
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/toso
+
+==================================================================

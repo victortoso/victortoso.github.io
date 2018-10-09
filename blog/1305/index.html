@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <title>The unpredictable, GSoC report and next steps</title>
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/fonts.css" />
+    
+  </head>
+
+  <body>
+    <nav>
+    <ul class="menu">
+      
+      <li><a href="/">Home</a></li>
+      
+      <li><a href="/about/">About</a></li>
+      
+      <li><a href="/talks/">Talks</a></li>
+      
+      <li><a href="/tags/">Tags</a></li>
+      
+    </ul>
+    <hr/>
+    </nav>
+
+<div class="article-meta">
+<h1><span class="title">The unpredictable, GSoC report and next steps</span></h1>
+
+<h2 class="date">2013/07/17</h2>
+</div>
+
+<main>
+<p>Oh boy, there are things that can slow you down. It&rsquo;s been three weeks
+since my last post, in this short period of time I had a car accident (
+I&rsquo;m 100% alright! ), one root canal treatment (with a good dose of
+pain), my girlfriend moved to another city&hellip; Oh well, too many
+headaches in three weeks!</p>
+
+<p>But when I was in good mood (or healthy enough) here I was, in front of
+this screen trying to make good code to Grilo&hellip; and I like the
+achievements so far. Lets take a look.</p>
+
+<p>I started to implement the <a href="http://www.metrolyrics.com/">Metrolyrics</a>
+plugin before writing any C code to Grilo in order to have a lua-based
+plugin to use. A lot of this plugin has changed to work with
+lua-factory. For those who <a href="http://www.victortoso.com/planet-gsoc-project-and-brazil.html">don&rsquo;t
+remember</a>,
+lua-factory is part of grilo-plugins, and it is the glue-code in charge
+to load-and-use the lua-plugins.</p>
+
+<p>In this moment, we can use the <em>Search</em>, <em>Browse</em>, <em>Query</em> and <em>Resolve</em>
+operations from Grilo to this lua-plugin.</p>
+
+<p>As the lua code needs some help from C to perform a few operations,
+lua-library was created to be a module to lua. This module has two
+functions implemented: Fetch, to perform async fetch from web and
+Callback, to return the content to the application.</p>
+
+<p>A lot has to be done yet. Hopefully without any personal headache :)</p>
+
+<p>For instance:</p>
+
+<ul>
+<li><em>Store</em> and <em>Remove</em> operations must be implemented in lua-factory;</li>
+<li>Log and Error functions to the lua-library;</li>
+<li>Better care with user configs, metadata-keys</li>
+<li>Solving some problems with UTF-8 chars</li>
+</ul>
+
+<p>I will be writing a new lua-plugin this week and I&rsquo;m trying to choose
+between <a href="https://soundcloud.com/">Soundcloud</a> or
+<a href="http://www.last.fm/">Last.fm</a>. Both have the necessary features to be
+implemented that Metrolyrics lacks for Grilo.</p>
+
+<p>Well, I intend to make my next post in Brno before GUADEC and another
+post after with much more GNOMExperience&hellip;</p>
+
+</main>
+
+  <footer>
+  
+  
+  <hr/>
+  <a href="https://keybase.io/toso/"><img src="/images/about-logo-keybase-16x16.png" alt="keybase-logo" /></a> <a href="https://twitter.com/victortoso/"><img src="/images/about-logo-twitter-16x16.png" alt="twitter-logo" /></a> <a href="https://gitlab.com/victortoso"><img src="/images/about-logo-gitlab-16x16.png" alt="gitlab-logo" /></a> <a href="https://github.com/victortoso"><img src="/images/about-logo-github-16x16.png" alt="github-logo" /></a> <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/"><img src="/images/about-logo-creative-commons-16x16.png" alt="cc-logo" /></a>
+  
+  </footer>
+  </body>
+</html>
+

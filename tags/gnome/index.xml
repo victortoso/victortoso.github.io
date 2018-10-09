@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Gnome on Victor Toso</title>
+    <link>http://victortoso.com/tags/gnome/</link>
+    <description>Recent content in Gnome on Victor Toso</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 06 Feb 2016 12:20:00 +0200</lastBuildDate>
+    
+	<atom:link href="http://victortoso.com/tags/gnome/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Grilo framework and Lua</title>
+      <link>http://victortoso.com/talks/1601/</link>
+      <pubDate>Sat, 06 Feb 2016 12:20:00 +0200</pubDate>
+      
+      <guid>http://victortoso.com/talks/1601/</guid>
+      <description>The DevConf CZ is a three-day conference that brings different communities of developers together in Brno, Czech Republic. Organized by Red Hat, this conference offers several interesting topics on talks or workshops. Great to keep yourself up-to-date on fast evolving technologies.
+My collegues presented Spice on Windows describing the process to deliver Windows builds of SPICE components from a Linux machine. As extra, Virgl + Spice (Linux-only) was showed in the end, check it out!</description>
+    </item>
+    
+    <item>
+      <title>Another GSoC on Grilo!</title>
+      <link>http://victortoso.com/talks/1401/</link>
+      <pubDate>Sun, 27 Jul 2014 17:00:00 +0200</pubDate>
+      
+      <guid>http://victortoso.com/talks/1401/</guid>
+      <description>GUADEC 2014 took place in Strasbourg, France and that was my first time in this beautiful country. My friend Watson Sato was also enrolled in the GSoC on GNOME and we were able to travel and attend the conference together.
+The time slot per intern for the light talk was very short once again but everybody was able to summarize their work very well. Sadly the video was not uploaded.</description>
+    </item>
+    
+    <item>
+      <title>Google Summer of Code 2014</title>
+      <link>http://victortoso.com/blog/1402/</link>
+      <pubDate>Tue, 22 Apr 2014 23:43:00 -0300</pubDate>
+      
+      <guid>http://victortoso.com/blog/1402/</guid>
+      <description>Another great summer is coming I was accepted, once again, at Google Summer of Code program! I am really excited with the project. I&amp;rsquo;ll have fun with Grilo again by implementing a few new plugins and integrating them to Videos and Music.
+Check the wiki of the project for more info.
+Many thanks to Google for this amazing program and to Bastien, which will be mentoring me during this period.</description>
+    </item>
+    
+    <item>
+      <title>GSoC last week, GNOME final report! :)</title>
+      <link>http://victortoso.com/blog/1307/</link>
+      <pubDate>Sat, 21 Sep 2013 00:34:00 -0300</pubDate>
+      
+      <guid>http://victortoso.com/blog/1307/</guid>
+      <description>It&amp;rsquo;s been a while since my last post just after GUADEC. I&amp;rsquo;ve lost some time in August due moving to a new place in Campinas with two friends of mine. It was three weeks ago and I&amp;rsquo;m still feeling tired (I&amp;rsquo;m taking some time to get used with this new place).
+Since then, I&amp;rsquo;m working on grilo-plugins and this post is all about what I&amp;rsquo;ve accomplished and what are the next steps after GSoC.</description>
+    </item>
+    
+    <item>
+      <title>Brno, GUADEC and Grilo</title>
+      <link>http://victortoso.com/blog/1306/</link>
+      <pubDate>Mon, 05 Aug 2013 22:21:00 -0300</pubDate>
+      
+      <guid>http://victortoso.com/blog/1306/</guid>
+      <description>Brno is amazing. Just amazing. The people from here try to be helpfull even if they don&amp;rsquo;t speak a single word in English. The food is really good and quite cheap and the city is beautiful! I&amp;rsquo;m glad that I still have time for another tour around!
+Well, travelling without many concerns, meeting amazing people and with the opportunity to learn things you love&amp;hellip; GUADEC has been an amazing experience.</description>
+    </item>
+    
+    <item>
+      <title>My GSOC on Grilo!</title>
+      <link>http://victortoso.com/talks/1301/</link>
+      <pubDate>Sun, 04 Aug 2013 16:20:00 +0200</pubDate>
+      
+      <guid>http://victortoso.com/talks/1301/</guid>
+      <description>GUADEC 2013 was hosted in Brno, Czech Republic and it was my first time doing a talk for a big audience, quite an experience! I can see how nervous I got in the two minutes I had for the interns lightning talk.
+Not super instructive video to watch but quite funny to me :)
+Also, It is very interesting that a little bit more then a year later, I would be moving to Brno to start a new phase of my life.</description>
+    </item>
+    
+    <item>
+      <title>The unpredictable, GSoC report and next steps</title>
+      <link>http://victortoso.com/blog/1305/</link>
+      <pubDate>Wed, 17 Jul 2013 22:56:00 -0300</pubDate>
+      
+      <guid>http://victortoso.com/blog/1305/</guid>
+      <description>Oh boy, there are things that can slow you down. It&amp;rsquo;s been three weeks since my last post, in this short period of time I had a car accident ( I&amp;rsquo;m 100% alright! ), one root canal treatment (with a good dose of pain), my girlfriend moved to another city&amp;hellip; Oh well, too many headaches in three weeks!
+But when I was in good mood (or healthy enough) here I was, in front of this screen trying to make good code to Grilo&amp;hellip; and I like the achievements so far.</description>
+    </item>
+    
+    <item>
+      <title>Planet, GSoC project and Brazil</title>
+      <link>http://victortoso.com/blog/1304/</link>
+      <pubDate>Mon, 24 Jun 2013 02:14:00 -0300</pubDate>
+      
+      <guid>http://victortoso.com/blog/1304/</guid>
+      <description>First of all, hello everybody from Planet Gnome! This is the first post that will take place there. It is a really nice community where I&amp;rsquo;ve been learning always something new from the past 5 months. I hope I can put some interesting hacks for you guys.
+Thank you Alberto Ruiz for including me.
+I was accepted in GSoC this year to be working with Grilo. It is a really nice project which I&amp;rsquo;m always having some fun while coding.</description>
+    </item>
+    
+    <item>
+      <title>Lua, Lyrics and GUADEC</title>
+      <link>http://victortoso.com/blog/1303/</link>
+      <pubDate>Sun, 09 Jun 2013 03:01:00 -0300</pubDate>
+      
+      <guid>http://victortoso.com/blog/1303/</guid>
+      <description>First of all, as a good beginner in blogging I have promised that
+I&#39;ll make a proper introducing of the project later this week  which I did not. Sorry for that. I hope to do it soon.
+I&amp;rsquo;ve been studying Lua since last weekend with the good guidance of the Programming in Lua (written by Roberto Ierusalimschy as a way to improve my lua skills. Actually, before starting reading this book I thought my knowledge of lua was _[ok]() because it is easy to understand and make some code.</description>
+    </item>
+    
+    <item>
+      <title>Magnatune upstream and GSoC</title>
+      <link>http://victortoso.com/blog/1302/</link>
+      <pubDate>Tue, 28 May 2013 00:57:00 -0300</pubDate>
+      
+      <guid>http://victortoso.com/blog/1302/</guid>
+      <description>I was having a busy week until this Sunday which happened to be my birthday!
+I just made 25 years old and the celebration with my family was remarkable.
+I&amp;rsquo;m just happy with such great family.
+But besides my family, two amazing things made this last three days quite unforgettable.
+First, my first code to an open source community reached the upstream! As posted by Juan, within the 0.2.8 release of grilo-plugins is included the Magnatune plugin.</description>
+    </item>
+    
+    <item>
+      <title>Step by step</title>
+      <link>http://victortoso.com/blog/1301/</link>
+      <pubDate>Tue, 14 May 2013 00:02:00 -0300</pubDate>
+      
+      <guid>http://victortoso.com/blog/1301/</guid>
+      <description>Time goes by when you finally finish your 18 years studying things that people said you need to learn. Finally you start doing more and more things that you want to do. Learning what you think is interesting and working with what you love.
+I&amp;rsquo;m entering in a new phase of my life.
+I&amp;rsquo;ve been working in a few projects that made most of my days goes by in a blink of an eye.</description>
+    </item>
+    
+  </channel>
+</rss>

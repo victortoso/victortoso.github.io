@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Flickr on Victor Toso</title>
+    <link>http://victortoso.com/tags/flickr/</link>
+    <description>Recent content in Flickr on Victor Toso</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 21 Sep 2013 00:34:00 -0300</lastBuildDate>
+    
+	<atom:link href="http://victortoso.com/tags/flickr/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>GSoC last week, GNOME final report! :)</title>
+      <link>http://victortoso.com/blog/1307/</link>
+      <pubDate>Sat, 21 Sep 2013 00:34:00 -0300</pubDate>
+      
+      <guid>http://victortoso.com/blog/1307/</guid>
+      <description>It&amp;rsquo;s been a while since my last post just after GUADEC. I&amp;rsquo;ve lost some time in August due moving to a new place in Campinas with two friends of mine. It was three weeks ago and I&amp;rsquo;m still feeling tired (I&amp;rsquo;m taking some time to get used with this new place).
+Since then, I&amp;rsquo;m working on grilo-plugins and this post is all about what I&amp;rsquo;ve accomplished and what are the next steps after GSoC.</description>
+    </item>
+    
+  </channel>
+</rss>

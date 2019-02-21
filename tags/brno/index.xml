@@ -1,35 +1,56 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:dc="http://purl.org/dc/elements/1.1/">
   <channel>
+    <docs>https://blogs.law.harvard.edu/tech/rss</docs>
     <title>Brno on Victor Toso</title>
     <link>http://victortoso.com/tags/brno/</link>
     <description>Recent content in Brno on Victor Toso</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <ttl>1440</ttl>
+    <generator>Hugo 0.55.0-DEV</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 26 Oct 2014 21:03:00 +0200</lastBuildDate>
     
-	<atom:link href="http://victortoso.com/tags/brno/index.xml" rel="self" type="application/rss+xml" />
+      <atom:link href="http://victortoso.com/tags/brno/index.xml" rel="self" type="application/rss+xml" />
     
     
-    <item>
-      <title>Hello new life</title>
-      <link>http://victortoso.com/blog/1408/</link>
-      <pubDate>Sun, 26 Oct 2014 21:03:00 +0200</pubDate>
-      
-      <guid>http://victortoso.com/blog/1408/</guid>
-      <description>Since the end of the Google Summer of Code 2014 so many things have happened that It is really hard to make a simple blog post about it&amp;hellip; but I must try :)
+      <item>
+        <title>Hello new life</title>
+        <link>http://victortoso.com/blog/1408/</link>
+        <pubDate>Sun, 26 Oct 2014 21:03:00 +0200</pubDate>
+        <guid>http://victortoso.com/blog/1408/</guid>
+        <description>Since the end of the Google Summer of Code 2014 so many things have happened that It is really hard to make a simple blog post about it&amp;hellip; but I must try :)
 New job Well, along with the GSoC I&amp;rsquo;ve applied to a job at Red Hat and the process ended in August. Since October 15th I am part of the Spice team and I will be working at the Brno office in Czech Republic.</description>
-    </item>
+        <content:encoded><![CDATA[ Since the end of the Google Summer of Code 2014 so many things have happened that It is really hard to make a simple blog post about it&amp;hellip; but I must try :)
+New job Well, along with the GSoC I&amp;rsquo;ve applied to a job at Red Hat and the process ended in August. Since October 15th I am part of the Spice team and I will be working at the Brno office in Czech Republic.
+I am really excited with the work and with the team. I am learning a lot already.
+New City I have visited Brno at GUADEC 2013, lovely city. I feel safe here unlike Campinas in Brazil.
+I have great expectations about living here and so do my wife after reading Christian&amp;rsquo;s blog post about leaving Brno.
+Married Yay ;) Yes, biggest decision of my life.
+We have been together for almost three years now and we were living together for almost one year which made this decision straightforward for me. Catielle is a wonderful person and I am really happy with our marriage. I feel that we are going to be very happy here in Brno.
+Pending Well, I was quite a busy in the last two months but I still have a lot of things to do!
+A few blog posts about GUADEC, GSoC and Grilo I want to move this Blog to Pelican :-) Finishing off a few things related to the last GSoC project, making it upstream! Writing a documentation for the lua-factory plugin :-)
+That&amp;rsquo;s all for now! I will be back hacking and blogging now that things are getting calmer.
+]]></content:encoded>
+      </item>
     
-    <item>
-      <title>Brno, GUADEC and Grilo</title>
-      <link>http://victortoso.com/blog/1306/</link>
-      <pubDate>Mon, 05 Aug 2013 22:21:00 -0300</pubDate>
-      
-      <guid>http://victortoso.com/blog/1306/</guid>
-      <description>Brno is amazing. Just amazing. The people from here try to be helpfull even if they don&amp;rsquo;t speak a single word in English. The food is really good and quite cheap and the city is beautiful! I&amp;rsquo;m glad that I still have time for another tour around!
+      <item>
+        <title>Brno, GUADEC and Grilo</title>
+        <link>http://victortoso.com/blog/1306/</link>
+        <pubDate>Mon, 05 Aug 2013 22:21:00 -0300</pubDate>
+        <guid>http://victortoso.com/blog/1306/</guid>
+        <description>Brno is amazing. Just amazing. The people from here try to be helpfull even if they don&amp;rsquo;t speak a single word in English. The food is really good and quite cheap and the city is beautiful! I&amp;rsquo;m glad that I still have time for another tour around!
 Well, travelling without many concerns, meeting amazing people and with the opportunity to learn things you love&amp;hellip; GUADEC has been an amazing experience.</description>
-    </item>
+        <content:encoded><![CDATA[Brno is amazing. Just amazing. The people from here try to be helpfull even if they don&amp;rsquo;t speak a single word in English. The food is really good and quite cheap and the city is beautiful! I&amp;rsquo;m glad that I still have time for another tour around!
+Well, travelling without many concerns, meeting amazing people and with the opportunity to learn things you love&amp;hellip; GUADEC has been an amazing experience.
+The talks were really good but the people I have met here are awesome.
+I&amp;rsquo;m really glad to finally meet my mentor Juan Suárez and some folks from Red Hat. It was awesome to talk with some others interns such as Kalev, Marcos, Valentín, Alessandro, Bogdan and Carlos. It was brief but really nice. Hope to meet everybody again next year!
+Here in GUADEC I had a lightning talk trying to briefly explain what my GSoC is about. It was hard to do it in less then 3 minutes. I was quite nervous too but everything went well :)
+If anybody would like to know more about grilo or anything related ping me on #grilo
+I had the opportunity to talk with Juan about the GSoC project, Grilo and some plans for the future. I&amp;rsquo;m a bit excited to keep contributing to Grilo.
+I would like to thank GNOME Fundation for the sponsorship and making this travel possible; to Google for the Summer of Code Program; to Fabiano Fidêncio for helping me A LOT in Brno.
+And that&amp;rsquo;s all.
+]]></content:encoded>
+      </item>
     
   </channel>
 </rss>

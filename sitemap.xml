@@ -140,6 +140,12 @@
   </url>
   
   <url>
+    <loc>http://victortoso.com/tags/console-kit/</loc>
+    <lastmod>2016-06-25T15:10:00+02:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>http://victortoso.com/tags/devconf/</loc>
     <lastmod>2017-02-06T12:20:00+02:00</lastmod>
     <priority>0</priority>
@@ -194,6 +200,12 @@
   </url>
   
   <url>
+    <loc>http://victortoso.com/tags/life/</loc>
+    <lastmod>2015-10-15T23:34:00+02:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>http://victortoso.com/tags/lua/</loc>
     <lastmod>2013-06-24T02:14:00-03:00</lastmod>
     <priority>0</priority>
@@ -225,12 +237,6 @@
   
   <url>
     <loc>http://victortoso.com/tags/red-hat/</loc>
-    <lastmod>2014-10-26T21:03:00+02:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://victortoso.com/tags/red-hat-life/</loc>
     <lastmod>2015-10-15T23:34:00+02:00</lastmod>
     <priority>0</priority>
   </url>
@@ -242,7 +248,7 @@
   </url>
   
   <url>
-    <loc>http://victortoso.com/tags/spice-console-kit-systemd-windows/</loc>
+    <loc>http://victortoso.com/tags/systemd/</loc>
     <lastmod>2016-06-25T15:10:00+02:00</lastmod>
     <priority>0</priority>
   </url>
@@ -280,6 +286,12 @@
   <url>
     <loc>http://victortoso.com/</loc>
     <lastmod>2017-02-06T12:20:00+02:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://victortoso.com/tags/windows/</loc>
+    <lastmod>2016-06-25T15:10:00+02:00</lastmod>
     <priority>0</priority>
   </url>
   

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <channel>
+    <docs>https://blogs.law.harvard.edu/tech/rss</docs>
+    <title>Life on Victor Toso</title>
+    <link>http://victortoso.com/tags/life/</link>
+    <description>Recent content in Life on Victor Toso</description>
+    <ttl>1440</ttl>
+    <generator>Hugo 0.55.0-DEV</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 15 Oct 2015 23:34:00 +0200</lastBuildDate>
+    
+      <atom:link href="http://victortoso.com/tags/life/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      <item>
+        <title>One year</title>
+        <link>http://victortoso.com/blog/1501/</link>
+        <pubDate>Thu, 15 Oct 2015 23:34:00 +0200</pubDate>
+        <guid>http://victortoso.com/blog/1501/</guid>
+        <description>It&amp;rsquo;s been almost one year since my last blog post. One year since I got married and left Brazil to live in Czech Republic. In my last post I talked about all the changes I was passing through but no change is bigger than having a baby. Tereza has almost 4 months now :)
+One year at Red Hat and Spice.
+Even with the great amount of things to do in personal and professional life, I want to keep making GNOME better as much as I can in my free time and thus I want to get back to blogging again.</description>
+        <content:encoded><![CDATA[It&amp;rsquo;s been almost one year since my last blog post. One year since I got married and left Brazil to live in Czech Republic. In my last post I talked about all the changes I was passing through but no change is bigger than having a baby. Tereza has almost 4 months now :)
+One year at Red Hat and Spice.
+Even with the great amount of things to do in personal and professional life, I want to keep making GNOME better as much as I can in my free time and thus I want to get back to blogging again.
+I&amp;rsquo;ve finally managed to migrate from Blogger to Pelican so I hope that more personal posts like this one will not be part of Planet GNOME in the future :)
+I also plan to blog more about personal stuff such as being a father or living abroad. I hope that it can ease the distance from family and friends in Brazil.
+This one year was just crazy. Time flies and nothing like raising a child to realize that.
+Cheers!
+]]></content:encoded>
+      </item>
+    
+  </channel>
+</rss>

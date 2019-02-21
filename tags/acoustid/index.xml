@@ -1,26 +1,54 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:dc="http://purl.org/dc/elements/1.1/">
   <channel>
+    <docs>https://blogs.law.harvard.edu/tech/rss</docs>
     <title>Acoustid on Victor Toso</title>
     <link>http://victortoso.com/tags/acoustid/</link>
     <description>Recent content in Acoustid on Victor Toso</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <ttl>1440</ttl>
+    <generator>Hugo 0.55.0-DEV</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 15 Jul 2014 02:58:00 -0300</lastBuildDate>
     
-	<atom:link href="http://victortoso.com/tags/acoustid/index.xml" rel="self" type="application/rss+xml" />
+      <atom:link href="http://victortoso.com/tags/acoustid/index.xml" rel="self" type="application/rss+xml" />
     
     
-    <item>
-      <title>GSoC Report #6 and #7</title>
-      <link>http://victortoso.com/blog/1407/</link>
-      <pubDate>Tue, 15 Jul 2014 02:58:00 -0300</pubDate>
-      
-      <guid>http://victortoso.com/blog/1407/</guid>
-      <description>Tuesday&amp;hellip; Two weeks without posting again! Can I use as an excuse my grief for Brazil in this World Cup!? :) Well, actually I was somewhat busy studying&amp;hellip; I&amp;rsquo;ll share what in a moment.
+      <item>
+        <title>GSoC Report #6 and #7</title>
+        <link>http://victortoso.com/blog/1407/</link>
+        <pubDate>Tue, 15 Jul 2014 02:58:00 -0300</pubDate>
+        <guid>http://victortoso.com/blog/1407/</guid>
+        <description>Tuesday&amp;hellip; Two weeks without posting again! Can I use as an excuse my grief for Brazil in this World Cup!? :) Well, actually I was somewhat busy studying&amp;hellip; I&amp;rsquo;ll share what in a moment.
 In order to talk about what I&amp;rsquo;m working on I would like to explain one interesting feature that Grilo has.
 Cool thing in Grilo? You may know that Grilo uses plugins to fetch useful data to your application!</description>
-    </item>
+        <content:encoded><![CDATA[ Tuesday&amp;hellip; Two weeks without posting again! Can I use as an excuse my grief for Brazil in this World Cup!? :) Well, actually I was somewhat busy studying&amp;hellip; I&amp;rsquo;ll share what in a moment.
+In order to talk about what I&amp;rsquo;m working on I would like to explain one interesting feature that Grilo has.
+Cool thing in Grilo? You may know that Grilo uses plugins to fetch useful data to your application! Great. What you may not know is that Grilo can combine the use of its plugins to resolve what the application want!
+Let me explain.
+The TVDB can provide tons of interesting metadata for your TV Shows but to do so, It needs some keys in order to find your TV Show in its database like the name of the show the season and the episode that you are watching.
+Cool thing that there is a Grilo plugin called local-metadata which try to get as much data as possible from the file name. For instance, It is easy to local-metadata to gather all metadata necessary to The TVDB from files like:
+Boardwalk.Empire.S04E01.HDTV.x264-2HD.mp4; Adventure Time - 2x01 - It Came from the Nightosphere.mp4 etc&amp;hellip;
+MusicBrainz Well, I&amp;rsquo;ll be working in a MusicBrainz plugin to Grilo which will be very useful for several applications indeed. But from a music file, how you identify Author, Artist or anything?
+One cool way is checking the audio fingerprint!
+AcoustID has an Open database accessible through a webservice to get the MusicBrainz Track ID from your audio fingerprint!
+So, this is pretty much similar of the example above with the TVDB and local-metadata. The AcoustID will provide the MusicBrainz ID of the track and the MusicBrainz plugin will use this to get all metadata necessary. Cool, right?
+Out of curiosity I read this awesome blog post which explains how the fingerprint are calculated and how the AcoustID use that to search in its database. Check it out!
+AcoustID 1&amp;frasl;2 So, in order to generate the fingerprint as AcoustID needs, It is necessary to read the entire music file while providing the raw data to the chromaprint library.
+My first attempt to do that was using the libraries of ffmpeg as I already had some background with it and also a functional-example in hands.
+Of course it was a bad decision to implement such thing without talking with Bastien first :)
+He has explained a bit of the problems of having ffmpeg as dependency&amp;hellip;
+AcoustID 2&amp;frasl;2 Then I started doing one thing that I was postponing for some time: learning GStreamer.
+I read the manual and in its examples in order to understand how it works and what would be the best way to implement the AcoustID.
+In the end, there was already a Chromaprint plugin!
+The result is smaller but faster application then my previous work with ffmpeg :-)
+You can check the current AcoustID plugin here.
+Okay and what about that GNOME Video UI Well, yes. I&amp;rsquo;m trying.
+The current code is here, seriously, I want to make this work with CSS but somehow it is not working properly.
+For instance, I can change the attributes for all GtkLabel but I can&amp;rsquo;t change a specific GtkLabel alone.
+I can&amp;rsquo;t tell how glad I was after checking the GUADEC schedule and see the &amp;quot;GTK and CSS&amp;quot; talk from Benjamin Otte. I&amp;rsquo;ll be there, for sure!
+I think that&amp;rsquo;s all folks,
+]]></content:encoded>
+      </item>
     
   </channel>
 </rss>

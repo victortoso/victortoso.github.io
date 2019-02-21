@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:dc="http://purl.org/dc/elements/1.1/">
   <channel>
+    <docs>https://blogs.law.harvard.edu/tech/rss</docs>
     <title>Categories on Victor Toso</title>
     <link>http://victortoso.com/categories/</link>
     <description>Recent content in Categories on Victor Toso</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <ttl>1440</ttl>
+    <generator>Hugo 0.55.0-DEV</generator>
     <language>en-us</language>
     
-	<atom:link href="http://victortoso.com/categories/index.xml" rel="self" type="application/rss+xml" />
+      <atom:link href="http://victortoso.com/categories/index.xml" rel="self" type="application/rss+xml" />
     
     
   </channel>

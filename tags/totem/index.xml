@@ -1,26 +1,38 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:dc="http://purl.org/dc/elements/1.1/">
   <channel>
+    <docs>https://blogs.law.harvard.edu/tech/rss</docs>
     <title>Totem on Victor Toso</title>
     <link>http://victortoso.com/tags/totem/</link>
     <description>Recent content in Totem on Victor Toso</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <ttl>1440</ttl>
+    <generator>Hugo 0.55.0-DEV</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 25 Jun 2014 23:34:00 -0300</lastBuildDate>
     
-	<atom:link href="http://victortoso.com/tags/totem/index.xml" rel="self" type="application/rss+xml" />
+      <atom:link href="http://victortoso.com/tags/totem/index.xml" rel="self" type="application/rss+xml" />
     
     
-    <item>
-      <title>GSoC Report #4 and #5</title>
-      <link>http://victortoso.com/blog/1406/</link>
-      <pubDate>Wed, 25 Jun 2014 23:34:00 -0300</pubDate>
-      
-      <guid>http://victortoso.com/blog/1406/</guid>
-      <description>Hey :) I usually write my posts in the weekend when I do have more time to think about what I&amp;rsquo;ve done and what It is interesting to share. Sadly, two weekends ago I was ill due something I&amp;rsquo;ve eaten and now I&amp;rsquo;ll try to summarize two weeks in one post!
+      <item>
+        <title>GSoC Report #4 and #5</title>
+        <link>http://victortoso.com/blog/1406/</link>
+        <pubDate>Wed, 25 Jun 2014 23:34:00 -0300</pubDate>
+        <guid>http://victortoso.com/blog/1406/</guid>
+        <description>Hey :) I usually write my posts in the weekend when I do have more time to think about what I&amp;rsquo;ve done and what It is interesting to share. Sadly, two weekends ago I was ill due something I&amp;rsquo;ve eaten and now I&amp;rsquo;ll try to summarize two weeks in one post!
 The TVDB Is now upstream. Yay!
 The main care after implementing the cache with Gom was handling multiple requests of the same TV Show in a short period of time (concurrency).</description>
-    </item>
+        <content:encoded><![CDATA[ Hey :) I usually write my posts in the weekend when I do have more time to think about what I&amp;rsquo;ve done and what It is interesting to share. Sadly, two weekends ago I was ill due something I&amp;rsquo;ve eaten and now I&amp;rsquo;ll try to summarize two weeks in one post!
+The TVDB Is now upstream. Yay!
+The main care after implementing the cache with Gom was handling multiple requests of the same TV Show in a short period of time (concurrency).
+For instance, you are browsing some TV Show using some application that uses Grilo to requests metadata. It may occur several requests of the same tv show like, episode 01, episode 02, etc.
+We are handling this by fetching the TVDB only once to gather all existing data and then resolve the later requests with the cache.
+Quite nice, lots of fun implementing it.
+The Integration with the UI I have realized I&amp;rsquo;m really bad at building UIs and I&amp;rsquo;m also recognizing how much effort it is necessary to make a good UI (a lot).
+For that, I would like to thank the folks from Glade with the awesome and helpful software.
+Well, at the moment I&amp;rsquo;m implementing a simple program that creates a Widget to show all interesting information we will be providing on GNOME Videos. You may check the application here.
+The goal: Current status Life World cup is going on, traffic jam everywhere but people are in quite good mood here in Brazil. I&amp;rsquo;m happier mostly because of my new great friend, Marvin.
+]]></content:encoded>
+      </item>
     
   </channel>
 </rss>

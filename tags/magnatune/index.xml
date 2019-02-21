@@ -1,50 +1,80 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:dc="http://purl.org/dc/elements/1.1/">
   <channel>
+    <docs>https://blogs.law.harvard.edu/tech/rss</docs>
     <title>Magnatune on Victor Toso</title>
     <link>http://victortoso.com/tags/magnatune/</link>
     <description>Recent content in Magnatune on Victor Toso</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <ttl>1440</ttl>
+    <generator>Hugo 0.55.0-DEV</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 10 Jun 2014 02:04:00 -0300</lastBuildDate>
     
-	<atom:link href="http://victortoso.com/tags/magnatune/index.xml" rel="self" type="application/rss+xml" />
+      <atom:link href="http://victortoso.com/tags/magnatune/index.xml" rel="self" type="application/rss+xml" />
     
     
-    <item>
-      <title>GSoC 2014 Report #3 - gom</title>
-      <link>http://victortoso.com/blog/1405/</link>
-      <pubDate>Tue, 10 Jun 2014 02:04:00 -0300</pubDate>
-      
-      <guid>http://victortoso.com/blog/1405/</guid>
-      <description>gom Most of the work I&amp;rsquo;ve being doing since last report is improving the TVDB source in Grilo Plugins in order to have a cache for all data that you have once downloaded from thetvdb.com.
+      <item>
+        <title>GSoC 2014 Report #3 - gom</title>
+        <link>http://victortoso.com/blog/1405/</link>
+        <pubDate>Tue, 10 Jun 2014 02:04:00 -0300</pubDate>
+        <guid>http://victortoso.com/blog/1405/</guid>
+        <description>gom Most of the work I&amp;rsquo;ve being doing since last report is improving the TVDB source in Grilo Plugins in order to have a cache for all data that you have once downloaded from thetvdb.com.
 I&amp;rsquo;m doing that with gom.
 At first I thought it was a bit complicated as creating sql queries directly is easier. But under the hood gom does a lot of useful things that you don&amp;rsquo;t even need to bother thinking.</description>
-    </item>
+        <content:encoded><![CDATA[ gom Most of the work I&amp;rsquo;ve being doing since last report is improving the TVDB source in Grilo Plugins in order to have a cache for all data that you have once downloaded from thetvdb.com.
+I&amp;rsquo;m doing that with gom.
+At first I thought it was a bit complicated as creating sql queries directly is easier. But under the hood gom does a lot of useful things that you don&amp;rsquo;t even need to bother thinking. It is good to see that it was moved to git.gnome.org.
+Also, It was really good to see Magnatune working when I was reading the last post from Sai. It was my first patch to GNOME :). I&amp;rsquo;m thinking about updating the Magnatune source with gom in the near future and probably with more features. Let&amp;rsquo;s see!
+Note: One could check the thetvdb source patches here.
+Next The integration with GNOME Videos! I&amp;rsquo;m excited to see this working :)
+Guadec Oh yeah! I loved last year conference and I wouldn&amp;rsquo;t miss this year. Thanks very much to the GNOME Foundation for helping out with the sponsorship.
+]]></content:encoded>
+      </item>
     
-    <item>
-      <title>Magnatune upstream and GSoC</title>
-      <link>http://victortoso.com/blog/1302/</link>
-      <pubDate>Tue, 28 May 2013 00:57:00 -0300</pubDate>
-      
-      <guid>http://victortoso.com/blog/1302/</guid>
-      <description>I was having a busy week until this Sunday which happened to be my birthday!
+      <item>
+        <title>Magnatune upstream and GSoC</title>
+        <link>http://victortoso.com/blog/1302/</link>
+        <pubDate>Tue, 28 May 2013 00:57:00 -0300</pubDate>
+        <guid>http://victortoso.com/blog/1302/</guid>
+        <description>I was having a busy week until this Sunday which happened to be my birthday!
 I just made 25 years old and the celebration with my family was remarkable.
 I&amp;rsquo;m just happy with such great family.
 But besides my family, two amazing things made this last three days quite unforgettable.
 First, my first code to an open source community reached the upstream! As posted by Juan, within the 0.2.8 release of grilo-plugins is included the Magnatune plugin.</description>
-    </item>
+        <content:encoded><![CDATA[I was having a busy week until this Sunday which happened to be my birthday!
+I just made 25 years old and the celebration with my family was remarkable.
+I&amp;rsquo;m just happy with such great family.
+But besides my family, two amazing things made this last three days quite unforgettable.
+First, my first code to an open source community reached the upstream! As posted by Juan, within the 0.2.8 release of grilo-plugins is included the Magnatune plugin.
+I&amp;rsquo;m really glad about it! Thanks to Juan and Bastien for all suggestions and for reviewing the patches!
+Second, I was accepted at Google Summer of Code program to keep working with grilo! I&amp;rsquo;ll make a proper introducing of the project later this week but the reader can have an idea at the abstract page.
+Thanks to GNOME and Google for it.
+ A lot is happening and I&amp;rsquo;m full of good expectations.  :)
+]]></content:encoded>
+      </item>
     
-    <item>
-      <title>Step by step</title>
-      <link>http://victortoso.com/blog/1301/</link>
-      <pubDate>Tue, 14 May 2013 00:02:00 -0300</pubDate>
-      
-      <guid>http://victortoso.com/blog/1301/</guid>
-      <description>Time goes by when you finally finish your 18 years studying things that people said you need to learn. Finally you start doing more and more things that you want to do. Learning what you think is interesting and working with what you love.
+      <item>
+        <title>Step by step</title>
+        <link>http://victortoso.com/blog/1301/</link>
+        <pubDate>Tue, 14 May 2013 00:02:00 -0300</pubDate>
+        <guid>http://victortoso.com/blog/1301/</guid>
+        <description>Time goes by when you finally finish your 18 years studying things that people said you need to learn. Finally you start doing more and more things that you want to do. Learning what you think is interesting and working with what you love.
 I&amp;rsquo;m entering in a new phase of my life.
 I&amp;rsquo;ve been working in a few projects that made most of my days goes by in a blink of an eye.</description>
-    </item>
+        <content:encoded><![CDATA[Time goes by when you finally finish your 18 years studying things that people said you need to learn. Finally you start doing more and more things that you want to do. Learning what you think is interesting and working with what you love.
+I&amp;rsquo;m entering in a new phase of my life.
+I&amp;rsquo;ve been working in a few projects that made most of my days goes by in a blink of an eye. Which is something that would make most of us really happy.
+But it was recently that I felt a different kind of happiness with my work.
+I was studying how Grilo works to use it in small project of mine.
+Out of curiosity, I began to have more interest in how exactly Grilo works and the features that were expected to its future. It was about time to GSoC period start and I felt quite comfortable at seeking guidance with Grilo developers to share my will to help.
+A little more than a month since my first contact with the community and I&amp;rsquo;m still trying to make some code reach upstream a plugin but&amp;hellip; what amazing experience this has been!
+I didn&amp;rsquo;t know Magnatune until Juan introducing it to me. It&amp;rsquo;s really nice (check it out).
+Even if some audio players have already a good Magnatune plugin (like Rhythmbox), the plugin I&amp;rsquo;m working on could be useful for others applications that may be integrated with Grilo.
+The feeling of usefulness that I rarely felt with others projects I have worked, I found after this time I&amp;rsquo;ve spent with Grilo.
+I&amp;rsquo;m really excited with all this. I&amp;rsquo;m learning a lot and I truly believe that I can help a lot more.
+Step by step, giving back to the community what I&amp;rsquo;ve been using for so many years!
+]]></content:encoded>
+      </item>
     
   </channel>
 </rss>

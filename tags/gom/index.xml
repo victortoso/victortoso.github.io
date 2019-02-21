@@ -1,26 +1,35 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:dc="http://purl.org/dc/elements/1.1/">
   <channel>
+    <docs>https://blogs.law.harvard.edu/tech/rss</docs>
     <title>Gom on Victor Toso</title>
     <link>http://victortoso.com/tags/gom/</link>
     <description>Recent content in Gom on Victor Toso</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <ttl>1440</ttl>
+    <generator>Hugo 0.55.0-DEV</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 10 Jun 2014 02:04:00 -0300</lastBuildDate>
     
-	<atom:link href="http://victortoso.com/tags/gom/index.xml" rel="self" type="application/rss+xml" />
+      <atom:link href="http://victortoso.com/tags/gom/index.xml" rel="self" type="application/rss+xml" />
     
     
-    <item>
-      <title>GSoC 2014 Report #3 - gom</title>
-      <link>http://victortoso.com/blog/1405/</link>
-      <pubDate>Tue, 10 Jun 2014 02:04:00 -0300</pubDate>
-      
-      <guid>http://victortoso.com/blog/1405/</guid>
-      <description>gom Most of the work I&amp;rsquo;ve being doing since last report is improving the TVDB source in Grilo Plugins in order to have a cache for all data that you have once downloaded from thetvdb.com.
+      <item>
+        <title>GSoC 2014 Report #3 - gom</title>
+        <link>http://victortoso.com/blog/1405/</link>
+        <pubDate>Tue, 10 Jun 2014 02:04:00 -0300</pubDate>
+        <guid>http://victortoso.com/blog/1405/</guid>
+        <description>gom Most of the work I&amp;rsquo;ve being doing since last report is improving the TVDB source in Grilo Plugins in order to have a cache for all data that you have once downloaded from thetvdb.com.
 I&amp;rsquo;m doing that with gom.
 At first I thought it was a bit complicated as creating sql queries directly is easier. But under the hood gom does a lot of useful things that you don&amp;rsquo;t even need to bother thinking.</description>
-    </item>
+        <content:encoded><![CDATA[ gom Most of the work I&amp;rsquo;ve being doing since last report is improving the TVDB source in Grilo Plugins in order to have a cache for all data that you have once downloaded from thetvdb.com.
+I&amp;rsquo;m doing that with gom.
+At first I thought it was a bit complicated as creating sql queries directly is easier. But under the hood gom does a lot of useful things that you don&amp;rsquo;t even need to bother thinking. It is good to see that it was moved to git.gnome.org.
+Also, It was really good to see Magnatune working when I was reading the last post from Sai. It was my first patch to GNOME :). I&amp;rsquo;m thinking about updating the Magnatune source with gom in the near future and probably with more features. Let&amp;rsquo;s see!
+Note: One could check the thetvdb source patches here.
+Next The integration with GNOME Videos! I&amp;rsquo;m excited to see this working :)
+Guadec Oh yeah! I loved last year conference and I wouldn&amp;rsquo;t miss this year. Thanks very much to the GNOME Foundation for helping out with the sponsorship.
+]]></content:encoded>
+      </item>
     
   </channel>
 </rss>

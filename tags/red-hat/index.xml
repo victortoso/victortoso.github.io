@@ -1,25 +1,55 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:dc="http://purl.org/dc/elements/1.1/">
   <channel>
+    <docs>https://blogs.law.harvard.edu/tech/rss</docs>
     <title>Red Hat on Victor Toso</title>
     <link>http://victortoso.com/tags/red-hat/</link>
     <description>Recent content in Red Hat on Victor Toso</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <ttl>1440</ttl>
+    <generator>Hugo 0.55.0-DEV</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 26 Oct 2014 21:03:00 +0200</lastBuildDate>
+    <lastBuildDate>Thu, 15 Oct 2015 23:34:00 +0200</lastBuildDate>
     
-	<atom:link href="http://victortoso.com/tags/red-hat/index.xml" rel="self" type="application/rss+xml" />
+      <atom:link href="http://victortoso.com/tags/red-hat/index.xml" rel="self" type="application/rss+xml" />
     
     
-    <item>
-      <title>Hello new life</title>
-      <link>http://victortoso.com/blog/1408/</link>
-      <pubDate>Sun, 26 Oct 2014 21:03:00 +0200</pubDate>
-      
-      <guid>http://victortoso.com/blog/1408/</guid>
-      <description>Since the end of the Google Summer of Code 2014 so many things have happened that It is really hard to make a simple blog post about it&amp;hellip; but I must try :)
+      <item>
+        <title>One year</title>
+        <link>http://victortoso.com/blog/1501/</link>
+        <pubDate>Thu, 15 Oct 2015 23:34:00 +0200</pubDate>
+        <guid>http://victortoso.com/blog/1501/</guid>
+        <description>It&amp;rsquo;s been almost one year since my last blog post. One year since I got married and left Brazil to live in Czech Republic. In my last post I talked about all the changes I was passing through but no change is bigger than having a baby. Tereza has almost 4 months now :)
+One year at Red Hat and Spice.
+Even with the great amount of things to do in personal and professional life, I want to keep making GNOME better as much as I can in my free time and thus I want to get back to blogging again.</description>
+        <content:encoded><![CDATA[It&amp;rsquo;s been almost one year since my last blog post. One year since I got married and left Brazil to live in Czech Republic. In my last post I talked about all the changes I was passing through but no change is bigger than having a baby. Tereza has almost 4 months now :)
+One year at Red Hat and Spice.
+Even with the great amount of things to do in personal and professional life, I want to keep making GNOME better as much as I can in my free time and thus I want to get back to blogging again.
+I&amp;rsquo;ve finally managed to migrate from Blogger to Pelican so I hope that more personal posts like this one will not be part of Planet GNOME in the future :)
+I also plan to blog more about personal stuff such as being a father or living abroad. I hope that it can ease the distance from family and friends in Brazil.
+This one year was just crazy. Time flies and nothing like raising a child to realize that.
+Cheers!
+]]></content:encoded>
+      </item>
+    
+      <item>
+        <title>Hello new life</title>
+        <link>http://victortoso.com/blog/1408/</link>
+        <pubDate>Sun, 26 Oct 2014 21:03:00 +0200</pubDate>
+        <guid>http://victortoso.com/blog/1408/</guid>
+        <description>Since the end of the Google Summer of Code 2014 so many things have happened that It is really hard to make a simple blog post about it&amp;hellip; but I must try :)
 New job Well, along with the GSoC I&amp;rsquo;ve applied to a job at Red Hat and the process ended in August. Since October 15th I am part of the Spice team and I will be working at the Brno office in Czech Republic.</description>
-    </item>
+        <content:encoded><![CDATA[ Since the end of the Google Summer of Code 2014 so many things have happened that It is really hard to make a simple blog post about it&amp;hellip; but I must try :)
+New job Well, along with the GSoC I&amp;rsquo;ve applied to a job at Red Hat and the process ended in August. Since October 15th I am part of the Spice team and I will be working at the Brno office in Czech Republic.
+I am really excited with the work and with the team. I am learning a lot already.
+New City I have visited Brno at GUADEC 2013, lovely city. I feel safe here unlike Campinas in Brazil.
+I have great expectations about living here and so do my wife after reading Christian&amp;rsquo;s blog post about leaving Brno.
+Married Yay ;) Yes, biggest decision of my life.
+We have been together for almost three years now and we were living together for almost one year which made this decision straightforward for me. Catielle is a wonderful person and I am really happy with our marriage. I feel that we are going to be very happy here in Brno.
+Pending Well, I was quite a busy in the last two months but I still have a lot of things to do!
+A few blog posts about GUADEC, GSoC and Grilo I want to move this Blog to Pelican :-) Finishing off a few things related to the last GSoC project, making it upstream! Writing a documentation for the lua-factory plugin :-)
+That&amp;rsquo;s all for now! I will be back hacking and blogging now that things are getting calmer.
+]]></content:encoded>
+      </item>
     
   </channel>
 </rss>

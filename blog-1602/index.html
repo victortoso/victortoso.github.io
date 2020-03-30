@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+      <!-- Enable responsiveness on mobile devices-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+      <title>Victor Toso</title>
+
+      
+
+      
+          <link rel="stylesheet" href="https://victortoso.com/site.css">
+      
+
+      
+      
+    </head>
+
+    <body class="hack dark main container">
+        
+    
+        
+                
+                    <header>
+                        <nav itemscope itemtype="http://schema.org/SiteNavigationElement">
+                        
+                            <a itemprop="url"
+                               class=""
+                               href="https:&#x2F;&#x2F;victortoso.com">
+                                <span itemprop="name">Archive
+                                </span></a>
+                        
+                            <a itemprop="url"
+                               class=""
+                               href="https:&#x2F;&#x2F;victortoso.com&#x2F;categories&#x2F;code">
+                                <span itemprop="name">Code
+                                </span></a>
+                        
+                            <a itemprop="url"
+                               class=""
+                               href="https:&#x2F;&#x2F;victortoso.com&#x2F;categories&#x2F;talks">
+                                <span itemprop="name">Talks
+                                </span></a>
+                        
+                            <a itemprop="url"
+                               class=""
+                               href="https:&#x2F;&#x2F;victortoso.com&#x2F;tags">
+                                <span itemprop="name">Tags
+                                </span></a>
+                        
+                            <a itemprop="url"
+                               class=""
+                               href="https:&#x2F;&#x2F;victortoso.com&#x2F;about">
+                                <span itemprop="name">About
+                                </span></a>
+                        
+                        </nav>
+                    </header>
+                
+            
+    
+
+<article itemscope itemtype="http://schema.org/BlogPosting">
+    <header>
+        <h1 itemprop="headline">Playing with Desktop Integration</h1>
+        <span class="muted">
+    <svg style="margin-bottom:-3px" class="i-clock" viewBox="0 0 32 32"
+         width="16" height="16" fill="none" stroke="currentcolor"
+         stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
+        <circle cx="16" cy="16" r="14"/>
+        <path d="M16 8 L16 16 20 20"/>
+    </svg>
+    <span>4 minute read</span>
+    <svg style="margin-bottom: -3px" class="i-edit" viewBox="0 0 32 32"
+         width="16" height="16" fill="none" stroke="currentcolor"
+         stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
+        <path d="M30 7 L25 2 5 22 3 29 10 27 Z M21 6 L26 11 Z M5 22 L10 27 Z"/>
+    </svg>
+
+    Published: 2016-06-25
+</span>
+    </header>
+    <div itemprop="articleBody">
+      <p>Thanks to a bug found in Spice's drag and drop implementation, I was
+able to improve the integration of our guest agent (spice-vdagent) with
+the Desktop Session on Linux and Windows. I enjoyed the process to solve
+those problems so I thought a blog post could be interesting as well.</p>
+<h2 id="the-problem">The problem</h2>
+<p>If you use <a href="https://victortoso.com/blog-1602/www.spice-space.org">Spice</a> you might enjoy the feature of
+copying files from your client machine to the guest by simply using the
+drag and drop feature. It works pretty well and under the hood we are
+sending this data to spice-vdagent which copies it to your Download or
+Desktop folder.</p>
+<p>The problem is that you could transfer files with drag and drop while
+your guest session was Locked
+(<a href="https://bugzilla.redhat.com/show_bug.cgi?id=1323623">rhbz#1323623</a>);
+even worse, it was also possible to transfer files when your guest were
+on Login Screen, when no user was logged in
+(<a href="https://bugzilla.redhat.com/show_bug.cgi?id=1328761">rhbz#1328761</a>).</p>
+<p>In order to fix both issues, we need to ask (someone) about the Session
+state, the following questions &quot;Is the session Locked?&quot; and
+&quot;Does this session belong to a user?&quot;. Let's see how we can do
+that.</p>
+<h2 id="linux-guests">Linux Guests</h2>
+<p>In order to solve this in the best way possible, I did not want to make
+integration with specific Desktop Environment (DE) so, I started looking
+for a cross Desktop API.</p>
+<p>My first try was around <em>org.freedesktop.ScreenSaver</em> interface which
+worked rather well. I had a few issues that I might be able to
+workaround but it did not seem right to request ScreenSaver the state of
+your user session.</p>
+<p>So I looked at
+<a href="https://www.freedesktop.org/wiki/Software/systemd/logind/">logind</a> from
+systemd and there I could find a very promising 'Lock' and 'Unlock'
+signals! I checked with <em>gdbus monitor</em> if this was being used in my
+session with:</p>
+<pre style="background-color:#2b303b;">
+<span style="color:#c0c5ce;"># get your session path with:
+gdbus call --system --dest org.freedesktop.login1 \
+           --object-path /org/freedesktop/login1 \
+           --method org.freedesktop.login1.Manager.ListSessions
+
+# monitor it
+gdbus monitor --system --dest org.freedesktop.login1 \
+              --object-path /org/freedesktop/login1/session/_31
+
+# Lock an then Unlock your session with GNOME and see:
+/org/freedesktop/login1/session/_31: org.freedesktop.login1.Session.Unlock()
+</span></pre>
+<p>So, the Unlock
+signal was emitted but not the Lock signal. I thought it could be a bug
+so a filed <a href="https://bugzilla.gnome.org/show_bug.cgi?id=764773">#764773</a>
+to discuss it. It was not a bug and tracking the Lock and Unlock signals
+was not the best approach.</p>
+<p>After some discussion with halfline we agreed that extending logind
+would make things easier. Lennart pointed that having a LockedHint
+property with SetLockedHint method would be a nice thing to have.</p>
+<p>This would make rather simple to programs like spice-vdagent to query
+the Locked state of the Session.</p>
+<p>The proposal was
+<a href="https://github.com/systemd/systemd/pull/3238">accepted</a> and works well.
+One less bug to solve.</p>
+<p>Back to the <em>bad</em> transfer over Login screen, that happens because we
+have a spice-vdagent running for GDM so we can do things like resizing
+the display correctly and as soon as possible.</p>
+<p>The solution was rather simple here, all you need to do is to check your
+session class. We are only interested in a session that belongs to
+&quot;User&quot; and sd_session_get_class() can give you that.</p>
+<p>That's it for Linux guests. I also patched our console-kit integration
+but I don't plan to comment on it. Take a look in <a href="https://cgit.freedesktop.org/spice/linux/vd_agent/commit/?id=49c421a82cebeeb47f268d57d30384e650734ae9">this
+commit</a>
+to check for the session class and <a href="https://cgit.freedesktop.org/spice/linux/vd_agent/commit/?id=1700c0244f37dc67a48519765543ddd7c3f4c17b">this
+one</a>
+to check if we are in a Locked session.</p>
+<p>Many many thanks to halfline for his time and help, it was really fun.</p>
+<h2 id="windows">Windows</h2>
+<p>I wasn't excited on the windows part so I postpone for some time but in
+the end, It was surprisingly easy. We only have one bug here due the
+design difference between our agents: the transfer while Guest is in
+Locked screen.</p>
+<p>On Windows you can subscribe for session notifications and the event
+<a href="https://msdn.microsoft.com/en-us/library/aa383841(v=vs.85).aspx">WTSRegisterSessionNotification</a>
+has WTS_SESSION_LOCK and WTS_SESSION_UNLOCK types. Very handy.
+Minimum requirements say 'Windows Vista' but it works on 'Windows XP' as
+well. Super!</p>
+<p>As we were already listening to sessions notifications, I only had to
+handle the lock/unlock events type
+(<a href="https://cgit.freedesktop.org/spice/win32/vd_agent/commit/?id=5907b6cbb5c724f9729da59a644271b4258d122e">here</a>).</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>I'm naive. I thought I would have much more work with <em>Desktop
+integration</em> on Windows then on Linux! I'll be more careful with my
+thoughts next time :)</p>
+<p>Bugs bugs bugs.</p>
+
+    </div>
+
+    
+        <footer>
+            <hr>
+            <p>
+                
+                    Published by Victor Toso
+                
+                
+                    
+                    in <a href="https://victortoso.com/categories/code/">code</a>
+                
+                
+                    and tagged
+                    
+                        <a href="https://victortoso.com/tags/spice/">spice</a>
+                        
+                            
+                                
+                                    ,
+                                
+                            
+                        
+                    
+                        <a href="https://victortoso.com/tags/console-kit/">console-kit</a>
+                        
+                            
+                                
+                                    ,
+                                
+                            
+                        
+                    
+                        <a href="https://victortoso.com/tags/systemd/">systemd</a>
+                        
+                            
+                                
+                                    and
+                                
+                            
+                        
+                    
+                        <a href="https://victortoso.com/tags/windows/">windows</a>
+                        
+                            
+                        
+                    
+                
+            </p>
+        </footer>
+    
+</article>
+
+
+    </body>
+
+</html>

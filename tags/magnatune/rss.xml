@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Victor Toso</title>
+        <link>https%3A//victortoso.com</link>
+        <description>Nothing relevant</description>
+        <generator>Zola</generator>
+        <language>en</language>
+        <atom:link href="https%3A//victortoso.com/tags/magnatune/rss.xml" rel="self" type="application/rss+xml"/>
+        <lastBuildDate>Tue, 10 Jun 2014 00:00:00 +0000</lastBuildDate>
+        
+            <item>
+                <title>GSoC 2014 Report #3 - gom</title>
+                <pubDate>Tue, 10 Jun 2014 00:00:00 +0000</pubDate>
+                <link>https%3A//victortoso.com/blog-1405/</link>
+                <guid>https%3A//victortoso.com/blog-1405/</guid>
+                <description>&lt;h2 id=&quot;gom&quot;&gt;gom&lt;&#x2F;h2&gt;
+&lt;p&gt;Most of the work I&#x27;ve being doing since last report is improving the
+TVDB source in Grilo Plugins in order to have a cache for all data that
+you have once downloaded from thetvdb.com.&lt;&#x2F;p&gt;
+&lt;p&gt;I&#x27;m doing that with gom.&lt;&#x2F;p&gt;
+&lt;p&gt;At first I thought it was a bit complicated as creating sql queries
+directly is easier. But under the hood gom does a lot of useful things
+that you don&#x27;t even need to bother thinking. It is good to see that &lt;a href=&quot;http:&#x2F;&#x2F;www.audidude.com&#x2F;blog&#x2F;2014&#x2F;04&#x2F;12&#x2F;gom.html&quot;&gt;it
+was moved&lt;&#x2F;a&gt; to
+git.gnome.org.&lt;&#x2F;p&gt;
+&lt;p&gt;Also, It was really good to see &lt;a href=&quot;http:&#x2F;&#x2F;magnatune.com&#x2F;&quot;&gt;Magnatune&lt;&#x2F;a&gt;
+working when I was reading the &lt;a href=&quot;http:&#x2F;&#x2F;sai-prayaga.rhcloud.com&#x2F;blog&#x2F;2014&#x2F;06&#x2F;05&#x2F;grilo-plugins-and-ampache&#x2F;&quot;&gt;last
+post&lt;&#x2F;a&gt;
+from Sai. It was my first patch to GNOME :). I&#x27;m thinking about updating
+the Magnatune source with gom in the near future and probably with more
+features. Let&#x27;s see!&lt;&#x2F;p&gt;
+&lt;p&gt;Note: One could check the thetvdb source patches
+&lt;a href=&quot;https:&#x2F;&#x2F;bugzilla.gnome.org&#x2F;show_bug.cgi?id=672933&quot;&gt;here&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;next&quot;&gt;Next&lt;&#x2F;h2&gt;
+&lt;p&gt;The integration with GNOME Videos! I&#x27;m excited to see this working :)&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;guadec&quot;&gt;Guadec&lt;&#x2F;h2&gt;
+&lt;p&gt;Oh yeah! I loved last year conference and I wouldn&#x27;t miss this year.
+Thanks very much to the GNOME Foundation for helping out with the
+sponsorship.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;1405-01-gnome-sponsored-badge.png&quot; alt=&quot;GNOME rocks!&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+</description>
+            </item>
+        
+            <item>
+                <title>Magnatune upstream and GSoC</title>
+                <pubDate>Tue, 28 May 2013 00:00:00 +0000</pubDate>
+                <link>https%3A//victortoso.com/blog-1302/</link>
+                <guid>https%3A//victortoso.com/blog-1302/</guid>
+                <description>&lt;p&gt;I was having a busy week until this Sunday which happened to be my
+birthday!&lt;&#x2F;p&gt;
+&lt;p&gt;I just made 25 years old and the celebration with my family was
+remarkable.&lt;&#x2F;p&gt;
+&lt;p&gt;I&#x27;m just happy with such great family.&lt;&#x2F;p&gt;
+&lt;p&gt;But besides my family, two amazing things made this last three days
+quite unforgettable.&lt;&#x2F;p&gt;
+&lt;p&gt;First, my first code to an open source community reached the upstream!
+&lt;a href=&quot;http:&#x2F;&#x2F;blogs.igalia.com&#x2F;jasuarez&#x2F;2013&#x2F;05&#x2F;25&#x2F;grilo-plugins-0-2-8-released&#x2F;&quot;&gt;As posted by
+Juan&lt;&#x2F;a&gt;,
+within the 0.2.8 release of grilo-plugins is included the Magnatune
+plugin.&lt;&#x2F;p&gt;
+&lt;p&gt;I&#x27;m really glad about it! Thanks to
+&lt;a href=&quot;https:&#x2F;&#x2F;wiki.gnome.org&#x2F;JuanSuarez&quot;&gt;Juan&lt;&#x2F;a&gt; and
+&lt;a href=&quot;https:&#x2F;&#x2F;wiki.gnome.org&#x2F;BastienNocera&quot;&gt;Bastien&lt;&#x2F;a&gt; for all suggestions and
+for reviewing the patches!&lt;&#x2F;p&gt;
+&lt;p&gt;Second, I was accepted at Google Summer of Code program to keep working
+with grilo! I&#x27;ll make a proper introducing of the project later this
+week but the reader can have an idea at the abstract page.&lt;&#x2F;p&gt;
+&lt;p&gt;Thanks to &lt;a href=&quot;https:&#x2F;&#x2F;www.gnome.org&#x2F;&quot;&gt;GNOME&lt;&#x2F;a&gt; and Google for it.&lt;&#x2F;p&gt;
+&lt;p&gt;A lot is happening and I&#x27;m full of good expectations.&lt;&#x2F;p&gt;
+&lt;p&gt;:)&lt;&#x2F;p&gt;
+</description>
+            </item>
+        
+            <item>
+                <title>Step by step</title>
+                <pubDate>Tue, 14 May 2013 00:00:00 +0000</pubDate>
+                <link>https%3A//victortoso.com/blog-1301/</link>
+                <guid>https%3A//victortoso.com/blog-1301/</guid>
+                <description>&lt;p&gt;Time goes by when you finally finish your 18 years studying things that
+people said you need to learn. Finally you start doing more and more
+things that you want to do. Learning what you think is interesting and
+working with what you love.&lt;&#x2F;p&gt;
+&lt;p&gt;I&#x27;m entering in a new phase of my life.&lt;&#x2F;p&gt;
+&lt;p&gt;I&#x27;ve been working in a few projects that made most of my days goes by in
+a blink of an eye. Which is something that would make most of us really
+happy.&lt;&#x2F;p&gt;
+&lt;p&gt;But it was recently that I felt a different kind of happiness with my
+work.&lt;&#x2F;p&gt;
+&lt;p&gt;I was studying how &lt;a href=&quot;https:&#x2F;&#x2F;live.gnome.org&#x2F;Grilo&quot;&gt;Grilo&lt;&#x2F;a&gt; works to use it
+in small project of mine.&lt;&#x2F;p&gt;
+&lt;p&gt;Out of curiosity, I began to have more interest in how exactly Grilo
+works and the features that were expected to its future. It was about
+time to
+&lt;a href=&quot;http:&#x2F;&#x2F;www.google-melange.com&#x2F;gsoc&#x2F;homepage&#x2F;google&#x2F;gsoc2013&quot;&gt;GSoC&lt;&#x2F;a&gt;
+period start and I felt quite comfortable at seeking guidance with Grilo
+developers to share my will to help.&lt;&#x2F;p&gt;
+&lt;p&gt;A little more than a month since my first contact with the community and
+I&#x27;m still trying to make some code reach upstream &lt;a href=&quot;https:&#x2F;&#x2F;bugzilla.gnome.org&#x2F;show_bug.cgi?id=698523&quot;&gt;a
+plugin&lt;&#x2F;a&gt; but... what
+amazing experience this has been!&lt;&#x2F;p&gt;
+&lt;p&gt;I didn&#x27;t know Magnatune until Juan introducing it to me. It&#x27;s really
+nice (&lt;a href=&quot;http:&#x2F;&#x2F;magnatune.com&#x2F;&quot;&gt;check it out&lt;&#x2F;a&gt;).&lt;&#x2F;p&gt;
+&lt;p&gt;Even if some audio players have already a good Magnatune plugin (like
+&lt;a href=&quot;https:&#x2F;&#x2F;wiki.gnome.org&#x2F;Apps&#x2F;Rhythmbox&quot;&gt;Rhythmbox&lt;&#x2F;a&gt;), the plugin I&#x27;m
+working on could be useful for others applications that may be
+integrated with Grilo.&lt;&#x2F;p&gt;
+&lt;p&gt;The feeling of usefulness that I rarely felt with others projects I have
+worked, I found after this time I&#x27;ve spent with Grilo.&lt;&#x2F;p&gt;
+&lt;p&gt;I&#x27;m really excited with all this. I&#x27;m learning a lot and I truly believe
+that I can help a lot more.&lt;&#x2F;p&gt;
+&lt;p&gt;Step by step, giving back to the community what I&#x27;ve been using for so
+many years!&lt;&#x2F;p&gt;
+</description>
+            </item>
+        
+    </channel>
+</rss>

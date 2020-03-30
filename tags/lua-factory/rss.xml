@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Victor Toso</title>
+        <link>https%3A//victortoso.com</link>
+        <description>Nothing relevant</description>
+        <generator>Zola</generator>
+        <language>en</language>
+        <atom:link href="https%3A//victortoso.com/tags/lua-factory/rss.xml" rel="self" type="application/rss+xml"/>
+        <lastBuildDate>Tue, 25 Feb 2014 00:00:00 +0000</lastBuildDate>
+        
+            <item>
+                <title>Lua-Factory available upstream</title>
+                <pubDate>Tue, 25 Feb 2014 00:00:00 +0000</pubDate>
+                <link>https%3A//victortoso.com/blog-1401/</link>
+                <guid>https%3A//victortoso.com/blog-1401/</guid>
+                <description>&lt;p&gt;It has been four months since the GSoC 2013 code submission. At that
+time the Lua-Factory Plugin was usable but yet with &lt;a href=&quot;http:&#x2F;&#x2F;www.victortoso.com&#x2F;gsoc-last-week-gnome-final-report.html&quot;&gt;some
+issues&lt;&#x2F;a&gt;
+to be dealt.&lt;&#x2F;p&gt;
+&lt;p&gt;It was in the last two weeks that most of those issues were solved
+together with a few recommendations from
+&lt;a href=&quot;http:&#x2F;&#x2F;www.igalia.com&#x2F;nc&#x2F;igalia-247&#x2F;igalian&#x2F;item&#x2F;jasuarez&#x2F;&quot;&gt;Juan&lt;&#x2F;a&gt; and
+&lt;a href=&quot;https:&#x2F;&#x2F;wiki.gnome.org&#x2F;BastienNocera&quot;&gt;Bastien&lt;&#x2F;a&gt; and tonight it was
+merged upstream in Grilo-Plugins repository.&lt;&#x2F;p&gt;
+&lt;p&gt;Hooray!&lt;&#x2F;p&gt;
+&lt;p&gt;The documentation for implementing a Lua sources will come soon.&lt;&#x2F;p&gt;
+&lt;p&gt;If you want to try it, you can always find some guidance in #grilo channel.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;news-from-brazil&quot;&gt;News from Brazil&lt;&#x2F;h2&gt;
+&lt;p&gt;It is Carnaval!&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;1401-01-brasil-2010-desfile-scale.png&quot; alt=&quot;Carnaval!!!&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+</description>
+            </item>
+        
+    </channel>
+</rss>

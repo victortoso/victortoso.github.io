@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Victor Toso</title>
+        <link>https%3A//victortoso.com</link>
+        <description>Nothing relevant</description>
+        <generator>Zola</generator>
+        <language>en</language>
+        <atom:link href="https%3A//victortoso.com/tags/flickr/rss.xml" rel="self" type="application/rss+xml"/>
+        <lastBuildDate>Sat, 21 Sep 2013 00:00:00 +0000</lastBuildDate>
+        
+            <item>
+                <title>GSoC last week, GNOME final report! :)</title>
+                <pubDate>Sat, 21 Sep 2013 00:00:00 +0000</pubDate>
+                <link>https%3A//victortoso.com/blog-1307/</link>
+                <guid>https%3A//victortoso.com/blog-1307/</guid>
+                <description>&lt;p&gt;It&#x27;s been a while since my last post just after GUADEC. I&#x27;ve lost some
+time in August due moving to a new place in Campinas with two friends of
+mine. It was three weeks ago and I&#x27;m still feeling tired (I&#x27;m taking
+some time to get used with this new place).&lt;&#x2F;p&gt;
+&lt;p&gt;Since then, I&#x27;m working on grilo-plugins and this post is all about what
+I&#x27;ve accomplished and what are the next steps after GSoC.&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;the-post-is-bigger-then-usual-so-grab-a-cup-of-coffee&quot;&gt;&lt;em&gt;(The post is bigger then usual so... grab a cup of coffee !)&lt;&#x2F;em&gt;&lt;&#x2F;h3&gt;
+&lt;p&gt;As &lt;a href=&quot;http:&#x2F;&#x2F;www.victortoso.com&#x2F;planet-gsoc-project-and-brazil.html&quot;&gt;I told
+before&lt;&#x2F;a&gt;,
+Grilo has some commands that are translated to the source like Search
+and Browse operations. Good part of my project was translating this
+commands from Grilo to the Lua source and the result of this work was
+the lua-factory plugin.&lt;&#x2F;p&gt;
+&lt;p&gt;The subset of commands available to Lua sources are: Search, Browse,
+Query, Resolve, May Resolve, Store and Remove. I&#x27;ve developed two Lua
+sources that implement those commands besides the last two (Store and
+Remove) due a library dependency that will be commented bellow.&lt;&#x2F;p&gt;
+&lt;p&gt;Those Lua sources are &lt;a href=&quot;http:&#x2F;&#x2F;www.metrolyrics.com&#x2F;&quot;&gt;Metrolyrics&lt;&#x2F;a&gt; and
+&lt;a href=&quot;https:&#x2F;&#x2F;www.flickr.com&#x2F;&quot;&gt;Flickr&lt;&#x2F;a&gt; which already exists as C source.&lt;&#x2F;p&gt;
+&lt;p&gt;Due the limitations of the standards libraries of Lua and the need of
+interaction with Grilo itself the lua library was created. This is a set
+of lua modules that are helpful for the developers. Those modules could
+be wrappers of C librarys or custom functions.&lt;&#x2F;p&gt;
+&lt;p&gt;For instance, to be able to interact with Flickr web service a wrapper
+of &lt;a href=&quot;http:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;OAuth&quot;&gt;oauth&lt;&#x2F;a&gt; library was created;&lt;&#x2F;p&gt;
+&lt;p&gt;And all this were just the first steps;&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;current-issues-that-should-be-improved&quot;&gt;Current issues that should be improved&lt;&#x2F;h2&gt;
+&lt;p&gt;The main goal of the GSoC project was being able to write plugins with
+Lua and them should be transparent to Grilo, making no difference
+between a C or Lua source. I feel that was accomplished but no without
+problems, lets check some of them &lt;sup class=&quot;footnote-reference&quot;&gt;&lt;a href=&quot;#1&quot;&gt;1&lt;&#x2F;a&gt;&lt;&#x2F;sup&gt;:&lt;&#x2F;p&gt;
+&lt;div class=&quot;footnote-definition&quot; id=&quot;1&quot;&gt;&lt;sup class=&quot;footnote-definition-label&quot;&gt;1&lt;&#x2F;sup&gt;
+&lt;p&gt;If the reader see more problems not listed, feel free to comment it!&lt;&#x2F;p&gt;
+&lt;&#x2F;div&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;The annoying userdata: To perform the callback from Lua source to
+the Application, we need to store the userdata passed from
+lua-factory somehow. There are a couple of ways of doing it but I
+didn&#x27;t made it work before GUADEC and it was kind of low priority
+after; For instance, the Search operation in Lua should be a
+function called grl_source_search() wich have two parameters:
+(1) a Table with the data that the functions need; (2) An userdata which
+is a pointer to a structure in C (which is no useful for Lua code); A
+better approach is storing this in the Lua stack, hiding from lua code;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;Improving the GrlNet library with the possibility to POST content to
+the web. This was the reason that I didn&#x27;t implement Store and
+Remove in the Lua Flickr source :(&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;A better callback implementation (or a totally different one). This
+is one of the topics I talked with
+&lt;a href=&quot;http:&#x2F;&#x2F;www.igalia.com&#x2F;nc&#x2F;igalia-247&#x2F;igalian&#x2F;item&#x2F;jasuarez&#x2F;&quot;&gt;Juan&lt;&#x2F;a&gt;
+in GUADEC and this could actually be expanded to Grilo itself so,
+I&#x27;ll keep it to another post;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;More sources! In order to be sure that this code is trustable a few
+more sources are needed; They will be implemented after the two
+first topics! &lt;sup class=&quot;footnote-reference&quot;&gt;&lt;a href=&quot;#2&quot;&gt;2&lt;&#x2F;a&gt;&lt;&#x2F;sup&gt;)&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;div class=&quot;footnote-definition&quot; id=&quot;2&quot;&gt;&lt;sup class=&quot;footnote-definition-label&quot;&gt;2&lt;&#x2F;sup&gt;
+&lt;p&gt;If the reader want to see a source implemented to Grilo,
+tell me! I&#x27;m kind of building a small list :)&lt;&#x2F;p&gt;
+&lt;&#x2F;div&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;the-last-week-of-gsoc-period&quot;&gt;The last week of GSoC Period&lt;&#x2F;h2&gt;
+&lt;p&gt;This week I&#x27;m not writing much code but trying to make a useful
+documentation to help other developers.&lt;&#x2F;p&gt;
+&lt;p&gt;But as we can see in google&#x27;s
+&lt;a href=&quot;http:&#x2F;&#x2F;www.google-melange.com&#x2F;gsoc&#x2F;events&#x2F;google&#x2F;gsoc2013&quot;&gt;timeline&lt;&#x2F;a&gt;,
+next week I&#x27;ll be submitting the source code I&#x27;ve developed so far.&lt;&#x2F;p&gt;
+&lt;p&gt;It will be the last week of GSoC but not my last in Grilo or in this
+project. Hopefully, I&#x27;ll have a few more improvements in the end of
+October!&lt;&#x2F;p&gt;
+&lt;p&gt;A big thanks to Juan for all the feedback, help and insights! I&#x27;ve made
+big steps these last three months and you help me out everytime :)&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;final-considerations&quot;&gt;Final considerations&lt;&#x2F;h2&gt;
+&lt;p&gt;I&#x27;ve enjoyed a lot this period! I&#x27;ve learnt a lot! I&#x27;ve met amazing
+people! I&#x27;ve traveled more then 10&#x27;000Km to a beautiful city to attend a
+super conference! I&#x27;ve learnt Lua (and loving it!)&lt;&#x2F;p&gt;
+&lt;p&gt;I&#x27;m lucky. Thanks to GNOME and Google for that!&lt;&#x2F;p&gt;
+&lt;p&gt;Wow, you made it till here. You can reclaim a beer in the next GUADEC!&lt;&#x2F;p&gt;
+&lt;p&gt;Did you know ? Grilo is a type of bug in Brazil ? A Cricket !&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;1307-01-grilo-cricket.png&quot; alt=&quot;Grilo is a bug!&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+</description>
+            </item>
+        
+    </channel>
+</rss>

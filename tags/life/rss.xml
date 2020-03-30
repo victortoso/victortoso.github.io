@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Victor Toso</title>
+        <link>https%3A//victortoso.com</link>
+        <description>Nothing relevant</description>
+        <generator>Zola</generator>
+        <language>en</language>
+        <atom:link href="https%3A//victortoso.com/tags/life/rss.xml" rel="self" type="application/rss+xml"/>
+        <lastBuildDate>Thu, 15 Oct 2015 00:00:00 +0000</lastBuildDate>
+        
+            <item>
+                <title>One year</title>
+                <pubDate>Thu, 15 Oct 2015 00:00:00 +0000</pubDate>
+                <link>https%3A//victortoso.com/blog-1501/</link>
+                <guid>https%3A//victortoso.com/blog-1501/</guid>
+                <description>&lt;p&gt;It&#x27;s been almost one year since my last blog post. One year since I got
+married and left Brazil to live in Czech Republic. In my &lt;a href=&quot;http:&#x2F;&#x2F;www.victortoso.com&#x2F;hello-new-life.html&quot;&gt;last
+post&lt;&#x2F;a&gt; I talked about all
+the changes I was passing through but no change is bigger than having a
+baby. &lt;a href=&quot;https:&#x2F;&#x2F;twitter.com&#x2F;victortoso&#x2F;status&#x2F;647374843038539776&quot;&gt;Tereza&lt;&#x2F;a&gt;
+has almost 4 months now :)&lt;&#x2F;p&gt;
+&lt;p&gt;One year at &lt;a href=&quot;http:&#x2F;&#x2F;www.redhat.com&#x2F;en&quot;&gt;Red Hat&lt;&#x2F;a&gt; and
+&lt;a href=&quot;http:&#x2F;&#x2F;www.spice-space.org&#x2F;&quot;&gt;Spice&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;Even with the great amount of things to do in personal and professional
+life, I want to keep making GNOME better as much as I can in my free
+time and thus I want to get back to blogging again.&lt;&#x2F;p&gt;
+&lt;p&gt;I&#x27;ve finally managed to migrate from Blogger to
+&lt;a href=&quot;http:&#x2F;&#x2F;docs.getpelican.com&#x2F;en&#x2F;latest&#x2F;index.html&quot;&gt;Pelican&lt;&#x2F;a&gt; so I hope
+that more personal posts like this one will not be part of Planet GNOME
+in the future :)&lt;&#x2F;p&gt;
+&lt;p&gt;I also plan to blog more about personal stuff such as being a father or
+living abroad. I hope that it can ease the distance from family and
+friends in Brazil.&lt;&#x2F;p&gt;
+&lt;p&gt;This one year was just crazy. Time flies and nothing like raising a
+child to realize that.&lt;&#x2F;p&gt;
+&lt;p&gt;Cheers!&lt;&#x2F;p&gt;
+</description>
+            </item>
+        
+    </channel>
+</rss>

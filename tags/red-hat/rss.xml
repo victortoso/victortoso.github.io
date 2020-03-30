@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Victor Toso</title>
+        <link>https%3A//victortoso.com</link>
+        <description>Nothing relevant</description>
+        <generator>Zola</generator>
+        <language>en</language>
+        <atom:link href="https%3A//victortoso.com/tags/red-hat/rss.xml" rel="self" type="application/rss+xml"/>
+        <lastBuildDate>Thu, 15 Oct 2015 00:00:00 +0000</lastBuildDate>
+        
+            <item>
+                <title>One year</title>
+                <pubDate>Thu, 15 Oct 2015 00:00:00 +0000</pubDate>
+                <link>https%3A//victortoso.com/blog-1501/</link>
+                <guid>https%3A//victortoso.com/blog-1501/</guid>
+                <description>&lt;p&gt;It&#x27;s been almost one year since my last blog post. One year since I got
+married and left Brazil to live in Czech Republic. In my &lt;a href=&quot;http:&#x2F;&#x2F;www.victortoso.com&#x2F;hello-new-life.html&quot;&gt;last
+post&lt;&#x2F;a&gt; I talked about all
+the changes I was passing through but no change is bigger than having a
+baby. &lt;a href=&quot;https:&#x2F;&#x2F;twitter.com&#x2F;victortoso&#x2F;status&#x2F;647374843038539776&quot;&gt;Tereza&lt;&#x2F;a&gt;
+has almost 4 months now :)&lt;&#x2F;p&gt;
+&lt;p&gt;One year at &lt;a href=&quot;http:&#x2F;&#x2F;www.redhat.com&#x2F;en&quot;&gt;Red Hat&lt;&#x2F;a&gt; and
+&lt;a href=&quot;http:&#x2F;&#x2F;www.spice-space.org&#x2F;&quot;&gt;Spice&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;Even with the great amount of things to do in personal and professional
+life, I want to keep making GNOME better as much as I can in my free
+time and thus I want to get back to blogging again.&lt;&#x2F;p&gt;
+&lt;p&gt;I&#x27;ve finally managed to migrate from Blogger to
+&lt;a href=&quot;http:&#x2F;&#x2F;docs.getpelican.com&#x2F;en&#x2F;latest&#x2F;index.html&quot;&gt;Pelican&lt;&#x2F;a&gt; so I hope
+that more personal posts like this one will not be part of Planet GNOME
+in the future :)&lt;&#x2F;p&gt;
+&lt;p&gt;I also plan to blog more about personal stuff such as being a father or
+living abroad. I hope that it can ease the distance from family and
+friends in Brazil.&lt;&#x2F;p&gt;
+&lt;p&gt;This one year was just crazy. Time flies and nothing like raising a
+child to realize that.&lt;&#x2F;p&gt;
+&lt;p&gt;Cheers!&lt;&#x2F;p&gt;
+</description>
+            </item>
+        
+            <item>
+                <title>Hello new life</title>
+                <pubDate>Sun, 26 Oct 2014 00:00:00 +0000</pubDate>
+                <link>https%3A//victortoso.com/blog-1408/</link>
+                <guid>https%3A//victortoso.com/blog-1408/</guid>
+                <description>&lt;p&gt;Since the end of the Google Summer of Code 2014 so many things have
+happened that It is really hard to make a simple blog post about it...
+but I must try :)&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;new-job&quot;&gt;New job&lt;&#x2F;h2&gt;
+&lt;p&gt;Well, along with the GSoC I&#x27;ve applied to a job at &lt;a href=&quot;http:&#x2F;&#x2F;www.redhat.com&#x2F;en&quot;&gt;Red
+Hat&lt;&#x2F;a&gt; and the process ended in August. Since
+October 15th I am part of the &lt;a href=&quot;http:&#x2F;&#x2F;www.spice-space.org&#x2F;&quot;&gt;Spice&lt;&#x2F;a&gt; team
+and I will be working at the Brno office in Czech Republic.&lt;&#x2F;p&gt;
+&lt;p&gt;I am really excited with the work and with the team. I am learning a lot
+already.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;new-city&quot;&gt;New City&lt;&#x2F;h2&gt;
+&lt;p&gt;I have visited Brno at &lt;a href=&quot;http:&#x2F;&#x2F;www.victortoso.com&#x2F;brno-guadec-and-grilo.html&quot;&gt;GUADEC
+2013&lt;&#x2F;a&gt;, lovely
+city. I feel safe here unlike Campinas in Brazil.&lt;&#x2F;p&gt;
+&lt;p&gt;I have great expectations about living here and so do my wife after
+reading Christian&#x27;s blog post about &lt;a href=&quot;https:&#x2F;&#x2F;blogs.gnome.org&#x2F;uraeus&#x2F;2014&#x2F;09&#x2F;01&#x2F;leaving-brno&#x2F;&quot;&gt;leaving
+Brno&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;married&quot;&gt;Married&lt;&#x2F;h2&gt;
+&lt;p&gt;Yay ;) Yes, biggest decision of my life.&lt;&#x2F;p&gt;
+&lt;p&gt;We have been together for almost three years now and we were living
+together for almost one year which made this decision straightforward
+for me. &lt;a href=&quot;http:&#x2F;&#x2F;www.catielle.com.br&#x2F;&quot;&gt;Catielle&lt;&#x2F;a&gt; is a wonderful person
+and I am really happy with our marriage. I feel that we are going to be
+very happy here in Brno.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;pending&quot;&gt;Pending&lt;&#x2F;h2&gt;
+&lt;p&gt;Well, I was quite a busy in the last two months but I still have a lot
+of things to do!&lt;&#x2F;p&gt;
+&lt;p&gt;A few blog posts about GUADEC, GSoC and Grilo I want to move this Blog
+to Pelican :-) Finishing off a few things related to the last GSoC
+project, making it upstream! Writing a documentation for the lua-factory
+plugin :-)&lt;&#x2F;p&gt;
+&lt;p&gt;That&#x27;s all for now! I will be back hacking and blogging now that things
+are getting calmer.&lt;&#x2F;p&gt;
+</description>
+            </item>
+        
+    </channel>
+</rss>

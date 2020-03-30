@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Victor Toso</title>
+        <link>https%3A//victortoso.com</link>
+        <description>Nothing relevant</description>
+        <generator>Zola</generator>
+        <language>en</language>
+        <atom:link href="https%3A//victortoso.com/tags/the-tvdb/rss.xml" rel="self" type="application/rss+xml"/>
+        <lastBuildDate>Wed, 25 Jun 2014 00:00:00 +0000</lastBuildDate>
+        
+            <item>
+                <title>GSoC Report #4 and #5</title>
+                <pubDate>Wed, 25 Jun 2014 00:00:00 +0000</pubDate>
+                <link>https%3A//victortoso.com/blog-1406/</link>
+                <guid>https%3A//victortoso.com/blog-1406/</guid>
+                <description>&lt;h2 id=&quot;hey&quot;&gt;Hey :)&lt;&#x2F;h2&gt;
+&lt;p&gt;I usually write my posts in the weekend when I do have more time to
+think about what I&#x27;ve done and what It is interesting to share. Sadly,
+two weekends ago I was ill due something I&#x27;ve eaten and now I&#x27;ll try to
+summarize two weeks in one post!&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;the-tvdb&quot;&gt;The TVDB&lt;&#x2F;h2&gt;
+&lt;p&gt;Is &lt;a href=&quot;https:&#x2F;&#x2F;git.gnome.org&#x2F;browse&#x2F;grilo-plugins&#x2F;commit&#x2F;?id=b2b937413a26a0fe2ad18891a27a30a35b12b26b&quot;&gt;now
+upstream&lt;&#x2F;a&gt;.
+Yay!&lt;&#x2F;p&gt;
+&lt;p&gt;The main care after implementing the cache with Gom was handling
+multiple requests of the same TV Show in a short period of time
+(concurrency).&lt;&#x2F;p&gt;
+&lt;p&gt;For instance, you are browsing some TV Show using some application that
+uses Grilo to requests metadata. It may occur several requests of the
+same tv show like, episode 01, episode 02, etc.&lt;&#x2F;p&gt;
+&lt;p&gt;We are handling this by fetching the TVDB only once to gather all
+existing data and then resolve the later requests with the cache.&lt;&#x2F;p&gt;
+&lt;p&gt;Quite nice, lots of fun implementing it.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;the-integration-with-the-ui&quot;&gt;The Integration with the UI&lt;&#x2F;h2&gt;
+&lt;p&gt;I have realized I&#x27;m really bad at building UIs and I&#x27;m also recognizing
+how much effort it is necessary to make a good UI (a lot).&lt;&#x2F;p&gt;
+&lt;p&gt;For that, I would like to thank the folks from
+&lt;a href=&quot;https:&#x2F;&#x2F;glade.gnome.org&#x2F;&quot;&gt;Glade&lt;&#x2F;a&gt; with the awesome and helpful software.&lt;&#x2F;p&gt;
+&lt;p&gt;Well, at the moment I&#x27;m implementing a simple program that creates a
+Widget to show all interesting information we will be providing on GNOME
+Videos. You may check the application
+&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;victortoso&#x2F;totem-tvshows&quot;&gt;here&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;the-goal&quot;&gt;The goal:&lt;&#x2F;h2&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;1406-01-totem-widget-goal.png&quot; alt=&quot;Screenshot of goal&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;current-status&quot;&gt;Current status&lt;&#x2F;h2&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;1406-02-totem-widget-status.png&quot; alt=&quot;Screenshot of current status&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;life&quot;&gt;Life&lt;&#x2F;h2&gt;
+&lt;p&gt;World cup is going on, traffic jam everywhere but people are in quite
+good mood here in Brazil. I&#x27;m happier mostly because of my new great
+friend, Marvin.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;1406-03-marvin.png&quot; alt=&quot;Marvin is my dog :)&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+</description>
+            </item>
+        
+            <item>
+                <title>GSoC 2014 Report #2 - The TVDB - Tests and Libs</title>
+                <pubDate>Tue, 03 Jun 2014 00:00:00 +0000</pubDate>
+                <link>https%3A//victortoso.com/blog-1404/</link>
+                <guid>https%3A//victortoso.com/blog-1404/</guid>
+                <description>&lt;h2 id=&quot;keep-moving&quot;&gt;Keep moving!&lt;&#x2F;h2&gt;
+&lt;p&gt;One of the great features of the TVDB is all the image gallery that they
+have and provide. To get as much interesting data as possible using
+Grilo we need to extend our source and a great way to do it is through
+creating custom metadata-keys.&lt;&#x2F;p&gt;
+&lt;p&gt;With these newly created metadata-keys the TVDB source can now provide
+an url to the most voted Fanart, Poster and Banner of the tv show.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;tests&quot;&gt;Tests&lt;&#x2F;h2&gt;
+&lt;p&gt;I had included a few tests in the first week but it was just to show
+that the source was usable. The current version of the tests check if
+the source is finding the right data in a resolve operation.&lt;&#x2F;p&gt;
+&lt;p&gt;Simple enough but helped a lot finding bugs already :)&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;libs&quot;&gt;Libs&lt;&#x2F;h2&gt;
+&lt;p&gt;Well, I thought it would be nice to point a few libraries that I have
+never used before implementing this source:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http:&#x2F;&#x2F;xmlsoft.org&#x2F;&quot;&gt;Libxml&lt;&#x2F;a&gt;: Yes, never! I always choose JSON when
+available! :) The library has a nice documentation with samples but
+what really helped me was others sources in Grilo. I&#x27;ve also
+realized that I&#x27;m not big fan of
+&lt;a href=&quot;https:&#x2F;&#x2F;twitter.com&#x2F;jeresig&#x2F;status&#x2F;472094314995392512&quot;&gt;camelCase&lt;&#x2F;a&gt;.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;http:&#x2F;&#x2F;www.libarchive.org&#x2F;&quot;&gt;Libarchive&lt;&#x2F;a&gt;: I&#x27;ve come to know about
+this library in Planet feed when Bastien posted &lt;a href=&quot;http:&#x2F;&#x2F;www.hadess.net&#x2F;2013&#x2F;12&#x2F;on-beauty-of-libarchive.html&quot;&gt;about
+it&lt;&#x2F;a&gt;.
+Currently it is also included in Lua-Factory &lt;a href=&quot;https:&#x2F;&#x2F;bugzilla.gnome.org&#x2F;show_bug.cgi?id=728525&quot;&gt;with a
+function&lt;&#x2F;a&gt; which
+provides &#x27;unzip&#x27; to lua-sources in Grilo. Quite awesome.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;chergert&#x2F;gom&#x2F;&quot;&gt;Libgom&lt;&#x2F;a&gt;: Awesome but not very
+easy. The examples and
+&lt;a href=&quot;http:&#x2F;&#x2F;www.audidude.com&#x2F;blog&#x2F;2011&#x2F;03&#x2F;25&#x2F;gom-data-mapper.html&quot;&gt;the&lt;&#x2F;a&gt;
+&lt;a href=&quot;http:&#x2F;&#x2F;www.hadess.net&#x2F;2014&#x2F;04&#x2F;what-is-gom.html&quot;&gt;blog&lt;&#x2F;a&gt;
+&lt;a href=&quot;http:&#x2F;&#x2F;www.audidude.com&#x2F;blog&#x2F;2014&#x2F;04&#x2F;12&#x2F;gom.html&quot;&gt;posts&lt;&#x2F;a&gt; are the
+best documentation. I&#x27;ve started with a simple DB and at this moment
+I&#x27;m envolving from there before applying it to the TVDB.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;Hopefully I&#x27;m going to finish the coding of the TVDB source soon enough
+and then I&#x27;ll be starting the integration with Totem GNOME Videos. I&#x27;m
+really excited to see all work combined.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;relax&quot;&gt;Relax&lt;&#x2F;h2&gt;
+&lt;p&gt;Beautiful GNOME-shaped soap. Smells so good!&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;1404-01-gnome-pink.png&quot; alt=&quot;GNOME Soap&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+</description>
+            </item>
+        
+            <item>
+                <title>GSoC 2014 Report #1 - The TVDB</title>
+                <pubDate>Sat, 24 May 2014 00:00:00 +0000</pubDate>
+                <link>https%3A//victortoso.com/blog-1403/</link>
+                <guid>https%3A//victortoso.com/blog-1403/</guid>
+                <description>&lt;h2 id=&quot;start&quot;&gt;Start&lt;&#x2F;h2&gt;
+&lt;p&gt;This is the first weekend since the beginning of GSoC coding period and
+it has been satisfactory. For those that have no clue on what I&#x27;ll be
+working on this summer, &lt;a href=&quot;https:&#x2F;&#x2F;wiki.gnome.org&#x2F;Outreach&#x2F;SummerOfCode&#x2F;2014&#x2F;Projects&#x2F;VictorToso_VideosAndMusicWithGrilo&quot;&gt;part of
+it&lt;&#x2F;a&gt;
+is implementing TV Shows support in GNOME Videos!&lt;&#x2F;p&gt;
+&lt;p&gt;In order to provide all information necessary to the interface, we will
+be using Grilo with the &lt;a href=&quot;http:&#x2F;&#x2F;thetvdb.com&#x2F;&quot;&gt;The TVDB&lt;&#x2F;a&gt; source which is
+what I&#x27;m working on at the moment.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;the-tvdb&quot;&gt;The TVDB&lt;&#x2F;h2&gt;
+&lt;p&gt;The TVDB is an &amp;amp;quot;open database for television fans&amp;amp;quot; and
+it is just awesome. This database provides tons of information and
+images of series and episodes in several languages. It is a great source
+for Grilo and will fulfill completely our need.&lt;&#x2F;p&gt;
+&lt;p&gt;I strongly recommend a little browsing in the image gallery which has
+banners, fan art, posters like
+&lt;a href=&quot;http:&#x2F;&#x2F;thetvdb.com&#x2F;?tab=series&amp;amp;amp;id=73255&quot;&gt;House&lt;&#x2F;a&gt;, &lt;a href=&quot;http:&#x2F;&#x2F;thetvdb.com&#x2F;?tab=series&amp;amp;amp;id=81189&amp;amp;amp;lid=7&quot;&gt;Breaking
+Bad&lt;&#x2F;a&gt;.
+They have animes too like
+&lt;a href=&quot;http:&#x2F;&#x2F;thetvdb.com&#x2F;?tab=series&amp;amp;amp;id=78857&amp;amp;amp;lid=7&quot;&gt;Naruto&lt;&#x2F;a&gt;
+or
+&lt;a href=&quot;http:&#x2F;&#x2F;thetvdb.com&#x2F;?tab=series&amp;amp;amp;id=70350&amp;amp;amp;lid=7&quot;&gt;Evangelion&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;grilo-source-grl-thetvdb&quot;&gt;Grilo Source: grl-thetvdb&lt;&#x2F;h2&gt;
+&lt;p&gt;The first version is up on
+&lt;a href=&quot;https:&#x2F;&#x2F;bugzilla.gnome.org&#x2F;show_bug.cgi?id=672933&quot;&gt;bugzilla&lt;&#x2F;a&gt; not ready
+to upstream yet but it is functional. At this stage I&#x27;m not holding the
+data locally in any form. Every time the application request something
+to grl-thetvdb it will fetch the data from thetvdb.com which is poor
+design.&lt;&#x2F;p&gt;
+&lt;p&gt;But thats all I&#x27;ve got for this first week!&lt;&#x2F;p&gt;
+</description>
+            </item>
+        
+    </channel>
+</rss>

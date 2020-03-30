@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+      <!-- Enable responsiveness on mobile devices-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+      <title>Victor Toso</title>
+
+      
+
+      
+          <link rel="stylesheet" href="https://victortoso.com/site.css">
+      
+
+      
+      
+    </head>
+
+    <body class="hack dark main container">
+        
+    
+        
+                
+                    <header>
+                        <nav itemscope itemtype="http://schema.org/SiteNavigationElement">
+                        
+                            <a itemprop="url"
+                               class=""
+                               href="https:&#x2F;&#x2F;victortoso.com">
+                                <span itemprop="name">Archive
+                                </span></a>
+                        
+                            <a itemprop="url"
+                               class=""
+                               href="https:&#x2F;&#x2F;victortoso.com&#x2F;categories&#x2F;code">
+                                <span itemprop="name">Code
+                                </span></a>
+                        
+                            <a itemprop="url"
+                               class=""
+                               href="https:&#x2F;&#x2F;victortoso.com&#x2F;categories&#x2F;talks">
+                                <span itemprop="name">Talks
+                                </span></a>
+                        
+                            <a itemprop="url"
+                               class=""
+                               href="https:&#x2F;&#x2F;victortoso.com&#x2F;tags">
+                                <span itemprop="name">Tags
+                                </span></a>
+                        
+                            <a itemprop="url"
+                               class=""
+                               href="https:&#x2F;&#x2F;victortoso.com&#x2F;about">
+                                <span itemprop="name">About
+                                </span></a>
+                        
+                        </nav>
+                    </header>
+                
+            
+    
+
+<article itemscope itemtype="http://schema.org/BlogPosting">
+    <header>
+        <h1 itemprop="headline">GSoC 2014 Report #2 - The TVDB - Tests and Libs</h1>
+        <span class="muted">
+    <svg style="margin-bottom:-3px" class="i-clock" viewBox="0 0 32 32"
+         width="16" height="16" fill="none" stroke="currentcolor"
+         stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
+        <circle cx="16" cy="16" r="14"/>
+        <path d="M16 8 L16 16 20 20"/>
+    </svg>
+    <span>2 minute read</span>
+    <svg style="margin-bottom: -3px" class="i-edit" viewBox="0 0 32 32"
+         width="16" height="16" fill="none" stroke="currentcolor"
+         stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
+        <path d="M30 7 L25 2 5 22 3 29 10 27 Z M21 6 L26 11 Z M5 22 L10 27 Z"/>
+    </svg>
+
+    Published: 2014-06-03
+</span>
+    </header>
+    <div itemprop="articleBody">
+      <h2 id="keep-moving">Keep moving!</h2>
+<p>One of the great features of the TVDB is all the image gallery that they
+have and provide. To get as much interesting data as possible using
+Grilo we need to extend our source and a great way to do it is through
+creating custom metadata-keys.</p>
+<p>With these newly created metadata-keys the TVDB source can now provide
+an url to the most voted Fanart, Poster and Banner of the tv show.</p>
+<h2 id="tests">Tests</h2>
+<p>I had included a few tests in the first week but it was just to show
+that the source was usable. The current version of the tests check if
+the source is finding the right data in a resolve operation.</p>
+<p>Simple enough but helped a lot finding bugs already :)</p>
+<h2 id="libs">Libs</h2>
+<p>Well, I thought it would be nice to point a few libraries that I have
+never used before implementing this source:</p>
+<ul>
+<li><a href="http://xmlsoft.org/">Libxml</a>: Yes, never! I always choose JSON when
+available! :) The library has a nice documentation with samples but
+what really helped me was others sources in Grilo. I've also
+realized that I'm not big fan of
+<a href="https://twitter.com/jeresig/status/472094314995392512">camelCase</a>.</li>
+<li><a href="http://www.libarchive.org/">Libarchive</a>: I've come to know about
+this library in Planet feed when Bastien posted <a href="http://www.hadess.net/2013/12/on-beauty-of-libarchive.html">about
+it</a>.
+Currently it is also included in Lua-Factory <a href="https://bugzilla.gnome.org/show_bug.cgi?id=728525">with a
+function</a> which
+provides 'unzip' to lua-sources in Grilo. Quite awesome.</li>
+<li><a href="https://github.com/chergert/gom/">Libgom</a>: Awesome but not very
+easy. The examples and
+<a href="http://www.audidude.com/blog/2011/03/25/gom-data-mapper.html">the</a>
+<a href="http://www.hadess.net/2014/04/what-is-gom.html">blog</a>
+<a href="http://www.audidude.com/blog/2014/04/12/gom.html">posts</a> are the
+best documentation. I've started with a simple DB and at this moment
+I'm envolving from there before applying it to the TVDB.</li>
+</ul>
+<p>Hopefully I'm going to finish the coding of the TVDB source soon enough
+and then I'll be starting the integration with Totem GNOME Videos. I'm
+really excited to see all work combined.</p>
+<h2 id="relax">Relax</h2>
+<p>Beautiful GNOME-shaped soap. Smells so good!</p>
+<p><img src="/images/1404-01-gnome-pink.png" alt="GNOME Soap" /></p>
+
+    </div>
+
+    
+        <footer>
+            <hr>
+            <p>
+                
+                    Published by Victor Toso
+                
+                
+                    
+                    in <a href="https://victortoso.com/categories/code/">code</a>
+                
+                
+                    and tagged
+                    
+                        <a href="https://victortoso.com/tags/grilo/">grilo</a>
+                        
+                            
+                                
+                                    and
+                                
+                            
+                        
+                    
+                        <a href="https://victortoso.com/tags/the-tvdb/">the-tvdb</a>
+                        
+                            
+                        
+                    
+                
+            </p>
+        </footer>
+    
+</article>
+
+
+    </body>
+
+</html>

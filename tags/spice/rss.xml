@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Victor Toso</title>
+        <link>https%3A//victortoso.com</link>
+        <description>Nothing relevant</description>
+        <generator>Zola</generator>
+        <language>en</language>
+        <atom:link href="https%3A//victortoso.com/tags/spice/rss.xml" rel="self" type="application/rss+xml"/>
+        <lastBuildDate>Fri, 27 Jan 2017 00:00:00 +0000</lastBuildDate>
+        
+            <item>
+                <title>New ways to remote desktops with GStreamer integration</title>
+                <pubDate>Fri, 27 Jan 2017 00:00:00 +0000</pubDate>
+                <link>https%3A//victortoso.com/talks/talk-1701/</link>
+                <guid>https%3A//victortoso.com/talks/talk-1701/</guid>
+                <description>&lt;p&gt;Once again at &lt;a href=&quot;https:&#x2F;&#x2F;devconf.cz&#x2F;&quot;&gt;DevConf CZ&lt;&#x2F;a&gt; but now to talk about SPICE and
+its integration with &lt;a href=&quot;https:&#x2F;&#x2F;gstreamer.freedesktop.org&#x2F;&quot;&gt;GStreamer&lt;&#x2F;a&gt;.  Together
+with my friend and colleague &lt;a href=&quot;https:&#x2F;&#x2F;wiki.gnome.org&#x2F;PavelGrunt&quot;&gt;Pavel Grunt&lt;&#x2F;a&gt; we
+give a brief explanation about how SPICE works and then we focus on the image
+display and video streaming part of SPICE protocol while trying to clarify why
+streaming is so important to remote desktops.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.youtube.com&#x2F;watch?v=C5ox_M-k63w&quot;&gt;Video&lt;&#x2F;a&gt;
+&lt;a href=&quot;http:&#x2F;&#x2F;redhat.slides.com&#x2F;vtosodec&#x2F;deck?token=ItT532S7&quot;&gt;Slides&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+</description>
+            </item>
+        
+            <item>
+                <title>Playing with Desktop Integration</title>
+                <pubDate>Sat, 25 Jun 2016 00:00:00 +0000</pubDate>
+                <link>https%3A//victortoso.com/blog-1602/</link>
+                <guid>https%3A//victortoso.com/blog-1602/</guid>
+                <description>&lt;p&gt;Thanks to a bug found in Spice&#x27;s drag and drop implementation, I was
+able to improve the integration of our guest agent (spice-vdagent) with
+the Desktop Session on Linux and Windows. I enjoyed the process to solve
+those problems so I thought a blog post could be interesting as well.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;the-problem&quot;&gt;The problem&lt;&#x2F;h2&gt;
+&lt;p&gt;If you use &lt;a href=&quot;https:&#x2F;&#x2F;victortoso.com&#x2F;blog-1602&#x2F;www.spice-space.org&quot;&gt;Spice&lt;&#x2F;a&gt; you might enjoy the feature of
+copying files from your client machine to the guest by simply using the
+drag and drop feature. It works pretty well and under the hood we are
+sending this data to spice-vdagent which copies it to your Download or
+Desktop folder.&lt;&#x2F;p&gt;
+&lt;p&gt;The problem is that you could transfer files with drag and drop while
+your guest session was Locked
+(&lt;a href=&quot;https:&#x2F;&#x2F;bugzilla.redhat.com&#x2F;show_bug.cgi?id=1323623&quot;&gt;rhbz#1323623&lt;&#x2F;a&gt;);
+even worse, it was also possible to transfer files when your guest were
+on Login Screen, when no user was logged in
+(&lt;a href=&quot;https:&#x2F;&#x2F;bugzilla.redhat.com&#x2F;show_bug.cgi?id=1328761&quot;&gt;rhbz#1328761&lt;&#x2F;a&gt;).&lt;&#x2F;p&gt;
+&lt;p&gt;In order to fix both issues, we need to ask (someone) about the Session
+state, the following questions &amp;quot;Is the session Locked?&amp;quot; and
+&amp;quot;Does this session belong to a user?&amp;quot;. Let&#x27;s see how we can do
+that.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;linux-guests&quot;&gt;Linux Guests&lt;&#x2F;h2&gt;
+&lt;p&gt;In order to solve this in the best way possible, I did not want to make
+integration with specific Desktop Environment (DE) so, I started looking
+for a cross Desktop API.&lt;&#x2F;p&gt;
+&lt;p&gt;My first try was around &lt;em&gt;org.freedesktop.ScreenSaver&lt;&#x2F;em&gt; interface which
+worked rather well. I had a few issues that I might be able to
+workaround but it did not seem right to request ScreenSaver the state of
+your user session.&lt;&#x2F;p&gt;
+&lt;p&gt;So I looked at
+&lt;a href=&quot;https:&#x2F;&#x2F;www.freedesktop.org&#x2F;wiki&#x2F;Software&#x2F;systemd&#x2F;logind&#x2F;&quot;&gt;logind&lt;&#x2F;a&gt; from
+systemd and there I could find a very promising &#x27;Lock&#x27; and &#x27;Unlock&#x27;
+signals! I checked with &lt;em&gt;gdbus monitor&lt;&#x2F;em&gt; if this was being used in my
+session with:&lt;&#x2F;p&gt;
+&lt;pre style=&quot;background-color:#2b303b;&quot;&gt;
+&lt;span style=&quot;color:#c0c5ce;&quot;&gt;# get your session path with:
+gdbus call --system --dest org.freedesktop.login1 \
+           --object-path &#x2F;org&#x2F;freedesktop&#x2F;login1 \
+           --method org.freedesktop.login1.Manager.ListSessions
+
+# monitor it
+gdbus monitor --system --dest org.freedesktop.login1 \
+              --object-path &#x2F;org&#x2F;freedesktop&#x2F;login1&#x2F;session&#x2F;_31
+
+# Lock an then Unlock your session with GNOME and see:
+&#x2F;org&#x2F;freedesktop&#x2F;login1&#x2F;session&#x2F;_31: org.freedesktop.login1.Session.Unlock()
+&lt;&#x2F;span&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;So, the Unlock
+signal was emitted but not the Lock signal. I thought it could be a bug
+so a filed &lt;a href=&quot;https:&#x2F;&#x2F;bugzilla.gnome.org&#x2F;show_bug.cgi?id=764773&quot;&gt;#764773&lt;&#x2F;a&gt;
+to discuss it. It was not a bug and tracking the Lock and Unlock signals
+was not the best approach.&lt;&#x2F;p&gt;
+&lt;p&gt;After some discussion with halfline we agreed that extending logind
+would make things easier. Lennart pointed that having a LockedHint
+property with SetLockedHint method would be a nice thing to have.&lt;&#x2F;p&gt;
+&lt;p&gt;This would make rather simple to programs like spice-vdagent to query
+the Locked state of the Session.&lt;&#x2F;p&gt;
+&lt;p&gt;The proposal was
+&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;systemd&#x2F;systemd&#x2F;pull&#x2F;3238&quot;&gt;accepted&lt;&#x2F;a&gt; and works well.
+One less bug to solve.&lt;&#x2F;p&gt;
+&lt;p&gt;Back to the &lt;em&gt;bad&lt;&#x2F;em&gt; transfer over Login screen, that happens because we
+have a spice-vdagent running for GDM so we can do things like resizing
+the display correctly and as soon as possible.&lt;&#x2F;p&gt;
+&lt;p&gt;The solution was rather simple here, all you need to do is to check your
+session class. We are only interested in a session that belongs to
+&amp;quot;User&amp;quot; and sd_session_get_class() can give you that.&lt;&#x2F;p&gt;
+&lt;p&gt;That&#x27;s it for Linux guests. I also patched our console-kit integration
+but I don&#x27;t plan to comment on it. Take a look in &lt;a href=&quot;https:&#x2F;&#x2F;cgit.freedesktop.org&#x2F;spice&#x2F;linux&#x2F;vd_agent&#x2F;commit&#x2F;?id=49c421a82cebeeb47f268d57d30384e650734ae9&quot;&gt;this
+commit&lt;&#x2F;a&gt;
+to check for the session class and &lt;a href=&quot;https:&#x2F;&#x2F;cgit.freedesktop.org&#x2F;spice&#x2F;linux&#x2F;vd_agent&#x2F;commit&#x2F;?id=1700c0244f37dc67a48519765543ddd7c3f4c17b&quot;&gt;this
+one&lt;&#x2F;a&gt;
+to check if we are in a Locked session.&lt;&#x2F;p&gt;
+&lt;p&gt;Many many thanks to halfline for his time and help, it was really fun.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;windows&quot;&gt;Windows&lt;&#x2F;h2&gt;
+&lt;p&gt;I wasn&#x27;t excited on the windows part so I postpone for some time but in
+the end, It was surprisingly easy. We only have one bug here due the
+design difference between our agents: the transfer while Guest is in
+Locked screen.&lt;&#x2F;p&gt;
+&lt;p&gt;On Windows you can subscribe for session notifications and the event
+&lt;a href=&quot;https:&#x2F;&#x2F;msdn.microsoft.com&#x2F;en-us&#x2F;library&#x2F;aa383841(v=vs.85).aspx&quot;&gt;WTSRegisterSessionNotification&lt;&#x2F;a&gt;
+has WTS_SESSION_LOCK and WTS_SESSION_UNLOCK types. Very handy.
+Minimum requirements say &#x27;Windows Vista&#x27; but it works on &#x27;Windows XP&#x27; as
+well. Super!&lt;&#x2F;p&gt;
+&lt;p&gt;As we were already listening to sessions notifications, I only had to
+handle the lock&#x2F;unlock events type
+(&lt;a href=&quot;https:&#x2F;&#x2F;cgit.freedesktop.org&#x2F;spice&#x2F;win32&#x2F;vd_agent&#x2F;commit&#x2F;?id=5907b6cbb5c724f9729da59a644271b4258d122e&quot;&gt;here&lt;&#x2F;a&gt;).&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;&#x2F;h2&gt;
+&lt;p&gt;I&#x27;m naive. I thought I would have much more work with &lt;em&gt;Desktop
+integration&lt;&#x2F;em&gt; on Windows then on Linux! I&#x27;ll be more careful with my
+thoughts next time :)&lt;&#x2F;p&gt;
+&lt;p&gt;Bugs bugs bugs.&lt;&#x2F;p&gt;
+</description>
+            </item>
+        
+            <item>
+                <title>Hello new life</title>
+                <pubDate>Sun, 26 Oct 2014 00:00:00 +0000</pubDate>
+                <link>https%3A//victortoso.com/blog-1408/</link>
+                <guid>https%3A//victortoso.com/blog-1408/</guid>
+                <description>&lt;p&gt;Since the end of the Google Summer of Code 2014 so many things have
+happened that It is really hard to make a simple blog post about it...
+but I must try :)&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;new-job&quot;&gt;New job&lt;&#x2F;h2&gt;
+&lt;p&gt;Well, along with the GSoC I&#x27;ve applied to a job at &lt;a href=&quot;http:&#x2F;&#x2F;www.redhat.com&#x2F;en&quot;&gt;Red
+Hat&lt;&#x2F;a&gt; and the process ended in August. Since
+October 15th I am part of the &lt;a href=&quot;http:&#x2F;&#x2F;www.spice-space.org&#x2F;&quot;&gt;Spice&lt;&#x2F;a&gt; team
+and I will be working at the Brno office in Czech Republic.&lt;&#x2F;p&gt;
+&lt;p&gt;I am really excited with the work and with the team. I am learning a lot
+already.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;new-city&quot;&gt;New City&lt;&#x2F;h2&gt;
+&lt;p&gt;I have visited Brno at &lt;a href=&quot;http:&#x2F;&#x2F;www.victortoso.com&#x2F;brno-guadec-and-grilo.html&quot;&gt;GUADEC
+2013&lt;&#x2F;a&gt;, lovely
+city. I feel safe here unlike Campinas in Brazil.&lt;&#x2F;p&gt;
+&lt;p&gt;I have great expectations about living here and so do my wife after
+reading Christian&#x27;s blog post about &lt;a href=&quot;https:&#x2F;&#x2F;blogs.gnome.org&#x2F;uraeus&#x2F;2014&#x2F;09&#x2F;01&#x2F;leaving-brno&#x2F;&quot;&gt;leaving
+Brno&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;married&quot;&gt;Married&lt;&#x2F;h2&gt;
+&lt;p&gt;Yay ;) Yes, biggest decision of my life.&lt;&#x2F;p&gt;
+&lt;p&gt;We have been together for almost three years now and we were living
+together for almost one year which made this decision straightforward
+for me. &lt;a href=&quot;http:&#x2F;&#x2F;www.catielle.com.br&#x2F;&quot;&gt;Catielle&lt;&#x2F;a&gt; is a wonderful person
+and I am really happy with our marriage. I feel that we are going to be
+very happy here in Brno.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;pending&quot;&gt;Pending&lt;&#x2F;h2&gt;
+&lt;p&gt;Well, I was quite a busy in the last two months but I still have a lot
+of things to do!&lt;&#x2F;p&gt;
+&lt;p&gt;A few blog posts about GUADEC, GSoC and Grilo I want to move this Blog
+to Pelican :-) Finishing off a few things related to the last GSoC
+project, making it upstream! Writing a documentation for the lua-factory
+plugin :-)&lt;&#x2F;p&gt;
+&lt;p&gt;That&#x27;s all for now! I will be back hacking and blogging now that things
+are getting calmer.&lt;&#x2F;p&gt;
+</description>
+            </item>
+        
+    </channel>
+</rss>

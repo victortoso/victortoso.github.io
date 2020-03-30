@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Victor Toso</title>
+        <link>https%3A//victortoso.com</link>
+        <description>Nothing relevant</description>
+        <generator>Zola</generator>
+        <language>en</language>
+        <atom:link href="https%3A//victortoso.com/tags/lua/rss.xml" rel="self" type="application/rss+xml"/>
+        <lastBuildDate>Mon, 24 Jun 2013 00:00:00 +0000</lastBuildDate>
+        
+            <item>
+                <title>Planet, GSoC project and Brazil</title>
+                <pubDate>Mon, 24 Jun 2013 00:00:00 +0000</pubDate>
+                <link>https%3A//victortoso.com/blog-1304/</link>
+                <guid>https%3A//victortoso.com/blog-1304/</guid>
+                <description>&lt;p&gt;First of all, hello everybody from Planet Gnome! This is the first post
+that will take place there. It is a really nice community where I&#x27;ve
+been learning always something new from the past 5 months. I hope I can
+put some interesting hacks for you guys.&lt;&#x2F;p&gt;
+&lt;p&gt;Thank you &lt;a href=&quot;https:&#x2F;&#x2F;wiki.gnome.org&#x2F;AlbertoRuiz&quot;&gt;Alberto Ruiz&lt;&#x2F;a&gt; for
+including me.&lt;&#x2F;p&gt;
+&lt;p&gt;I was
+&lt;a href=&quot;http:&#x2F;&#x2F;www.victortoso.com&#x2F;magnatune-upstream-and-gsoc.html&quot;&gt;accepted&lt;&#x2F;a&gt;
+in GSoC this year to be working with
+&lt;a href=&quot;https:&#x2F;&#x2F;live.gnome.org&#x2F;Grilo&quot;&gt;Grilo&lt;&#x2F;a&gt;. It is a really nice project which
+I&#x27;m always having some fun while coding. I&#x27;m being mentored by &lt;a href=&quot;https:&#x2F;&#x2F;wiki.gnome.org&#x2F;JuanSuarez&quot;&gt;Juan
+Suarez&lt;&#x2F;a&gt; who has been always helpful
+with my problems.&lt;&#x2F;p&gt;
+&lt;p&gt;Grilo is basically a framework to get content through plugins. A lot of
+plugins were made already and all were written in C. My GSoC project is
+about making possible to write plugins in &lt;a href=&quot;http:&#x2F;&#x2F;www.lua.org&#x2F;&quot;&gt;Lua&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;About the project itself, I&#x27;ll be writing a glue-code between Grilo and
+Lua. They&#x27;ll be tagged as lua-factory as the c code dealing with lua;
+and grilo-library as a library written in c to be used by the
+lua-plugins.&lt;&#x2F;p&gt;
+&lt;p&gt;I tried to make a simple design to represent how grilo and grilo-plugins
+works now and where my code will take place.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;1304-01-grilo-and-lua-factory.png&quot; alt=&quot;Design of Grilo + Grilo Plugins with Lua-Factory and Lua sources&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;The &#x27;search&#x27; is one of the subset commands that Grilo can request.&lt;&#x2F;p&gt;
+&lt;p&gt;The progress in the moment I&#x27;m writing this post is that the lyric
+plugin get the content (by &#x27;search&#x27; and &#x27;browse&#x27;) and I&#x27;m able to load
+the plugin with my current lua-factory but can&#x27;t perform any command
+yet.&lt;&#x2F;p&gt;
+&lt;p&gt;I guest this is it about GSoC for now :)&lt;&#x2F;p&gt;
+&lt;p&gt;I would also like to say to those who followed me here, we have at least
+three Brazilians interns in GNOME this year: &lt;a href=&quot;https:&#x2F;&#x2F;15experience.wordpress.com&#x2F;&quot;&gt;Rafael
+Fonseca&lt;&#x2F;a&gt;, &lt;a href=&quot;https:&#x2F;&#x2F;wiki.gnome.org&#x2F;MelissaWen&quot;&gt;Melissa
+Wen&lt;&#x2F;a&gt; and myself. Brazil is in such
+crazy historical moment right now.&lt;&#x2F;p&gt;
+&lt;p&gt;If you know absolute nothing about it please do :)&lt;&#x2F;p&gt;
+&lt;p&gt;To finish this post, this beautiful GNOME cup that my girlfriend gave to
+me in my birthday.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;1304-02-gnome-cup.png&quot; alt=&quot;GNOME cup&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+</description>
+            </item>
+        
+            <item>
+                <title>Lua, Lyrics and GUADEC</title>
+                <pubDate>Sun, 09 Jun 2013 00:00:00 +0000</pubDate>
+                <link>https%3A//victortoso.com/blog-1303/</link>
+                <guid>https%3A//victortoso.com/blog-1303/</guid>
+                <description>&lt;p&gt;First of all, as a good beginner in blogging I have promised that&lt;&#x2F;p&gt;
+&lt;pre style=&quot;background-color:#2b303b;&quot;&gt;
+&lt;span style=&quot;color:#c0c5ce;&quot;&gt;I&amp;#39;ll make a proper introducing of the project later this week
+&lt;&#x2F;span&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;which I did not. Sorry for that. I hope to do it soon.&lt;&#x2F;p&gt;
+&lt;p&gt;I&#x27;ve been studying Lua since last weekend with the good guidance of the
+&lt;a href=&quot;http:&#x2F;&#x2F;www.lua.org&#x2F;pil&#x2F;&quot;&gt;Programming in Lua&lt;&#x2F;a&gt; (written by &lt;a href=&quot;http:&#x2F;&#x2F;www.inf.puc-rio.br&#x2F;%7Eroberto&#x2F;&quot;&gt;Roberto
+Ierusalimschy&lt;&#x2F;a&gt; as a way to improve
+my lua skills. Actually, before starting reading this book I thought my
+knowledge of lua was _&lt;a href=&quot;https:&#x2F;&#x2F;victortoso.com&#x2F;blog-1303&#x2F;&quot;&gt;ok&lt;&#x2F;a&gt; because it is easy to understand and make
+some code. Naive!&lt;&#x2F;p&gt;
+&lt;p&gt;Lua is simple but we can do a lot with it. The book is helping me to
+really understand how powerful Lua can be. Actually, I don&#x27;t think that
+all I&#x27;m learning is necessary to implement plugins. I keep studying
+because I&#x27;m enjoying Lua. :)&lt;&#x2F;p&gt;
+&lt;p&gt;I&#x27;ve started the lua-plugin that I&#x27;ll be using in the next steps of my
+GSoC project. It&#x27;ll be about Lyrics, using an available API of
+&lt;a href=&quot;http:&#x2F;&#x2F;www.metrolyrics.com&#x2F;&quot;&gt;Metrolyrics&lt;&#x2F;a&gt;. This plugin will help me for
+the next 4 weeks or so with a subset of Grilo functions.&lt;&#x2F;p&gt;
+&lt;p&gt;Good news is that I&#x27;ll attend to GUADEC in Brno, Czech Republic in
+August. It will be an amazing trip and I&#x27;ll hopefully meet some of the
+people that helped me to achieve all this.&lt;&#x2F;p&gt;
+</description>
+            </item>
+        
+    </channel>
+</rss>

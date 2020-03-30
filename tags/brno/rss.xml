@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Victor Toso</title>
+        <link>https%3A//victortoso.com</link>
+        <description>Nothing relevant</description>
+        <generator>Zola</generator>
+        <language>en</language>
+        <atom:link href="https%3A//victortoso.com/tags/brno/rss.xml" rel="self" type="application/rss+xml"/>
+        <lastBuildDate>Sun, 26 Oct 2014 00:00:00 +0000</lastBuildDate>
+        
+            <item>
+                <title>Hello new life</title>
+                <pubDate>Sun, 26 Oct 2014 00:00:00 +0000</pubDate>
+                <link>https%3A//victortoso.com/blog-1408/</link>
+                <guid>https%3A//victortoso.com/blog-1408/</guid>
+                <description>&lt;p&gt;Since the end of the Google Summer of Code 2014 so many things have
+happened that It is really hard to make a simple blog post about it...
+but I must try :)&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;new-job&quot;&gt;New job&lt;&#x2F;h2&gt;
+&lt;p&gt;Well, along with the GSoC I&#x27;ve applied to a job at &lt;a href=&quot;http:&#x2F;&#x2F;www.redhat.com&#x2F;en&quot;&gt;Red
+Hat&lt;&#x2F;a&gt; and the process ended in August. Since
+October 15th I am part of the &lt;a href=&quot;http:&#x2F;&#x2F;www.spice-space.org&#x2F;&quot;&gt;Spice&lt;&#x2F;a&gt; team
+and I will be working at the Brno office in Czech Republic.&lt;&#x2F;p&gt;
+&lt;p&gt;I am really excited with the work and with the team. I am learning a lot
+already.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;new-city&quot;&gt;New City&lt;&#x2F;h2&gt;
+&lt;p&gt;I have visited Brno at &lt;a href=&quot;http:&#x2F;&#x2F;www.victortoso.com&#x2F;brno-guadec-and-grilo.html&quot;&gt;GUADEC
+2013&lt;&#x2F;a&gt;, lovely
+city. I feel safe here unlike Campinas in Brazil.&lt;&#x2F;p&gt;
+&lt;p&gt;I have great expectations about living here and so do my wife after
+reading Christian&#x27;s blog post about &lt;a href=&quot;https:&#x2F;&#x2F;blogs.gnome.org&#x2F;uraeus&#x2F;2014&#x2F;09&#x2F;01&#x2F;leaving-brno&#x2F;&quot;&gt;leaving
+Brno&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;married&quot;&gt;Married&lt;&#x2F;h2&gt;
+&lt;p&gt;Yay ;) Yes, biggest decision of my life.&lt;&#x2F;p&gt;
+&lt;p&gt;We have been together for almost three years now and we were living
+together for almost one year which made this decision straightforward
+for me. &lt;a href=&quot;http:&#x2F;&#x2F;www.catielle.com.br&#x2F;&quot;&gt;Catielle&lt;&#x2F;a&gt; is a wonderful person
+and I am really happy with our marriage. I feel that we are going to be
+very happy here in Brno.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;pending&quot;&gt;Pending&lt;&#x2F;h2&gt;
+&lt;p&gt;Well, I was quite a busy in the last two months but I still have a lot
+of things to do!&lt;&#x2F;p&gt;
+&lt;p&gt;A few blog posts about GUADEC, GSoC and Grilo I want to move this Blog
+to Pelican :-) Finishing off a few things related to the last GSoC
+project, making it upstream! Writing a documentation for the lua-factory
+plugin :-)&lt;&#x2F;p&gt;
+&lt;p&gt;That&#x27;s all for now! I will be back hacking and blogging now that things
+are getting calmer.&lt;&#x2F;p&gt;
+</description>
+            </item>
+        
+            <item>
+                <title>Brno, GUADEC and Grilo</title>
+                <pubDate>Mon, 05 Aug 2013 00:00:00 +0000</pubDate>
+                <link>https%3A//victortoso.com/blog-1306/</link>
+                <guid>https%3A//victortoso.com/blog-1306/</guid>
+                <description>&lt;p&gt;Brno is amazing. Just amazing. The people from here try to be helpfull
+even if they don&#x27;t speak a single word in English. The food is really
+good and quite cheap and the city is beautiful! I&#x27;m glad that I still
+have time for another tour around!&lt;&#x2F;p&gt;
+&lt;p&gt;Well, travelling without many concerns, meeting amazing people and with
+the opportunity to learn things you love... GUADEC has been an amazing
+experience.&lt;&#x2F;p&gt;
+&lt;p&gt;The talks were really good but the people I have met here are awesome.&lt;&#x2F;p&gt;
+&lt;p&gt;I&#x27;m really glad to finally meet my mentor Juan Suárez and some folks
+from Red Hat. It was awesome to talk with some others interns such as
+Kalev, Marcos, Valentín, Alessandro, Bogdan and Carlos. It was brief but
+really nice. Hope to meet everybody again next year!&lt;&#x2F;p&gt;
+&lt;p&gt;Here in GUADEC I had a lightning talk trying to briefly explain what my
+GSoC is about. It was hard to do it in less then 3 minutes. I was quite
+nervous too but everything went well :)&lt;&#x2F;p&gt;
+&lt;p&gt;If anybody would like to know more about grilo or anything related ping
+me on #grilo&lt;&#x2F;p&gt;
+&lt;p&gt;I had the opportunity to talk with Juan about the GSoC project, Grilo
+and some plans for the future. I&#x27;m a bit excited to keep contributing to
+Grilo.&lt;&#x2F;p&gt;
+&lt;p&gt;I would like to thank GNOME Fundation for the sponsorship and making
+this travel possible; to Google for the Summer of Code Program; to
+Fabiano Fidêncio for helping me A LOT in Brno.&lt;&#x2F;p&gt;
+&lt;p&gt;And that&#x27;s all.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;1306-01-gnome-sponsored-badge.png&quot; alt=&quot;GNOME rocks!&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+</description>
+            </item>
+        
+    </channel>
+</rss>

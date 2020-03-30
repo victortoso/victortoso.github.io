@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+      <!-- Enable responsiveness on mobile devices-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+      <title>Victor Toso</title>
+
+      
+
+      
+          <link rel="stylesheet" href="https://victortoso.com/site.css">
+      
+
+      
+      
+    </head>
+
+    <body class="hack dark main container">
+        
+    
+        
+                
+                    <header>
+                        <nav itemscope itemtype="http://schema.org/SiteNavigationElement">
+                        
+                            <a itemprop="url"
+                               class=""
+                               href="https:&#x2F;&#x2F;victortoso.com">
+                                <span itemprop="name">Archive
+                                </span></a>
+                        
+                            <a itemprop="url"
+                               class=""
+                               href="https:&#x2F;&#x2F;victortoso.com&#x2F;categories&#x2F;code">
+                                <span itemprop="name">Code
+                                </span></a>
+                        
+                            <a itemprop="url"
+                               class=""
+                               href="https:&#x2F;&#x2F;victortoso.com&#x2F;categories&#x2F;talks">
+                                <span itemprop="name">Talks
+                                </span></a>
+                        
+                            <a itemprop="url"
+                               class=""
+                               href="https:&#x2F;&#x2F;victortoso.com&#x2F;tags">
+                                <span itemprop="name">Tags
+                                </span></a>
+                        
+                            <a itemprop="url"
+                               class=""
+                               href="https:&#x2F;&#x2F;victortoso.com&#x2F;about">
+                                <span itemprop="name">About
+                                </span></a>
+                        
+                        </nav>
+                    </header>
+                
+            
+    
+
+<article itemscope itemtype="http://schema.org/BlogPosting">
+    <header>
+        <h1 itemprop="headline">The unpredictable, GSoC report and next steps</h1>
+        <span class="muted">
+    <svg style="margin-bottom:-3px" class="i-clock" viewBox="0 0 32 32"
+         width="16" height="16" fill="none" stroke="currentcolor"
+         stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
+        <circle cx="16" cy="16" r="14"/>
+        <path d="M16 8 L16 16 20 20"/>
+    </svg>
+    <span>2 minute read</span>
+    <svg style="margin-bottom: -3px" class="i-edit" viewBox="0 0 32 32"
+         width="16" height="16" fill="none" stroke="currentcolor"
+         stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
+        <path d="M30 7 L25 2 5 22 3 29 10 27 Z M21 6 L26 11 Z M5 22 L10 27 Z"/>
+    </svg>
+
+    Published: 2013-07-17
+</span>
+    </header>
+    <div itemprop="articleBody">
+      <p>Oh boy, there are things that can slow you down. It's been three weeks
+since my last post, in this short period of time I had a car accident (
+I'm 100% alright! ), one root canal treatment (with a good dose of
+pain), my girlfriend moved to another city... Oh well, too many
+headaches in three weeks!</p>
+<p>But when I was in good mood (or healthy enough) here I was, in front of
+this screen trying to make good code to Grilo... and I like the
+achievements so far. Lets take a look.</p>
+<p>I started to implement the <a href="http://www.metrolyrics.com/">Metrolyrics</a>
+plugin before writing any C code to Grilo in order to have a lua-based
+plugin to use. A lot of this plugin has changed to work with
+lua-factory. For those who <a href="http://www.victortoso.com/planet-gsoc-project-and-brazil.html">don't
+remember</a>,
+lua-factory is part of grilo-plugins, and it is the glue-code in charge
+to load-and-use the lua-plugins.</p>
+<p>In this moment, we can use the <em>Search</em>, <em>Browse</em>, <em>Query</em> and <em>Resolve</em>
+operations from Grilo to this lua-plugin.</p>
+<p>As the lua code needs some help from C to perform a few operations,
+lua-library was created to be a module to lua. This module has two
+functions implemented: Fetch, to perform async fetch from web and
+Callback, to return the content to the application.</p>
+<p>A lot has to be done yet. Hopefully without any personal headache :)</p>
+<p>For instance:</p>
+<ul>
+<li><em>Store</em> and <em>Remove</em> operations must be implemented in lua-factory;</li>
+<li>Log and Error functions to the lua-library;</li>
+<li>Better care with user configs, metadata-keys</li>
+<li>Solving some problems with UTF-8 chars</li>
+</ul>
+<p>I will be writing a new lua-plugin this week and I'm trying to choose
+between <a href="https://soundcloud.com/">Soundcloud</a> or
+<a href="http://www.last.fm/">Last.fm</a>. Both have the necessary features to be
+implemented that Metrolyrics lacks for Grilo.</p>
+<p>Well, I intend to make my next post in Brno before GUADEC and another
+post after with much more GNOMExperience...</p>
+
+    </div>
+
+    
+        <footer>
+            <hr>
+            <p>
+                
+                    Published by Victor Toso
+                
+                
+                    
+                    in <a href="https://victortoso.com/categories/code/">code</a>
+                
+                
+                    and tagged
+                    
+                        <a href="https://victortoso.com/tags/gsoc/">gsoc</a>
+                        
+                            
+                                
+                                    ,
+                                
+                            
+                        
+                    
+                        <a href="https://victortoso.com/tags/gnome/">gnome</a>
+                        
+                            
+                                
+                                    ,
+                                
+                            
+                        
+                    
+                        <a href="https://victortoso.com/tags/grilo/">grilo</a>
+                        
+                            
+                                
+                                    and
+                                
+                            
+                        
+                    
+                        <a href="https://victortoso.com/tags/metrolyrics/">metrolyrics</a>
+                        
+                            
+                        
+                    
+                
+            </p>
+        </footer>
+    
+</article>
+
+
+    </body>
+
+</html>

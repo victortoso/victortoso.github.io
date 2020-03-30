@@ -1,298 +1,313 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-  xmlns:xhtml="http://www.w3.org/1999/xhtml">
-  
-  <url>
-    <loc>http://victortoso.com/talks/1701/</loc>
-    <lastmod>2017-02-06T12:20:00+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://victortoso.com/blog/1602/</loc>
-    <lastmod>2016-06-25T15:10:00+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://victortoso.com/blog/1601/</loc>
-    <lastmod>2016-06-09T00:42:00+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://victortoso.com/talks/1601/</loc>
-    <lastmod>2016-02-06T12:20:00+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://victortoso.com/blog/1501/</loc>
-    <lastmod>2015-10-15T23:34:00+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://victortoso.com/blog/1408/</loc>
-    <lastmod>2014-10-26T21:03:00+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://victortoso.com/talks/1401/</loc>
-    <lastmod>2014-07-27T17:00:00+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://victortoso.com/blog/1407/</loc>
-    <lastmod>2014-07-15T02:58:00-03:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://victortoso.com/blog/1406/</loc>
-    <lastmod>2014-06-25T23:34:00-03:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://victortoso.com/blog/1405/</loc>
-    <lastmod>2014-06-10T02:04:00-03:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://victortoso.com/blog/1404/</loc>
-    <lastmod>2014-06-03T01:58:00-03:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://victortoso.com/blog/1403/</loc>
-    <lastmod>2014-05-24T23:34:00-03:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://victortoso.com/blog/1402/</loc>
-    <lastmod>2014-04-22T23:43:00-03:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://victortoso.com/blog/1401/</loc>
-    <lastmod>2014-02-25T00:19:00-03:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://victortoso.com/blog/1307/</loc>
-    <lastmod>2013-09-21T00:34:00-03:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://victortoso.com/blog/1306/</loc>
-    <lastmod>2013-08-05T22:21:00-03:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://victortoso.com/talks/1301/</loc>
-    <lastmod>2013-08-04T16:20:00+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://victortoso.com/blog/1305/</loc>
-    <lastmod>2013-07-17T22:56:00-03:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://victortoso.com/blog/1304/</loc>
-    <lastmod>2013-06-24T02:14:00-03:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://victortoso.com/blog/1303/</loc>
-    <lastmod>2013-06-09T03:01:00-03:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://victortoso.com/blog/1302/</loc>
-    <lastmod>2013-05-28T00:57:00-03:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://victortoso.com/blog/1301/</loc>
-    <lastmod>2013-05-14T00:02:00-03:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://victortoso.com/about/</loc>
-  </url>
-  
-  <url>
-    <loc>http://victortoso.com/tags/acoustid/</loc>
-    <lastmod>2014-07-15T02:58:00-03:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://victortoso.com/blog/</loc>
-    <lastmod>2016-06-25T15:10:00+02:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://victortoso.com/tags/brno/</loc>
-    <lastmod>2014-10-26T21:03:00+02:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://victortoso.com/categories/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://victortoso.com/tags/console-kit/</loc>
-    <lastmod>2016-06-25T15:10:00+02:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://victortoso.com/tags/devconf/</loc>
-    <lastmod>2017-02-06T12:20:00+02:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://victortoso.com/tags/flickr/</loc>
-    <lastmod>2013-09-21T00:34:00-03:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://victortoso.com/tags/gnome/</loc>
-    <lastmod>2016-02-06T12:20:00+02:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://victortoso.com/tags/gom/</loc>
-    <lastmod>2014-06-10T02:04:00-03:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://victortoso.com/tags/grilo/</loc>
-    <lastmod>2016-06-09T00:42:00+02:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://victortoso.com/tags/gsoc/</loc>
-    <lastmod>2016-06-09T00:42:00+02:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://victortoso.com/tags/gstreamer/</loc>
-    <lastmod>2017-02-06T12:20:00+02:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://victortoso.com/tags/gtk/</loc>
-    <lastmod>2014-06-25T23:34:00-03:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://victortoso.com/tags/guadec/</loc>
-    <lastmod>2014-07-27T17:00:00+02:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://victortoso.com/tags/life/</loc>
-    <lastmod>2015-10-15T23:34:00+02:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://victortoso.com/tags/lua/</loc>
-    <lastmod>2013-06-24T02:14:00-03:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://victortoso.com/tags/lua-factory/</loc>
-    <lastmod>2014-02-25T00:19:00-03:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://victortoso.com/tags/magnatune/</loc>
-    <lastmod>2014-06-10T02:04:00-03:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://victortoso.com/tags/metrolyrics/</loc>
-    <lastmod>2013-09-21T00:34:00-03:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://victortoso.com/tags/musicbrainz/</loc>
-    <lastmod>2014-07-15T02:58:00-03:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://victortoso.com/tags/red-hat/</loc>
-    <lastmod>2015-10-15T23:34:00+02:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://victortoso.com/tags/spice/</loc>
-    <lastmod>2017-02-06T12:20:00+02:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://victortoso.com/tags/systemd/</loc>
-    <lastmod>2016-06-25T15:10:00+02:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://victortoso.com/tags/</loc>
-    <lastmod>2014-07-15T02:58:00-03:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://victortoso.com/talks/</loc>
-    <lastmod>2017-02-06T12:20:00+02:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://victortoso.com/tags/talks/</loc>
-    <lastmod>2017-02-06T12:20:00+02:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://victortoso.com/tags/the-tvdb/</loc>
-    <lastmod>2014-06-25T23:34:00-03:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://victortoso.com/tags/totem/</loc>
-    <lastmod>2014-06-25T23:34:00-03:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://victortoso.com/</loc>
-    <lastmod>2017-02-06T12:20:00+02:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://victortoso.com/tags/windows/</loc>
-    <lastmod>2016-06-25T15:10:00+02:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="https://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+    
+        <url>
+            <loc>https%3A//victortoso.com/</loc>
+            
+        </url>
+    
+        <url>
+            <loc>https%3A//victortoso.com/about/</loc>
+            
+        </url>
+    
+        <url>
+            <loc>https%3A//victortoso.com/blog-1301/</loc>
+            
+                <lastmod>2013-05-14</lastmod>
+            
+        </url>
+    
+        <url>
+            <loc>https%3A//victortoso.com/blog-1302/</loc>
+            
+                <lastmod>2013-05-28</lastmod>
+            
+        </url>
+    
+        <url>
+            <loc>https%3A//victortoso.com/blog-1303/</loc>
+            
+                <lastmod>2013-06-09</lastmod>
+            
+        </url>
+    
+        <url>
+            <loc>https%3A//victortoso.com/blog-1304/</loc>
+            
+                <lastmod>2013-06-24</lastmod>
+            
+        </url>
+    
+        <url>
+            <loc>https%3A//victortoso.com/blog-1305/</loc>
+            
+                <lastmod>2013-07-17</lastmod>
+            
+        </url>
+    
+        <url>
+            <loc>https%3A//victortoso.com/blog-1306/</loc>
+            
+                <lastmod>2013-08-05</lastmod>
+            
+        </url>
+    
+        <url>
+            <loc>https%3A//victortoso.com/blog-1307/</loc>
+            
+                <lastmod>2013-09-21</lastmod>
+            
+        </url>
+    
+        <url>
+            <loc>https%3A//victortoso.com/blog-1401/</loc>
+            
+                <lastmod>2014-02-25</lastmod>
+            
+        </url>
+    
+        <url>
+            <loc>https%3A//victortoso.com/blog-1402/</loc>
+            
+                <lastmod>2014-04-22</lastmod>
+            
+        </url>
+    
+        <url>
+            <loc>https%3A//victortoso.com/blog-1403/</loc>
+            
+                <lastmod>2014-05-24</lastmod>
+            
+        </url>
+    
+        <url>
+            <loc>https%3A//victortoso.com/blog-1404/</loc>
+            
+                <lastmod>2014-06-03</lastmod>
+            
+        </url>
+    
+        <url>
+            <loc>https%3A//victortoso.com/blog-1405/</loc>
+            
+                <lastmod>2014-06-10</lastmod>
+            
+        </url>
+    
+        <url>
+            <loc>https%3A//victortoso.com/blog-1406/</loc>
+            
+                <lastmod>2014-06-25</lastmod>
+            
+        </url>
+    
+        <url>
+            <loc>https%3A//victortoso.com/blog-1407/</loc>
+            
+                <lastmod>2014-07-15</lastmod>
+            
+        </url>
+    
+        <url>
+            <loc>https%3A//victortoso.com/blog-1408/</loc>
+            
+                <lastmod>2014-10-26</lastmod>
+            
+        </url>
+    
+        <url>
+            <loc>https%3A//victortoso.com/blog-1501/</loc>
+            
+                <lastmod>2015-10-15</lastmod>
+            
+        </url>
+    
+        <url>
+            <loc>https%3A//victortoso.com/blog-1601/</loc>
+            
+                <lastmod>2016-06-09</lastmod>
+            
+        </url>
+    
+        <url>
+            <loc>https%3A//victortoso.com/blog-1602/</loc>
+            
+                <lastmod>2016-06-25</lastmod>
+            
+        </url>
+    
+        <url>
+            <loc>https%3A//victortoso.com/categories/</loc>
+            
+        </url>
+    
+        <url>
+            <loc>https%3A//victortoso.com/categories/code/</loc>
+            
+        </url>
+    
+        <url>
+            <loc>https%3A//victortoso.com/categories/talks/</loc>
+            
+        </url>
+    
+        <url>
+            <loc>https%3A//victortoso.com/page/1/</loc>
+            
+        </url>
+    
+        <url>
+            <loc>https%3A//victortoso.com/tags/</loc>
+            
+        </url>
+    
+        <url>
+            <loc>https%3A//victortoso.com/tags/acoustid/</loc>
+            
+        </url>
+    
+        <url>
+            <loc>https%3A//victortoso.com/tags/brno/</loc>
+            
+        </url>
+    
+        <url>
+            <loc>https%3A//victortoso.com/tags/console-kit/</loc>
+            
+        </url>
+    
+        <url>
+            <loc>https%3A//victortoso.com/tags/devconf/</loc>
+            
+        </url>
+    
+        <url>
+            <loc>https%3A//victortoso.com/tags/flickr/</loc>
+            
+        </url>
+    
+        <url>
+            <loc>https%3A//victortoso.com/tags/gnome/</loc>
+            
+        </url>
+    
+        <url>
+            <loc>https%3A//victortoso.com/tags/gom/</loc>
+            
+        </url>
+    
+        <url>
+            <loc>https%3A//victortoso.com/tags/grilo/</loc>
+            
+        </url>
+    
+        <url>
+            <loc>https%3A//victortoso.com/tags/gsoc/</loc>
+            
+        </url>
+    
+        <url>
+            <loc>https%3A//victortoso.com/tags/gstreamer/</loc>
+            
+        </url>
+    
+        <url>
+            <loc>https%3A//victortoso.com/tags/gtk/</loc>
+            
+        </url>
+    
+        <url>
+            <loc>https%3A//victortoso.com/tags/guadec/</loc>
+            
+        </url>
+    
+        <url>
+            <loc>https%3A//victortoso.com/tags/life/</loc>
+            
+        </url>
+    
+        <url>
+            <loc>https%3A//victortoso.com/tags/lua-factory/</loc>
+            
+        </url>
+    
+        <url>
+            <loc>https%3A//victortoso.com/tags/lua/</loc>
+            
+        </url>
+    
+        <url>
+            <loc>https%3A//victortoso.com/tags/magnatune/</loc>
+            
+        </url>
+    
+        <url>
+            <loc>https%3A//victortoso.com/tags/metrolyrics/</loc>
+            
+        </url>
+    
+        <url>
+            <loc>https%3A//victortoso.com/tags/musicbrainz/</loc>
+            
+        </url>
+    
+        <url>
+            <loc>https%3A//victortoso.com/tags/red-hat/</loc>
+            
+        </url>
+    
+        <url>
+            <loc>https%3A//victortoso.com/tags/spice/</loc>
+            
+        </url>
+    
+        <url>
+            <loc>https%3A//victortoso.com/tags/systemd/</loc>
+            
+        </url>
+    
+        <url>
+            <loc>https%3A//victortoso.com/tags/the-tvdb/</loc>
+            
+        </url>
+    
+        <url>
+            <loc>https%3A//victortoso.com/tags/totem/</loc>
+            
+        </url>
+    
+        <url>
+            <loc>https%3A//victortoso.com/tags/windows/</loc>
+            
+        </url>
+    
+        <url>
+            <loc>https%3A//victortoso.com/talks/talk-1301/</loc>
+            
+                <lastmod>2013-08-04</lastmod>
+            
+        </url>
+    
+        <url>
+            <loc>https%3A//victortoso.com/talks/talk-1401/</loc>
+            
+                <lastmod>2014-07-27</lastmod>
+            
+        </url>
+    
+        <url>
+            <loc>https%3A//victortoso.com/talks/talk-1601/</loc>
+            
+                <lastmod>2016-02-06</lastmod>
+            
+        </url>
+    
+        <url>
+            <loc>https%3A//victortoso.com/talks/talk-1701/</loc>
+            
+                <lastmod>2017-01-27</lastmod>
+            
+        </url>
+    
 </urlset>

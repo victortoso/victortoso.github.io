@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Victor Toso</title>
+        <link>https%3A//victortoso.com</link>
+        <description>Nothing relevant</description>
+        <generator>Zola</generator>
+        <language>en</language>
+        <atom:link href="https%3A//victortoso.com/tags/guadec/rss.xml" rel="self" type="application/rss+xml"/>
+        <lastBuildDate>Sun, 27 Jul 2014 00:00:00 +0000</lastBuildDate>
+        
+            <item>
+                <title>Another GSoC on Grilo!</title>
+                <pubDate>Sun, 27 Jul 2014 00:00:00 +0000</pubDate>
+                <link>https%3A//victortoso.com/talks/talk-1401/</link>
+                <guid>https%3A//victortoso.com/talks/talk-1401/</guid>
+                <description>&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;2014.guadec.org&quot;&gt;GUADEC 2014&lt;&#x2F;a&gt; took place in Strasbourg, France and that
+was my first time in this beautiful country. My friend &lt;a href=&quot;https:&#x2F;&#x2F;yuumasato.wordpress.com&#x2F;&quot;&gt;Watson
+Sato&lt;&#x2F;a&gt; was also enrolled in the
+&lt;a href=&quot;https:&#x2F;&#x2F;developers.google.com&#x2F;open-source&#x2F;gsoc&#x2F;&quot;&gt;GSoC&lt;&#x2F;a&gt; on GNOME and we were
+able to travel and attend the conference together.&lt;&#x2F;p&gt;
+&lt;p&gt;The time slot per intern for the light talk was very short once again but
+everybody was able to summarize their work very well. Sadly the video was not
+uploaded.&lt;&#x2F;p&gt;
+&lt;p&gt;I hope to come back to visit France more times in the future.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;a href=&quot;&#x2F;slides&#x2F;1401-guadec-light-talk-about-grilo.pdf&quot;&gt;Slides&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+</description>
+            </item>
+        
+            <item>
+                <title>Brno, GUADEC and Grilo</title>
+                <pubDate>Mon, 05 Aug 2013 00:00:00 +0000</pubDate>
+                <link>https%3A//victortoso.com/blog-1306/</link>
+                <guid>https%3A//victortoso.com/blog-1306/</guid>
+                <description>&lt;p&gt;Brno is amazing. Just amazing. The people from here try to be helpfull
+even if they don&#x27;t speak a single word in English. The food is really
+good and quite cheap and the city is beautiful! I&#x27;m glad that I still
+have time for another tour around!&lt;&#x2F;p&gt;
+&lt;p&gt;Well, travelling without many concerns, meeting amazing people and with
+the opportunity to learn things you love... GUADEC has been an amazing
+experience.&lt;&#x2F;p&gt;
+&lt;p&gt;The talks were really good but the people I have met here are awesome.&lt;&#x2F;p&gt;
+&lt;p&gt;I&#x27;m really glad to finally meet my mentor Juan Suárez and some folks
+from Red Hat. It was awesome to talk with some others interns such as
+Kalev, Marcos, Valentín, Alessandro, Bogdan and Carlos. It was brief but
+really nice. Hope to meet everybody again next year!&lt;&#x2F;p&gt;
+&lt;p&gt;Here in GUADEC I had a lightning talk trying to briefly explain what my
+GSoC is about. It was hard to do it in less then 3 minutes. I was quite
+nervous too but everything went well :)&lt;&#x2F;p&gt;
+&lt;p&gt;If anybody would like to know more about grilo or anything related ping
+me on #grilo&lt;&#x2F;p&gt;
+&lt;p&gt;I had the opportunity to talk with Juan about the GSoC project, Grilo
+and some plans for the future. I&#x27;m a bit excited to keep contributing to
+Grilo.&lt;&#x2F;p&gt;
+&lt;p&gt;I would like to thank GNOME Fundation for the sponsorship and making
+this travel possible; to Google for the Summer of Code Program; to
+Fabiano Fidêncio for helping me A LOT in Brno.&lt;&#x2F;p&gt;
+&lt;p&gt;And that&#x27;s all.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;1306-01-gnome-sponsored-badge.png&quot; alt=&quot;GNOME rocks!&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+</description>
+            </item>
+        
+            <item>
+                <title>My GSOC on Grilo!</title>
+                <pubDate>Sun, 04 Aug 2013 00:00:00 +0000</pubDate>
+                <link>https%3A//victortoso.com/talks/talk-1301/</link>
+                <guid>https%3A//victortoso.com/talks/talk-1301/</guid>
+                <description>&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;2013.guadec.org&quot;&gt;GUADEC 2013&lt;&#x2F;a&gt; was hosted in Brno, Czech Republic and it
+was my first time doing a talk for a big audience, quite an experience! I can
+see how nervous I got in the two minutes I had for the interns lightning talk.&lt;&#x2F;p&gt;
+&lt;p&gt;Not super instructive video to watch but quite funny to me :)&lt;&#x2F;p&gt;
+&lt;p&gt;Also, It is very interesting that a little bit more then a year later, I would
+be moving to Brno to start a new phase of my life.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.superlectures.com&#x2F;guadec2013&#x2F;interns-lightning-talks?start=1:21:12&quot;&gt;Video&lt;&#x2F;a&gt;
+&lt;a href=&quot;&#x2F;slides&#x2F;1301-guadec-light-talk-about-grilo.pdf&quot;&gt;Slides&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+</description>
+            </item>
+        
+    </channel>
+</rss>

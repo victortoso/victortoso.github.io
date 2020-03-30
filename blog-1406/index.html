@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+      <!-- Enable responsiveness on mobile devices-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+      <title>Victor Toso</title>
+
+      
+
+      
+          <link rel="stylesheet" href="https://victortoso.com/site.css">
+      
+
+      
+      
+    </head>
+
+    <body class="hack dark main container">
+        
+    
+        
+                
+                    <header>
+                        <nav itemscope itemtype="http://schema.org/SiteNavigationElement">
+                        
+                            <a itemprop="url"
+                               class=""
+                               href="https:&#x2F;&#x2F;victortoso.com">
+                                <span itemprop="name">Archive
+                                </span></a>
+                        
+                            <a itemprop="url"
+                               class=""
+                               href="https:&#x2F;&#x2F;victortoso.com&#x2F;categories&#x2F;code">
+                                <span itemprop="name">Code
+                                </span></a>
+                        
+                            <a itemprop="url"
+                               class=""
+                               href="https:&#x2F;&#x2F;victortoso.com&#x2F;categories&#x2F;talks">
+                                <span itemprop="name">Talks
+                                </span></a>
+                        
+                            <a itemprop="url"
+                               class=""
+                               href="https:&#x2F;&#x2F;victortoso.com&#x2F;tags">
+                                <span itemprop="name">Tags
+                                </span></a>
+                        
+                            <a itemprop="url"
+                               class=""
+                               href="https:&#x2F;&#x2F;victortoso.com&#x2F;about">
+                                <span itemprop="name">About
+                                </span></a>
+                        
+                        </nav>
+                    </header>
+                
+            
+    
+
+<article itemscope itemtype="http://schema.org/BlogPosting">
+    <header>
+        <h1 itemprop="headline">GSoC Report #4 and #5</h1>
+        <span class="muted">
+    <svg style="margin-bottom:-3px" class="i-clock" viewBox="0 0 32 32"
+         width="16" height="16" fill="none" stroke="currentcolor"
+         stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
+        <circle cx="16" cy="16" r="14"/>
+        <path d="M16 8 L16 16 20 20"/>
+    </svg>
+    <span>2 minute read</span>
+    <svg style="margin-bottom: -3px" class="i-edit" viewBox="0 0 32 32"
+         width="16" height="16" fill="none" stroke="currentcolor"
+         stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
+        <path d="M30 7 L25 2 5 22 3 29 10 27 Z M21 6 L26 11 Z M5 22 L10 27 Z"/>
+    </svg>
+
+    Published: 2014-06-25
+</span>
+    </header>
+    <div itemprop="articleBody">
+      <h2 id="hey">Hey :)</h2>
+<p>I usually write my posts in the weekend when I do have more time to
+think about what I've done and what It is interesting to share. Sadly,
+two weekends ago I was ill due something I've eaten and now I'll try to
+summarize two weeks in one post!</p>
+<h2 id="the-tvdb">The TVDB</h2>
+<p>Is <a href="https://git.gnome.org/browse/grilo-plugins/commit/?id=b2b937413a26a0fe2ad18891a27a30a35b12b26b">now
+upstream</a>.
+Yay!</p>
+<p>The main care after implementing the cache with Gom was handling
+multiple requests of the same TV Show in a short period of time
+(concurrency).</p>
+<p>For instance, you are browsing some TV Show using some application that
+uses Grilo to requests metadata. It may occur several requests of the
+same tv show like, episode 01, episode 02, etc.</p>
+<p>We are handling this by fetching the TVDB only once to gather all
+existing data and then resolve the later requests with the cache.</p>
+<p>Quite nice, lots of fun implementing it.</p>
+<h2 id="the-integration-with-the-ui">The Integration with the UI</h2>
+<p>I have realized I'm really bad at building UIs and I'm also recognizing
+how much effort it is necessary to make a good UI (a lot).</p>
+<p>For that, I would like to thank the folks from
+<a href="https://glade.gnome.org/">Glade</a> with the awesome and helpful software.</p>
+<p>Well, at the moment I'm implementing a simple program that creates a
+Widget to show all interesting information we will be providing on GNOME
+Videos. You may check the application
+<a href="https://github.com/victortoso/totem-tvshows">here</a>.</p>
+<h2 id="the-goal">The goal:</h2>
+<p><img src="/images/1406-01-totem-widget-goal.png" alt="Screenshot of goal" /></p>
+<h2 id="current-status">Current status</h2>
+<p><img src="/images/1406-02-totem-widget-status.png" alt="Screenshot of current status" /></p>
+<h2 id="life">Life</h2>
+<p>World cup is going on, traffic jam everywhere but people are in quite
+good mood here in Brazil. I'm happier mostly because of my new great
+friend, Marvin.</p>
+<p><img src="/images/1406-03-marvin.png" alt="Marvin is my dog :)" /></p>
+
+    </div>
+
+    
+        <footer>
+            <hr>
+            <p>
+                
+                    Published by Victor Toso
+                
+                
+                    
+                    in <a href="https://victortoso.com/categories/code/">code</a>
+                
+                
+                    and tagged
+                    
+                        <a href="https://victortoso.com/tags/grilo/">grilo</a>
+                        
+                            
+                                
+                                    ,
+                                
+                            
+                        
+                    
+                        <a href="https://victortoso.com/tags/the-tvdb/">the-tvdb</a>
+                        
+                            
+                                
+                                    ,
+                                
+                            
+                        
+                    
+                        <a href="https://victortoso.com/tags/gtk/">gtk</a>
+                        
+                            
+                                
+                                    and
+                                
+                            
+                        
+                    
+                        <a href="https://victortoso.com/tags/totem/">totem</a>
+                        
+                            
+                        
+                    
+                
+            </p>
+        </footer>
+    
+</article>
+
+
+    </body>
+
+</html>

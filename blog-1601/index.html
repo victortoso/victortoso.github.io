@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+      <!-- Enable responsiveness on mobile devices-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+      <title>Victor Toso</title>
+
+      
+
+      
+          <link rel="stylesheet" href="https://victortoso.com/site.css">
+      
+
+      
+      
+    </head>
+
+    <body class="hack dark main container">
+        
+    
+        
+                
+                    <header>
+                        <nav itemscope itemtype="http://schema.org/SiteNavigationElement">
+                        
+                            <a itemprop="url"
+                               class=""
+                               href="https:&#x2F;&#x2F;victortoso.com">
+                                <span itemprop="name">Archive
+                                </span></a>
+                        
+                            <a itemprop="url"
+                               class=""
+                               href="https:&#x2F;&#x2F;victortoso.com&#x2F;categories&#x2F;code">
+                                <span itemprop="name">Code
+                                </span></a>
+                        
+                            <a itemprop="url"
+                               class=""
+                               href="https:&#x2F;&#x2F;victortoso.com&#x2F;categories&#x2F;talks">
+                                <span itemprop="name">Talks
+                                </span></a>
+                        
+                            <a itemprop="url"
+                               class=""
+                               href="https:&#x2F;&#x2F;victortoso.com&#x2F;tags">
+                                <span itemprop="name">Tags
+                                </span></a>
+                        
+                            <a itemprop="url"
+                               class=""
+                               href="https:&#x2F;&#x2F;victortoso.com&#x2F;about">
+                                <span itemprop="name">About
+                                </span></a>
+                        
+                        </nav>
+                    </header>
+                
+            
+    
+
+<article itemscope itemtype="http://schema.org/BlogPosting">
+    <header>
+        <h1 itemprop="headline">Grilo updates!</h1>
+        <span class="muted">
+    <svg style="margin-bottom:-3px" class="i-clock" viewBox="0 0 32 32"
+         width="16" height="16" fill="none" stroke="currentcolor"
+         stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
+        <circle cx="16" cy="16" r="14"/>
+        <path d="M16 8 L16 16 20 20"/>
+    </svg>
+    <span>3 minute read</span>
+    <svg style="margin-bottom: -3px" class="i-edit" viewBox="0 0 32 32"
+         width="16" height="16" fill="none" stroke="currentcolor"
+         stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
+        <path d="M30 7 L25 2 5 22 3 29 10 27 Z M21 6 L26 11 Z M5 22 L10 27 Z"/>
+    </svg>
+
+    Published: 2016-06-09
+</span>
+    </header>
+    <div itemprop="articleBody">
+      <p>Nothing like talking about Grilo to keep the blog going and to be honest
+I have some interesting things to talk about.</p>
+<h2 id="grilo-0-3">Grilo 0.3</h2>
+<p>The major release happened almost 6 months ago and it has brought some
+API/ABI changes being my favourite the merge of all Grilo media types
+into GrlMedia
+(<a href="https://bugzilla.gnome.org/show_bug.cgi?id=755551">#755551</a>); This
+introduces support from Grilo to different types of media!</p>
+<p>Well, to be pedantic, it was always possible to have different media
+types in Grilo on GrlMedia but it is more clear to applications by
+merging GrlMedia{Audio,Video,Image,Box} in GrlMedia; It should also help
+us to identify problems with media types that were not originally
+supported, such as
+<a href="https://bugzilla.gnome.org/show_bug.cgi?id=767182">#767182</a></p>
+<p>I expect this change will increase the interest in Grilo for a whole new
+set of applications. For instance, with
+<a href="http://thegamesdb.net/">TheGamesDB</a> source we got support to metadata
+for Games
+(<a href="https://bugzilla.gnome.org/show_bug.cgi?id=766678">#766678</a>) and I'm
+excited to see how <a href="http://bytesgnomeschozo.blogspot.cz/">Kekun</a> will be
+using this in the gnome-games project!</p>
+<h2 id="plugins">Plugins</h2>
+<p>A few other plugins have landed upstream as well. I've mentioned
+TheGamesDB before but we also have iTunes Podcast, both written by
+<a href="http://www.hadess.net/">Bastien</a>.</p>
+<p>I was able to finally finish a plugin related to my GSoC in 2014:
+<a href="https://bugzilla.gnome.org/show_bug.cgi?id=732879">AcoustID</a>. In the
+end, we decided to split the audio decoding and the audio's fingerprint
+generation in one plugin called Chromaprint and another plugin that
+actually fetch data on AcoustID web service.</p>
+<p>It took some time and the learning process was quite great by learning
+GStreamer from scratch. As always, many thanks to Bastien for the
+guidance and also to <a href="https://twitter.com/thgss">thiagoss</a> by helping
+out with the GStreamer bits :-)</p>
+<p>PS: Three of the four plugins above were written in Lua :-)</p>
+<h2 id="google-summer-of-code-2016">Google Summer of Code 2016</h2>
+<p>And we already are in the development phase of GSoC 2016! As always,
+<a href="https://wiki.gnome.org/Outreach/SummerOfCode/2016/Projects/">exciting
+projects</a>
+in GNOME.</p>
+<p>I'm particularly interested in
+<a href="https://wiki.gnome.org/Apps/Music">Music</a> this year. <a href="https://gnarula.com/">Gaurav
+Narula</a> is working to have <a href="https://wiki.gnome.org/Outreach/SummerOfCode/2016/Projects/GauravNarula_MusicOwnCloud">ownCloud
+Support</a>
+and <a href="https://saifulbkhan.wordpress.com/">Saiful Khan</a> will be making
+<a href="https://wiki.gnome.org/Outreach/SummerOfCode/2016/Projects/SaifulBariKhan_MusicTagEditing">Audio Tag
+Editing</a>
+possible from Music. The #gnome-music channel has been quite active by
+having interesting and amusing discussions. I guess this will be a good
+year for Music.</p>
+<p>Big expectations as well with <a href="https://alexandruvisarion.wordpress.com/">Alexandru
+Visarion</a> working on Boxes in
+order to have <a href="https://wiki.gnome.org/Outreach/SummerOfCode/2016/Projects/AlexandruVisarion_BoxesSpiceFeatures">More Spice
+Features</a></p>
+<ul>
+<li>Yay! It was sheer coincidence as today we were discussing about shared
+folders with Spice's webdav. That will be great to land in Boxes!</li>
+</ul>
+<p>I wish all the students a great learning experience.</p>
+<h2 id="other-news">Other news</h2>
+<p>Grilo has piqued my interest since before 2013 as neat project that I
+could be using in one Set-Top Box that I had in hands; it then became
+the project for my first free software contribution; it has been nearly
+two years since my second GSoC but I'm still having fun with Grilo.</p>
+<p>So, you could imagine how happy I am to become
+<a href="https://twitter.com/victortoso/status/740079518984118272">co-maintainer</a>
+to this great project :)</p>
+
+    </div>
+
+    
+        <footer>
+            <hr>
+            <p>
+                
+                    Published by Victor Toso
+                
+                
+                    
+                    in <a href="https://victortoso.com/categories/code/">code</a>
+                
+                
+                    and tagged
+                    
+                        <a href="https://victortoso.com/tags/grilo/">grilo</a>
+                        
+                            
+                                
+                                    and
+                                
+                            
+                        
+                    
+                        <a href="https://victortoso.com/tags/gsoc/">gsoc</a>
+                        
+                            
+                        
+                    
+                
+            </p>
+        </footer>
+    
+</article>
+
+
+    </body>
+
+</html>

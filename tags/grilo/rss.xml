@@ -1,0 +1,758 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Victor Toso</title>
+        <link>https%3A//victortoso.com</link>
+        <description>Nothing relevant</description>
+        <generator>Zola</generator>
+        <language>en</language>
+        <atom:link href="https%3A//victortoso.com/tags/grilo/rss.xml" rel="self" type="application/rss+xml"/>
+        <lastBuildDate>Thu, 09 Jun 2016 00:00:00 +0000</lastBuildDate>
+        
+            <item>
+                <title>Grilo updates!</title>
+                <pubDate>Thu, 09 Jun 2016 00:00:00 +0000</pubDate>
+                <link>https%3A//victortoso.com/blog-1601/</link>
+                <guid>https%3A//victortoso.com/blog-1601/</guid>
+                <description>&lt;p&gt;Nothing like talking about Grilo to keep the blog going and to be honest
+I have some interesting things to talk about.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;grilo-0-3&quot;&gt;Grilo 0.3&lt;&#x2F;h2&gt;
+&lt;p&gt;The major release happened almost 6 months ago and it has brought some
+API&#x2F;ABI changes being my favourite the merge of all Grilo media types
+into GrlMedia
+(&lt;a href=&quot;https:&#x2F;&#x2F;bugzilla.gnome.org&#x2F;show_bug.cgi?id=755551&quot;&gt;#755551&lt;&#x2F;a&gt;); This
+introduces support from Grilo to different types of media!&lt;&#x2F;p&gt;
+&lt;p&gt;Well, to be pedantic, it was always possible to have different media
+types in Grilo on GrlMedia but it is more clear to applications by
+merging GrlMedia{Audio,Video,Image,Box} in GrlMedia; It should also help
+us to identify problems with media types that were not originally
+supported, such as
+&lt;a href=&quot;https:&#x2F;&#x2F;bugzilla.gnome.org&#x2F;show_bug.cgi?id=767182&quot;&gt;#767182&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;I expect this change will increase the interest in Grilo for a whole new
+set of applications. For instance, with
+&lt;a href=&quot;http:&#x2F;&#x2F;thegamesdb.net&#x2F;&quot;&gt;TheGamesDB&lt;&#x2F;a&gt; source we got support to metadata
+for Games
+(&lt;a href=&quot;https:&#x2F;&#x2F;bugzilla.gnome.org&#x2F;show_bug.cgi?id=766678&quot;&gt;#766678&lt;&#x2F;a&gt;) and I&#x27;m
+excited to see how &lt;a href=&quot;http:&#x2F;&#x2F;bytesgnomeschozo.blogspot.cz&#x2F;&quot;&gt;Kekun&lt;&#x2F;a&gt; will be
+using this in the gnome-games project!&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;plugins&quot;&gt;Plugins&lt;&#x2F;h2&gt;
+&lt;p&gt;A few other plugins have landed upstream as well. I&#x27;ve mentioned
+TheGamesDB before but we also have iTunes Podcast, both written by
+&lt;a href=&quot;http:&#x2F;&#x2F;www.hadess.net&#x2F;&quot;&gt;Bastien&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;I was able to finally finish a plugin related to my GSoC in 2014:
+&lt;a href=&quot;https:&#x2F;&#x2F;bugzilla.gnome.org&#x2F;show_bug.cgi?id=732879&quot;&gt;AcoustID&lt;&#x2F;a&gt;. In the
+end, we decided to split the audio decoding and the audio&#x27;s fingerprint
+generation in one plugin called Chromaprint and another plugin that
+actually fetch data on AcoustID web service.&lt;&#x2F;p&gt;
+&lt;p&gt;It took some time and the learning process was quite great by learning
+GStreamer from scratch. As always, many thanks to Bastien for the
+guidance and also to &lt;a href=&quot;https:&#x2F;&#x2F;twitter.com&#x2F;thgss&quot;&gt;thiagoss&lt;&#x2F;a&gt; by helping
+out with the GStreamer bits :-)&lt;&#x2F;p&gt;
+&lt;p&gt;PS: Three of the four plugins above were written in Lua :-)&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;google-summer-of-code-2016&quot;&gt;Google Summer of Code 2016&lt;&#x2F;h2&gt;
+&lt;p&gt;And we already are in the development phase of GSoC 2016! As always,
+&lt;a href=&quot;https:&#x2F;&#x2F;wiki.gnome.org&#x2F;Outreach&#x2F;SummerOfCode&#x2F;2016&#x2F;Projects&#x2F;&quot;&gt;exciting
+projects&lt;&#x2F;a&gt;
+in GNOME.&lt;&#x2F;p&gt;
+&lt;p&gt;I&#x27;m particularly interested in
+&lt;a href=&quot;https:&#x2F;&#x2F;wiki.gnome.org&#x2F;Apps&#x2F;Music&quot;&gt;Music&lt;&#x2F;a&gt; this year. &lt;a href=&quot;https:&#x2F;&#x2F;gnarula.com&#x2F;&quot;&gt;Gaurav
+Narula&lt;&#x2F;a&gt; is working to have &lt;a href=&quot;https:&#x2F;&#x2F;wiki.gnome.org&#x2F;Outreach&#x2F;SummerOfCode&#x2F;2016&#x2F;Projects&#x2F;GauravNarula_MusicOwnCloud&quot;&gt;ownCloud
+Support&lt;&#x2F;a&gt;
+and &lt;a href=&quot;https:&#x2F;&#x2F;saifulbkhan.wordpress.com&#x2F;&quot;&gt;Saiful Khan&lt;&#x2F;a&gt; will be making
+&lt;a href=&quot;https:&#x2F;&#x2F;wiki.gnome.org&#x2F;Outreach&#x2F;SummerOfCode&#x2F;2016&#x2F;Projects&#x2F;SaifulBariKhan_MusicTagEditing&quot;&gt;Audio Tag
+Editing&lt;&#x2F;a&gt;
+possible from Music. The #gnome-music channel has been quite active by
+having interesting and amusing discussions. I guess this will be a good
+year for Music.&lt;&#x2F;p&gt;
+&lt;p&gt;Big expectations as well with &lt;a href=&quot;https:&#x2F;&#x2F;alexandruvisarion.wordpress.com&#x2F;&quot;&gt;Alexandru
+Visarion&lt;&#x2F;a&gt; working on Boxes in
+order to have &lt;a href=&quot;https:&#x2F;&#x2F;wiki.gnome.org&#x2F;Outreach&#x2F;SummerOfCode&#x2F;2016&#x2F;Projects&#x2F;AlexandruVisarion_BoxesSpiceFeatures&quot;&gt;More Spice
+Features&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Yay! It was sheer coincidence as today we were discussing about shared
+folders with Spice&#x27;s webdav. That will be great to land in Boxes!&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;I wish all the students a great learning experience.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;other-news&quot;&gt;Other news&lt;&#x2F;h2&gt;
+&lt;p&gt;Grilo has piqued my interest since before 2013 as neat project that I
+could be using in one Set-Top Box that I had in hands; it then became
+the project for my first free software contribution; it has been nearly
+two years since my second GSoC but I&#x27;m still having fun with Grilo.&lt;&#x2F;p&gt;
+&lt;p&gt;So, you could imagine how happy I am to become
+&lt;a href=&quot;https:&#x2F;&#x2F;twitter.com&#x2F;victortoso&#x2F;status&#x2F;740079518984118272&quot;&gt;co-maintainer&lt;&#x2F;a&gt;
+to this great project :)&lt;&#x2F;p&gt;
+</description>
+            </item>
+        
+            <item>
+                <title>Grilo framework and Lua</title>
+                <pubDate>Sat, 06 Feb 2016 00:00:00 +0000</pubDate>
+                <link>https%3A//victortoso.com/talks/talk-1601/</link>
+                <guid>https%3A//victortoso.com/talks/talk-1601/</guid>
+                <description>&lt;p&gt;The &lt;a href=&quot;https:&#x2F;&#x2F;devconfcz2016.sched.com&#x2F;&quot;&gt;DevConf CZ&lt;&#x2F;a&gt; is a three-day conference
+that brings different communities of developers together in Brno, Czech
+Republic. Organized by Red Hat, this conference offers several interesting
+topics on talks or workshops. Great to keep yourself up-to-date on fast
+evolving technologies.&lt;&#x2F;p&gt;
+&lt;p&gt;My collegues presented &lt;a href=&quot;https:&#x2F;&#x2F;www.youtube.com&#x2F;watch?v=qlhbVUI2T6M&quot;&gt;Spice on
+Windows&lt;&#x2F;a&gt; describing the process to
+deliver Windows builds of SPICE components from a Linux machine. As extra, Virgl
++ Spice (Linux-only) was showed in the end, check it out!&lt;&#x2F;p&gt;
+&lt;p&gt;As SPICE was covered by very capable hands, I talked about Grilo once again but
+covering it all the way from application side using Grilo core and the the usage
+and development of Grilo plugins.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.youtube.com&#x2F;watch?v=RrCp3eOhLl0&quot;&gt;Video&lt;&#x2F;a&gt;
+&lt;a href=&quot;&#x2F;slides&#x2F;1601-devconf-intro-to-grilo.pdf&quot;&gt;Slides&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+</description>
+            </item>
+        
+            <item>
+                <title>Another GSoC on Grilo!</title>
+                <pubDate>Sun, 27 Jul 2014 00:00:00 +0000</pubDate>
+                <link>https%3A//victortoso.com/talks/talk-1401/</link>
+                <guid>https%3A//victortoso.com/talks/talk-1401/</guid>
+                <description>&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;2014.guadec.org&quot;&gt;GUADEC 2014&lt;&#x2F;a&gt; took place in Strasbourg, France and that
+was my first time in this beautiful country. My friend &lt;a href=&quot;https:&#x2F;&#x2F;yuumasato.wordpress.com&#x2F;&quot;&gt;Watson
+Sato&lt;&#x2F;a&gt; was also enrolled in the
+&lt;a href=&quot;https:&#x2F;&#x2F;developers.google.com&#x2F;open-source&#x2F;gsoc&#x2F;&quot;&gt;GSoC&lt;&#x2F;a&gt; on GNOME and we were
+able to travel and attend the conference together.&lt;&#x2F;p&gt;
+&lt;p&gt;The time slot per intern for the light talk was very short once again but
+everybody was able to summarize their work very well. Sadly the video was not
+uploaded.&lt;&#x2F;p&gt;
+&lt;p&gt;I hope to come back to visit France more times in the future.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;a href=&quot;&#x2F;slides&#x2F;1401-guadec-light-talk-about-grilo.pdf&quot;&gt;Slides&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+</description>
+            </item>
+        
+            <item>
+                <title>GSoC Report #6 and #7</title>
+                <pubDate>Tue, 15 Jul 2014 00:00:00 +0000</pubDate>
+                <link>https%3A//victortoso.com/blog-1407/</link>
+                <guid>https%3A//victortoso.com/blog-1407/</guid>
+                <description>&lt;h2 id=&quot;tuesday&quot;&gt;Tuesday...&lt;&#x2F;h2&gt;
+&lt;p&gt;Two weeks without posting again! Can I use as an excuse &lt;a href=&quot;http:&#x2F;&#x2F;sadbrazilians.tumblr.com&#x2F;&quot;&gt;my
+grief&lt;&#x2F;a&gt; for Brazil in this World Cup!?
+:) Well, actually I was somewhat busy studying... I&#x27;ll share what in a
+moment.&lt;&#x2F;p&gt;
+&lt;p&gt;In order to talk about what I&#x27;m working on I would like to explain one
+interesting feature that Grilo has.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;cool-thing-in-grilo&quot;&gt;Cool thing in Grilo?&lt;&#x2F;h2&gt;
+&lt;p&gt;You may know that Grilo uses plugins to fetch useful data to your
+application! Great. What you may not know is that Grilo can combine the
+use of its plugins to resolve what the application want!&lt;&#x2F;p&gt;
+&lt;p&gt;Let me explain.&lt;&#x2F;p&gt;
+&lt;p&gt;The TVDB can provide tons of interesting metadata for your TV Shows but
+to do so, It needs some keys in order to find your TV Show in its
+database like the name of the show the season and the episode that you
+are watching.&lt;&#x2F;p&gt;
+&lt;p&gt;Cool thing that there is a Grilo plugin called local-metadata which try
+to get as much data as possible from the file name. For instance, It is
+easy to local-metadata to gather all metadata necessary to The TVDB from
+files like:&lt;&#x2F;p&gt;
+&lt;p&gt;Boardwalk.Empire.S04E01.HDTV.x264-2HD.mp4; Adventure Time - 2x01 - It
+Came from the Nightosphere.mp4 etc...&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;musicbrainz&quot;&gt;MusicBrainz&lt;&#x2F;h2&gt;
+&lt;p&gt;Well, I&#x27;ll be working in a &lt;a href=&quot;https:&#x2F;&#x2F;musicbrainz.org&#x2F;&quot;&gt;MusicBrainz&lt;&#x2F;a&gt;
+plugin to Grilo which will be very useful for several applications
+indeed. But from a music file, how you identify Author, Artist or
+anything?&lt;&#x2F;p&gt;
+&lt;p&gt;One cool way is checking the audio fingerprint!&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;a href=&quot;http:&#x2F;&#x2F;acoustid.org&#x2F;&quot;&gt;AcoustID&lt;&#x2F;a&gt; has an Open database accessible through
+a webservice to get the MusicBrainz Track ID from your audio
+fingerprint!&lt;&#x2F;p&gt;
+&lt;p&gt;So, this is pretty much similar of the example above with the TVDB and
+local-metadata. The AcoustID will provide the MusicBrainz ID of the
+track and the MusicBrainz plugin will use this to get all metadata
+necessary. Cool, right?&lt;&#x2F;p&gt;
+&lt;p&gt;Out of curiosity I read this awesome blog post which explains how the
+fingerprint are calculated and how the AcoustID use that to search in
+its database. &lt;a href=&quot;https:&#x2F;&#x2F;oxygene.sk&#x2F;2011&#x2F;01&#x2F;how-does-chromaprint-work&#x2F;&quot;&gt;Check it
+out!&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;acoustid-1-2&quot;&gt;AcoustID 1&#x2F;2&lt;&#x2F;h2&gt;
+&lt;p&gt;So, in order to generate the fingerprint as AcoustID needs, It is
+necessary to read the entire music file while providing the raw data to
+the chromaprint library.&lt;&#x2F;p&gt;
+&lt;p&gt;My first attempt to do that was using the libraries of ffmpeg as I
+already had some background with it and also a
+&lt;a href=&quot;https:&#x2F;&#x2F;bitbucket.org&#x2F;acoustid&#x2F;chromaprint&#x2F;src&#x2F;master&#x2F;examples&#x2F;fpcalc.c&quot;&gt;functional-example&lt;&#x2F;a&gt;
+in hands.&lt;&#x2F;p&gt;
+&lt;p&gt;Of course it was a bad decision to implement such thing without talking
+with Bastien first :)&lt;&#x2F;p&gt;
+&lt;p&gt;He has explained a bit of the problems of having ffmpeg as dependency...&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;acoustid-2-2&quot;&gt;AcoustID 2&#x2F;2&lt;&#x2F;h2&gt;
+&lt;p&gt;Then I started doing one thing that I was postponing for some time:
+learning &lt;a href=&quot;http:&#x2F;&#x2F;gstreamer.freedesktop.org&#x2F;&quot;&gt;GStreamer&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;I read the
+&lt;a href=&quot;http:&#x2F;&#x2F;gstreamer.freedesktop.org&#x2F;data&#x2F;doc&#x2F;gstreamer&#x2F;head&#x2F;manual&#x2F;html&quot;&gt;manual&lt;&#x2F;a&gt;
+and in its examples in order to understand how it works and what would
+be the best way to implement the AcoustID.&lt;&#x2F;p&gt;
+&lt;p&gt;In the end, there was already a &lt;a href=&quot;https:&#x2F;&#x2F;oxygene.sk&#x2F;2011&#x2F;01&#x2F;chromaprint-plug-in-for-gstreamer&#x2F;&quot;&gt;Chromaprint
+plugin&lt;&#x2F;a&gt;!&lt;&#x2F;p&gt;
+&lt;p&gt;The result is smaller but faster application then my previous work with
+ffmpeg :-)&lt;&#x2F;p&gt;
+&lt;p&gt;You can check the current AcoustID plugin
+&lt;a href=&quot;https:&#x2F;&#x2F;bugzilla.gnome.org&#x2F;show_bug.cgi?id=732879&quot;&gt;here&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;okay-and-what-about-that-gnome-video-ui&quot;&gt;Okay and what about that GNOME Video UI&lt;&#x2F;h2&gt;
+&lt;p&gt;Well, yes. I&#x27;m trying.&lt;&#x2F;p&gt;
+&lt;p&gt;The current code &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;victortoso&#x2F;totem-tvshows&quot;&gt;is here&lt;&#x2F;a&gt;,
+seriously, I want to make this work with CSS but somehow it is not
+working properly.&lt;&#x2F;p&gt;
+&lt;p&gt;For instance, I can change the attributes for all GtkLabel but I can&#x27;t
+change a specific GtkLabel alone.&lt;&#x2F;p&gt;
+&lt;p&gt;I can&#x27;t tell how glad I was after checking the GUADEC schedule and see
+the &amp;quot;GTK and CSS&amp;quot; talk from Benjamin Otte. I&#x27;ll be there, for
+sure!&lt;&#x2F;p&gt;
+&lt;p&gt;I think that&#x27;s all folks,&lt;&#x2F;p&gt;
+</description>
+            </item>
+        
+            <item>
+                <title>GSoC Report #4 and #5</title>
+                <pubDate>Wed, 25 Jun 2014 00:00:00 +0000</pubDate>
+                <link>https%3A//victortoso.com/blog-1406/</link>
+                <guid>https%3A//victortoso.com/blog-1406/</guid>
+                <description>&lt;h2 id=&quot;hey&quot;&gt;Hey :)&lt;&#x2F;h2&gt;
+&lt;p&gt;I usually write my posts in the weekend when I do have more time to
+think about what I&#x27;ve done and what It is interesting to share. Sadly,
+two weekends ago I was ill due something I&#x27;ve eaten and now I&#x27;ll try to
+summarize two weeks in one post!&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;the-tvdb&quot;&gt;The TVDB&lt;&#x2F;h2&gt;
+&lt;p&gt;Is &lt;a href=&quot;https:&#x2F;&#x2F;git.gnome.org&#x2F;browse&#x2F;grilo-plugins&#x2F;commit&#x2F;?id=b2b937413a26a0fe2ad18891a27a30a35b12b26b&quot;&gt;now
+upstream&lt;&#x2F;a&gt;.
+Yay!&lt;&#x2F;p&gt;
+&lt;p&gt;The main care after implementing the cache with Gom was handling
+multiple requests of the same TV Show in a short period of time
+(concurrency).&lt;&#x2F;p&gt;
+&lt;p&gt;For instance, you are browsing some TV Show using some application that
+uses Grilo to requests metadata. It may occur several requests of the
+same tv show like, episode 01, episode 02, etc.&lt;&#x2F;p&gt;
+&lt;p&gt;We are handling this by fetching the TVDB only once to gather all
+existing data and then resolve the later requests with the cache.&lt;&#x2F;p&gt;
+&lt;p&gt;Quite nice, lots of fun implementing it.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;the-integration-with-the-ui&quot;&gt;The Integration with the UI&lt;&#x2F;h2&gt;
+&lt;p&gt;I have realized I&#x27;m really bad at building UIs and I&#x27;m also recognizing
+how much effort it is necessary to make a good UI (a lot).&lt;&#x2F;p&gt;
+&lt;p&gt;For that, I would like to thank the folks from
+&lt;a href=&quot;https:&#x2F;&#x2F;glade.gnome.org&#x2F;&quot;&gt;Glade&lt;&#x2F;a&gt; with the awesome and helpful software.&lt;&#x2F;p&gt;
+&lt;p&gt;Well, at the moment I&#x27;m implementing a simple program that creates a
+Widget to show all interesting information we will be providing on GNOME
+Videos. You may check the application
+&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;victortoso&#x2F;totem-tvshows&quot;&gt;here&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;the-goal&quot;&gt;The goal:&lt;&#x2F;h2&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;1406-01-totem-widget-goal.png&quot; alt=&quot;Screenshot of goal&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;current-status&quot;&gt;Current status&lt;&#x2F;h2&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;1406-02-totem-widget-status.png&quot; alt=&quot;Screenshot of current status&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;life&quot;&gt;Life&lt;&#x2F;h2&gt;
+&lt;p&gt;World cup is going on, traffic jam everywhere but people are in quite
+good mood here in Brazil. I&#x27;m happier mostly because of my new great
+friend, Marvin.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;1406-03-marvin.png&quot; alt=&quot;Marvin is my dog :)&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+</description>
+            </item>
+        
+            <item>
+                <title>GSoC 2014 Report #3 - gom</title>
+                <pubDate>Tue, 10 Jun 2014 00:00:00 +0000</pubDate>
+                <link>https%3A//victortoso.com/blog-1405/</link>
+                <guid>https%3A//victortoso.com/blog-1405/</guid>
+                <description>&lt;h2 id=&quot;gom&quot;&gt;gom&lt;&#x2F;h2&gt;
+&lt;p&gt;Most of the work I&#x27;ve being doing since last report is improving the
+TVDB source in Grilo Plugins in order to have a cache for all data that
+you have once downloaded from thetvdb.com.&lt;&#x2F;p&gt;
+&lt;p&gt;I&#x27;m doing that with gom.&lt;&#x2F;p&gt;
+&lt;p&gt;At first I thought it was a bit complicated as creating sql queries
+directly is easier. But under the hood gom does a lot of useful things
+that you don&#x27;t even need to bother thinking. It is good to see that &lt;a href=&quot;http:&#x2F;&#x2F;www.audidude.com&#x2F;blog&#x2F;2014&#x2F;04&#x2F;12&#x2F;gom.html&quot;&gt;it
+was moved&lt;&#x2F;a&gt; to
+git.gnome.org.&lt;&#x2F;p&gt;
+&lt;p&gt;Also, It was really good to see &lt;a href=&quot;http:&#x2F;&#x2F;magnatune.com&#x2F;&quot;&gt;Magnatune&lt;&#x2F;a&gt;
+working when I was reading the &lt;a href=&quot;http:&#x2F;&#x2F;sai-prayaga.rhcloud.com&#x2F;blog&#x2F;2014&#x2F;06&#x2F;05&#x2F;grilo-plugins-and-ampache&#x2F;&quot;&gt;last
+post&lt;&#x2F;a&gt;
+from Sai. It was my first patch to GNOME :). I&#x27;m thinking about updating
+the Magnatune source with gom in the near future and probably with more
+features. Let&#x27;s see!&lt;&#x2F;p&gt;
+&lt;p&gt;Note: One could check the thetvdb source patches
+&lt;a href=&quot;https:&#x2F;&#x2F;bugzilla.gnome.org&#x2F;show_bug.cgi?id=672933&quot;&gt;here&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;next&quot;&gt;Next&lt;&#x2F;h2&gt;
+&lt;p&gt;The integration with GNOME Videos! I&#x27;m excited to see this working :)&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;guadec&quot;&gt;Guadec&lt;&#x2F;h2&gt;
+&lt;p&gt;Oh yeah! I loved last year conference and I wouldn&#x27;t miss this year.
+Thanks very much to the GNOME Foundation for helping out with the
+sponsorship.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;1405-01-gnome-sponsored-badge.png&quot; alt=&quot;GNOME rocks!&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+</description>
+            </item>
+        
+            <item>
+                <title>GSoC 2014 Report #2 - The TVDB - Tests and Libs</title>
+                <pubDate>Tue, 03 Jun 2014 00:00:00 +0000</pubDate>
+                <link>https%3A//victortoso.com/blog-1404/</link>
+                <guid>https%3A//victortoso.com/blog-1404/</guid>
+                <description>&lt;h2 id=&quot;keep-moving&quot;&gt;Keep moving!&lt;&#x2F;h2&gt;
+&lt;p&gt;One of the great features of the TVDB is all the image gallery that they
+have and provide. To get as much interesting data as possible using
+Grilo we need to extend our source and a great way to do it is through
+creating custom metadata-keys.&lt;&#x2F;p&gt;
+&lt;p&gt;With these newly created metadata-keys the TVDB source can now provide
+an url to the most voted Fanart, Poster and Banner of the tv show.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;tests&quot;&gt;Tests&lt;&#x2F;h2&gt;
+&lt;p&gt;I had included a few tests in the first week but it was just to show
+that the source was usable. The current version of the tests check if
+the source is finding the right data in a resolve operation.&lt;&#x2F;p&gt;
+&lt;p&gt;Simple enough but helped a lot finding bugs already :)&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;libs&quot;&gt;Libs&lt;&#x2F;h2&gt;
+&lt;p&gt;Well, I thought it would be nice to point a few libraries that I have
+never used before implementing this source:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http:&#x2F;&#x2F;xmlsoft.org&#x2F;&quot;&gt;Libxml&lt;&#x2F;a&gt;: Yes, never! I always choose JSON when
+available! :) The library has a nice documentation with samples but
+what really helped me was others sources in Grilo. I&#x27;ve also
+realized that I&#x27;m not big fan of
+&lt;a href=&quot;https:&#x2F;&#x2F;twitter.com&#x2F;jeresig&#x2F;status&#x2F;472094314995392512&quot;&gt;camelCase&lt;&#x2F;a&gt;.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;http:&#x2F;&#x2F;www.libarchive.org&#x2F;&quot;&gt;Libarchive&lt;&#x2F;a&gt;: I&#x27;ve come to know about
+this library in Planet feed when Bastien posted &lt;a href=&quot;http:&#x2F;&#x2F;www.hadess.net&#x2F;2013&#x2F;12&#x2F;on-beauty-of-libarchive.html&quot;&gt;about
+it&lt;&#x2F;a&gt;.
+Currently it is also included in Lua-Factory &lt;a href=&quot;https:&#x2F;&#x2F;bugzilla.gnome.org&#x2F;show_bug.cgi?id=728525&quot;&gt;with a
+function&lt;&#x2F;a&gt; which
+provides &#x27;unzip&#x27; to lua-sources in Grilo. Quite awesome.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;chergert&#x2F;gom&#x2F;&quot;&gt;Libgom&lt;&#x2F;a&gt;: Awesome but not very
+easy. The examples and
+&lt;a href=&quot;http:&#x2F;&#x2F;www.audidude.com&#x2F;blog&#x2F;2011&#x2F;03&#x2F;25&#x2F;gom-data-mapper.html&quot;&gt;the&lt;&#x2F;a&gt;
+&lt;a href=&quot;http:&#x2F;&#x2F;www.hadess.net&#x2F;2014&#x2F;04&#x2F;what-is-gom.html&quot;&gt;blog&lt;&#x2F;a&gt;
+&lt;a href=&quot;http:&#x2F;&#x2F;www.audidude.com&#x2F;blog&#x2F;2014&#x2F;04&#x2F;12&#x2F;gom.html&quot;&gt;posts&lt;&#x2F;a&gt; are the
+best documentation. I&#x27;ve started with a simple DB and at this moment
+I&#x27;m envolving from there before applying it to the TVDB.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;Hopefully I&#x27;m going to finish the coding of the TVDB source soon enough
+and then I&#x27;ll be starting the integration with Totem GNOME Videos. I&#x27;m
+really excited to see all work combined.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;relax&quot;&gt;Relax&lt;&#x2F;h2&gt;
+&lt;p&gt;Beautiful GNOME-shaped soap. Smells so good!&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;1404-01-gnome-pink.png&quot; alt=&quot;GNOME Soap&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+</description>
+            </item>
+        
+            <item>
+                <title>GSoC 2014 Report #1 - The TVDB</title>
+                <pubDate>Sat, 24 May 2014 00:00:00 +0000</pubDate>
+                <link>https%3A//victortoso.com/blog-1403/</link>
+                <guid>https%3A//victortoso.com/blog-1403/</guid>
+                <description>&lt;h2 id=&quot;start&quot;&gt;Start&lt;&#x2F;h2&gt;
+&lt;p&gt;This is the first weekend since the beginning of GSoC coding period and
+it has been satisfactory. For those that have no clue on what I&#x27;ll be
+working on this summer, &lt;a href=&quot;https:&#x2F;&#x2F;wiki.gnome.org&#x2F;Outreach&#x2F;SummerOfCode&#x2F;2014&#x2F;Projects&#x2F;VictorToso_VideosAndMusicWithGrilo&quot;&gt;part of
+it&lt;&#x2F;a&gt;
+is implementing TV Shows support in GNOME Videos!&lt;&#x2F;p&gt;
+&lt;p&gt;In order to provide all information necessary to the interface, we will
+be using Grilo with the &lt;a href=&quot;http:&#x2F;&#x2F;thetvdb.com&#x2F;&quot;&gt;The TVDB&lt;&#x2F;a&gt; source which is
+what I&#x27;m working on at the moment.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;the-tvdb&quot;&gt;The TVDB&lt;&#x2F;h2&gt;
+&lt;p&gt;The TVDB is an &amp;amp;quot;open database for television fans&amp;amp;quot; and
+it is just awesome. This database provides tons of information and
+images of series and episodes in several languages. It is a great source
+for Grilo and will fulfill completely our need.&lt;&#x2F;p&gt;
+&lt;p&gt;I strongly recommend a little browsing in the image gallery which has
+banners, fan art, posters like
+&lt;a href=&quot;http:&#x2F;&#x2F;thetvdb.com&#x2F;?tab=series&amp;amp;amp;id=73255&quot;&gt;House&lt;&#x2F;a&gt;, &lt;a href=&quot;http:&#x2F;&#x2F;thetvdb.com&#x2F;?tab=series&amp;amp;amp;id=81189&amp;amp;amp;lid=7&quot;&gt;Breaking
+Bad&lt;&#x2F;a&gt;.
+They have animes too like
+&lt;a href=&quot;http:&#x2F;&#x2F;thetvdb.com&#x2F;?tab=series&amp;amp;amp;id=78857&amp;amp;amp;lid=7&quot;&gt;Naruto&lt;&#x2F;a&gt;
+or
+&lt;a href=&quot;http:&#x2F;&#x2F;thetvdb.com&#x2F;?tab=series&amp;amp;amp;id=70350&amp;amp;amp;lid=7&quot;&gt;Evangelion&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;grilo-source-grl-thetvdb&quot;&gt;Grilo Source: grl-thetvdb&lt;&#x2F;h2&gt;
+&lt;p&gt;The first version is up on
+&lt;a href=&quot;https:&#x2F;&#x2F;bugzilla.gnome.org&#x2F;show_bug.cgi?id=672933&quot;&gt;bugzilla&lt;&#x2F;a&gt; not ready
+to upstream yet but it is functional. At this stage I&#x27;m not holding the
+data locally in any form. Every time the application request something
+to grl-thetvdb it will fetch the data from thetvdb.com which is poor
+design.&lt;&#x2F;p&gt;
+&lt;p&gt;But thats all I&#x27;ve got for this first week!&lt;&#x2F;p&gt;
+</description>
+            </item>
+        
+            <item>
+                <title>Google Summer of Code 2014</title>
+                <pubDate>Tue, 22 Apr 2014 00:00:00 +0000</pubDate>
+                <link>https%3A//victortoso.com/blog-1402/</link>
+                <guid>https%3A//victortoso.com/blog-1402/</guid>
+                <description>&lt;h2 id=&quot;another-great-summer-is-coming&quot;&gt;Another great summer is coming&lt;&#x2F;h2&gt;
+&lt;p&gt;I was accepted, &lt;a href=&quot;http:&#x2F;&#x2F;www.victortoso.com&#x2F;magnatune-upstream-and-gsoc.html&quot;&gt;once
+again&lt;&#x2F;a&gt;, at
+Google Summer of Code program! I am really excited with the project.
+I&#x27;ll have fun with &lt;a href=&quot;https:&#x2F;&#x2F;live.gnome.org&#x2F;Grilo&quot;&gt;Grilo&lt;&#x2F;a&gt; again by
+implementing a few new plugins and integrating them to Videos and Music.&lt;&#x2F;p&gt;
+&lt;p&gt;Check the &lt;a href=&quot;https:&#x2F;&#x2F;wiki.gnome.org&#x2F;Outreach&#x2F;SummerOfCode&#x2F;2014&#x2F;Projects&#x2F;VictorToso_VideosAndMusicWithGrilo&quot;&gt;wiki of the
+project&lt;&#x2F;a&gt;
+for more info.&lt;&#x2F;p&gt;
+&lt;p&gt;Many thanks to Google for this amazing program and to
+&lt;a href=&quot;https:&#x2F;&#x2F;wiki.gnome.org&#x2F;BastienNocera&quot;&gt;Bastien&lt;&#x2F;a&gt;, which will be mentoring
+me during this period.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;partner-in-this-summer-of-coding&quot;&gt;Partner in this Summer of Coding!&lt;&#x2F;h2&gt;
+&lt;p&gt;Once again we have two brazilians in the GNOME-SoC, me and my great
+friend Watson Sato
+(&lt;a href=&quot;https:&#x2F;&#x2F;wiki.gnome.org&#x2F;Outreach&#x2F;SummerOfCode&#x2F;2014&#x2F;Projects&#x2F;YuumaSato_Pkcs11ModuleEvolution&quot;&gt;yuuma&lt;&#x2F;a&gt;)!
+He&#x27;ll be working in a security module to Evolution. Good luck!&lt;&#x2F;p&gt;
+&lt;p&gt;So, Let&#x27;s have fun!&lt;&#x2F;p&gt;
+</description>
+            </item>
+        
+            <item>
+                <title>Lua-Factory available upstream</title>
+                <pubDate>Tue, 25 Feb 2014 00:00:00 +0000</pubDate>
+                <link>https%3A//victortoso.com/blog-1401/</link>
+                <guid>https%3A//victortoso.com/blog-1401/</guid>
+                <description>&lt;p&gt;It has been four months since the GSoC 2013 code submission. At that
+time the Lua-Factory Plugin was usable but yet with &lt;a href=&quot;http:&#x2F;&#x2F;www.victortoso.com&#x2F;gsoc-last-week-gnome-final-report.html&quot;&gt;some
+issues&lt;&#x2F;a&gt;
+to be dealt.&lt;&#x2F;p&gt;
+&lt;p&gt;It was in the last two weeks that most of those issues were solved
+together with a few recommendations from
+&lt;a href=&quot;http:&#x2F;&#x2F;www.igalia.com&#x2F;nc&#x2F;igalia-247&#x2F;igalian&#x2F;item&#x2F;jasuarez&#x2F;&quot;&gt;Juan&lt;&#x2F;a&gt; and
+&lt;a href=&quot;https:&#x2F;&#x2F;wiki.gnome.org&#x2F;BastienNocera&quot;&gt;Bastien&lt;&#x2F;a&gt; and tonight it was
+merged upstream in Grilo-Plugins repository.&lt;&#x2F;p&gt;
+&lt;p&gt;Hooray!&lt;&#x2F;p&gt;
+&lt;p&gt;The documentation for implementing a Lua sources will come soon.&lt;&#x2F;p&gt;
+&lt;p&gt;If you want to try it, you can always find some guidance in #grilo channel.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;news-from-brazil&quot;&gt;News from Brazil&lt;&#x2F;h2&gt;
+&lt;p&gt;It is Carnaval!&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;1401-01-brasil-2010-desfile-scale.png&quot; alt=&quot;Carnaval!!!&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+</description>
+            </item>
+        
+            <item>
+                <title>GSoC last week, GNOME final report! :)</title>
+                <pubDate>Sat, 21 Sep 2013 00:00:00 +0000</pubDate>
+                <link>https%3A//victortoso.com/blog-1307/</link>
+                <guid>https%3A//victortoso.com/blog-1307/</guid>
+                <description>&lt;p&gt;It&#x27;s been a while since my last post just after GUADEC. I&#x27;ve lost some
+time in August due moving to a new place in Campinas with two friends of
+mine. It was three weeks ago and I&#x27;m still feeling tired (I&#x27;m taking
+some time to get used with this new place).&lt;&#x2F;p&gt;
+&lt;p&gt;Since then, I&#x27;m working on grilo-plugins and this post is all about what
+I&#x27;ve accomplished and what are the next steps after GSoC.&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;the-post-is-bigger-then-usual-so-grab-a-cup-of-coffee&quot;&gt;&lt;em&gt;(The post is bigger then usual so... grab a cup of coffee !)&lt;&#x2F;em&gt;&lt;&#x2F;h3&gt;
+&lt;p&gt;As &lt;a href=&quot;http:&#x2F;&#x2F;www.victortoso.com&#x2F;planet-gsoc-project-and-brazil.html&quot;&gt;I told
+before&lt;&#x2F;a&gt;,
+Grilo has some commands that are translated to the source like Search
+and Browse operations. Good part of my project was translating this
+commands from Grilo to the Lua source and the result of this work was
+the lua-factory plugin.&lt;&#x2F;p&gt;
+&lt;p&gt;The subset of commands available to Lua sources are: Search, Browse,
+Query, Resolve, May Resolve, Store and Remove. I&#x27;ve developed two Lua
+sources that implement those commands besides the last two (Store and
+Remove) due a library dependency that will be commented bellow.&lt;&#x2F;p&gt;
+&lt;p&gt;Those Lua sources are &lt;a href=&quot;http:&#x2F;&#x2F;www.metrolyrics.com&#x2F;&quot;&gt;Metrolyrics&lt;&#x2F;a&gt; and
+&lt;a href=&quot;https:&#x2F;&#x2F;www.flickr.com&#x2F;&quot;&gt;Flickr&lt;&#x2F;a&gt; which already exists as C source.&lt;&#x2F;p&gt;
+&lt;p&gt;Due the limitations of the standards libraries of Lua and the need of
+interaction with Grilo itself the lua library was created. This is a set
+of lua modules that are helpful for the developers. Those modules could
+be wrappers of C librarys or custom functions.&lt;&#x2F;p&gt;
+&lt;p&gt;For instance, to be able to interact with Flickr web service a wrapper
+of &lt;a href=&quot;http:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;OAuth&quot;&gt;oauth&lt;&#x2F;a&gt; library was created;&lt;&#x2F;p&gt;
+&lt;p&gt;And all this were just the first steps;&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;current-issues-that-should-be-improved&quot;&gt;Current issues that should be improved&lt;&#x2F;h2&gt;
+&lt;p&gt;The main goal of the GSoC project was being able to write plugins with
+Lua and them should be transparent to Grilo, making no difference
+between a C or Lua source. I feel that was accomplished but no without
+problems, lets check some of them &lt;sup class=&quot;footnote-reference&quot;&gt;&lt;a href=&quot;#1&quot;&gt;1&lt;&#x2F;a&gt;&lt;&#x2F;sup&gt;:&lt;&#x2F;p&gt;
+&lt;div class=&quot;footnote-definition&quot; id=&quot;1&quot;&gt;&lt;sup class=&quot;footnote-definition-label&quot;&gt;1&lt;&#x2F;sup&gt;
+&lt;p&gt;If the reader see more problems not listed, feel free to comment it!&lt;&#x2F;p&gt;
+&lt;&#x2F;div&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;The annoying userdata: To perform the callback from Lua source to
+the Application, we need to store the userdata passed from
+lua-factory somehow. There are a couple of ways of doing it but I
+didn&#x27;t made it work before GUADEC and it was kind of low priority
+after; For instance, the Search operation in Lua should be a
+function called grl_source_search() wich have two parameters:
+(1) a Table with the data that the functions need; (2) An userdata which
+is a pointer to a structure in C (which is no useful for Lua code); A
+better approach is storing this in the Lua stack, hiding from lua code;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;Improving the GrlNet library with the possibility to POST content to
+the web. This was the reason that I didn&#x27;t implement Store and
+Remove in the Lua Flickr source :(&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;A better callback implementation (or a totally different one). This
+is one of the topics I talked with
+&lt;a href=&quot;http:&#x2F;&#x2F;www.igalia.com&#x2F;nc&#x2F;igalia-247&#x2F;igalian&#x2F;item&#x2F;jasuarez&#x2F;&quot;&gt;Juan&lt;&#x2F;a&gt;
+in GUADEC and this could actually be expanded to Grilo itself so,
+I&#x27;ll keep it to another post;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;More sources! In order to be sure that this code is trustable a few
+more sources are needed; They will be implemented after the two
+first topics! &lt;sup class=&quot;footnote-reference&quot;&gt;&lt;a href=&quot;#2&quot;&gt;2&lt;&#x2F;a&gt;&lt;&#x2F;sup&gt;)&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;div class=&quot;footnote-definition&quot; id=&quot;2&quot;&gt;&lt;sup class=&quot;footnote-definition-label&quot;&gt;2&lt;&#x2F;sup&gt;
+&lt;p&gt;If the reader want to see a source implemented to Grilo,
+tell me! I&#x27;m kind of building a small list :)&lt;&#x2F;p&gt;
+&lt;&#x2F;div&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;the-last-week-of-gsoc-period&quot;&gt;The last week of GSoC Period&lt;&#x2F;h2&gt;
+&lt;p&gt;This week I&#x27;m not writing much code but trying to make a useful
+documentation to help other developers.&lt;&#x2F;p&gt;
+&lt;p&gt;But as we can see in google&#x27;s
+&lt;a href=&quot;http:&#x2F;&#x2F;www.google-melange.com&#x2F;gsoc&#x2F;events&#x2F;google&#x2F;gsoc2013&quot;&gt;timeline&lt;&#x2F;a&gt;,
+next week I&#x27;ll be submitting the source code I&#x27;ve developed so far.&lt;&#x2F;p&gt;
+&lt;p&gt;It will be the last week of GSoC but not my last in Grilo or in this
+project. Hopefully, I&#x27;ll have a few more improvements in the end of
+October!&lt;&#x2F;p&gt;
+&lt;p&gt;A big thanks to Juan for all the feedback, help and insights! I&#x27;ve made
+big steps these last three months and you help me out everytime :)&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;final-considerations&quot;&gt;Final considerations&lt;&#x2F;h2&gt;
+&lt;p&gt;I&#x27;ve enjoyed a lot this period! I&#x27;ve learnt a lot! I&#x27;ve met amazing
+people! I&#x27;ve traveled more then 10&#x27;000Km to a beautiful city to attend a
+super conference! I&#x27;ve learnt Lua (and loving it!)&lt;&#x2F;p&gt;
+&lt;p&gt;I&#x27;m lucky. Thanks to GNOME and Google for that!&lt;&#x2F;p&gt;
+&lt;p&gt;Wow, you made it till here. You can reclaim a beer in the next GUADEC!&lt;&#x2F;p&gt;
+&lt;p&gt;Did you know ? Grilo is a type of bug in Brazil ? A Cricket !&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;1307-01-grilo-cricket.png&quot; alt=&quot;Grilo is a bug!&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+</description>
+            </item>
+        
+            <item>
+                <title>Brno, GUADEC and Grilo</title>
+                <pubDate>Mon, 05 Aug 2013 00:00:00 +0000</pubDate>
+                <link>https%3A//victortoso.com/blog-1306/</link>
+                <guid>https%3A//victortoso.com/blog-1306/</guid>
+                <description>&lt;p&gt;Brno is amazing. Just amazing. The people from here try to be helpfull
+even if they don&#x27;t speak a single word in English. The food is really
+good and quite cheap and the city is beautiful! I&#x27;m glad that I still
+have time for another tour around!&lt;&#x2F;p&gt;
+&lt;p&gt;Well, travelling without many concerns, meeting amazing people and with
+the opportunity to learn things you love... GUADEC has been an amazing
+experience.&lt;&#x2F;p&gt;
+&lt;p&gt;The talks were really good but the people I have met here are awesome.&lt;&#x2F;p&gt;
+&lt;p&gt;I&#x27;m really glad to finally meet my mentor Juan Suárez and some folks
+from Red Hat. It was awesome to talk with some others interns such as
+Kalev, Marcos, Valentín, Alessandro, Bogdan and Carlos. It was brief but
+really nice. Hope to meet everybody again next year!&lt;&#x2F;p&gt;
+&lt;p&gt;Here in GUADEC I had a lightning talk trying to briefly explain what my
+GSoC is about. It was hard to do it in less then 3 minutes. I was quite
+nervous too but everything went well :)&lt;&#x2F;p&gt;
+&lt;p&gt;If anybody would like to know more about grilo or anything related ping
+me on #grilo&lt;&#x2F;p&gt;
+&lt;p&gt;I had the opportunity to talk with Juan about the GSoC project, Grilo
+and some plans for the future. I&#x27;m a bit excited to keep contributing to
+Grilo.&lt;&#x2F;p&gt;
+&lt;p&gt;I would like to thank GNOME Fundation for the sponsorship and making
+this travel possible; to Google for the Summer of Code Program; to
+Fabiano Fidêncio for helping me A LOT in Brno.&lt;&#x2F;p&gt;
+&lt;p&gt;And that&#x27;s all.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;1306-01-gnome-sponsored-badge.png&quot; alt=&quot;GNOME rocks!&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+</description>
+            </item>
+        
+            <item>
+                <title>My GSOC on Grilo!</title>
+                <pubDate>Sun, 04 Aug 2013 00:00:00 +0000</pubDate>
+                <link>https%3A//victortoso.com/talks/talk-1301/</link>
+                <guid>https%3A//victortoso.com/talks/talk-1301/</guid>
+                <description>&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;2013.guadec.org&quot;&gt;GUADEC 2013&lt;&#x2F;a&gt; was hosted in Brno, Czech Republic and it
+was my first time doing a talk for a big audience, quite an experience! I can
+see how nervous I got in the two minutes I had for the interns lightning talk.&lt;&#x2F;p&gt;
+&lt;p&gt;Not super instructive video to watch but quite funny to me :)&lt;&#x2F;p&gt;
+&lt;p&gt;Also, It is very interesting that a little bit more then a year later, I would
+be moving to Brno to start a new phase of my life.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.superlectures.com&#x2F;guadec2013&#x2F;interns-lightning-talks?start=1:21:12&quot;&gt;Video&lt;&#x2F;a&gt;
+&lt;a href=&quot;&#x2F;slides&#x2F;1301-guadec-light-talk-about-grilo.pdf&quot;&gt;Slides&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+</description>
+            </item>
+        
+            <item>
+                <title>The unpredictable, GSoC report and next steps</title>
+                <pubDate>Wed, 17 Jul 2013 00:00:00 +0000</pubDate>
+                <link>https%3A//victortoso.com/blog-1305/</link>
+                <guid>https%3A//victortoso.com/blog-1305/</guid>
+                <description>&lt;p&gt;Oh boy, there are things that can slow you down. It&#x27;s been three weeks
+since my last post, in this short period of time I had a car accident (
+I&#x27;m 100% alright! ), one root canal treatment (with a good dose of
+pain), my girlfriend moved to another city... Oh well, too many
+headaches in three weeks!&lt;&#x2F;p&gt;
+&lt;p&gt;But when I was in good mood (or healthy enough) here I was, in front of
+this screen trying to make good code to Grilo... and I like the
+achievements so far. Lets take a look.&lt;&#x2F;p&gt;
+&lt;p&gt;I started to implement the &lt;a href=&quot;http:&#x2F;&#x2F;www.metrolyrics.com&#x2F;&quot;&gt;Metrolyrics&lt;&#x2F;a&gt;
+plugin before writing any C code to Grilo in order to have a lua-based
+plugin to use. A lot of this plugin has changed to work with
+lua-factory. For those who &lt;a href=&quot;http:&#x2F;&#x2F;www.victortoso.com&#x2F;planet-gsoc-project-and-brazil.html&quot;&gt;don&#x27;t
+remember&lt;&#x2F;a&gt;,
+lua-factory is part of grilo-plugins, and it is the glue-code in charge
+to load-and-use the lua-plugins.&lt;&#x2F;p&gt;
+&lt;p&gt;In this moment, we can use the &lt;em&gt;Search&lt;&#x2F;em&gt;, &lt;em&gt;Browse&lt;&#x2F;em&gt;, &lt;em&gt;Query&lt;&#x2F;em&gt; and &lt;em&gt;Resolve&lt;&#x2F;em&gt;
+operations from Grilo to this lua-plugin.&lt;&#x2F;p&gt;
+&lt;p&gt;As the lua code needs some help from C to perform a few operations,
+lua-library was created to be a module to lua. This module has two
+functions implemented: Fetch, to perform async fetch from web and
+Callback, to return the content to the application.&lt;&#x2F;p&gt;
+&lt;p&gt;A lot has to be done yet. Hopefully without any personal headache :)&lt;&#x2F;p&gt;
+&lt;p&gt;For instance:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;em&gt;Store&lt;&#x2F;em&gt; and &lt;em&gt;Remove&lt;&#x2F;em&gt; operations must be implemented in lua-factory;&lt;&#x2F;li&gt;
+&lt;li&gt;Log and Error functions to the lua-library;&lt;&#x2F;li&gt;
+&lt;li&gt;Better care with user configs, metadata-keys&lt;&#x2F;li&gt;
+&lt;li&gt;Solving some problems with UTF-8 chars&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;I will be writing a new lua-plugin this week and I&#x27;m trying to choose
+between &lt;a href=&quot;https:&#x2F;&#x2F;soundcloud.com&#x2F;&quot;&gt;Soundcloud&lt;&#x2F;a&gt; or
+&lt;a href=&quot;http:&#x2F;&#x2F;www.last.fm&#x2F;&quot;&gt;Last.fm&lt;&#x2F;a&gt;. Both have the necessary features to be
+implemented that Metrolyrics lacks for Grilo.&lt;&#x2F;p&gt;
+&lt;p&gt;Well, I intend to make my next post in Brno before GUADEC and another
+post after with much more GNOMExperience...&lt;&#x2F;p&gt;
+</description>
+            </item>
+        
+            <item>
+                <title>Planet, GSoC project and Brazil</title>
+                <pubDate>Mon, 24 Jun 2013 00:00:00 +0000</pubDate>
+                <link>https%3A//victortoso.com/blog-1304/</link>
+                <guid>https%3A//victortoso.com/blog-1304/</guid>
+                <description>&lt;p&gt;First of all, hello everybody from Planet Gnome! This is the first post
+that will take place there. It is a really nice community where I&#x27;ve
+been learning always something new from the past 5 months. I hope I can
+put some interesting hacks for you guys.&lt;&#x2F;p&gt;
+&lt;p&gt;Thank you &lt;a href=&quot;https:&#x2F;&#x2F;wiki.gnome.org&#x2F;AlbertoRuiz&quot;&gt;Alberto Ruiz&lt;&#x2F;a&gt; for
+including me.&lt;&#x2F;p&gt;
+&lt;p&gt;I was
+&lt;a href=&quot;http:&#x2F;&#x2F;www.victortoso.com&#x2F;magnatune-upstream-and-gsoc.html&quot;&gt;accepted&lt;&#x2F;a&gt;
+in GSoC this year to be working with
+&lt;a href=&quot;https:&#x2F;&#x2F;live.gnome.org&#x2F;Grilo&quot;&gt;Grilo&lt;&#x2F;a&gt;. It is a really nice project which
+I&#x27;m always having some fun while coding. I&#x27;m being mentored by &lt;a href=&quot;https:&#x2F;&#x2F;wiki.gnome.org&#x2F;JuanSuarez&quot;&gt;Juan
+Suarez&lt;&#x2F;a&gt; who has been always helpful
+with my problems.&lt;&#x2F;p&gt;
+&lt;p&gt;Grilo is basically a framework to get content through plugins. A lot of
+plugins were made already and all were written in C. My GSoC project is
+about making possible to write plugins in &lt;a href=&quot;http:&#x2F;&#x2F;www.lua.org&#x2F;&quot;&gt;Lua&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;About the project itself, I&#x27;ll be writing a glue-code between Grilo and
+Lua. They&#x27;ll be tagged as lua-factory as the c code dealing with lua;
+and grilo-library as a library written in c to be used by the
+lua-plugins.&lt;&#x2F;p&gt;
+&lt;p&gt;I tried to make a simple design to represent how grilo and grilo-plugins
+works now and where my code will take place.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;1304-01-grilo-and-lua-factory.png&quot; alt=&quot;Design of Grilo + Grilo Plugins with Lua-Factory and Lua sources&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;The &#x27;search&#x27; is one of the subset commands that Grilo can request.&lt;&#x2F;p&gt;
+&lt;p&gt;The progress in the moment I&#x27;m writing this post is that the lyric
+plugin get the content (by &#x27;search&#x27; and &#x27;browse&#x27;) and I&#x27;m able to load
+the plugin with my current lua-factory but can&#x27;t perform any command
+yet.&lt;&#x2F;p&gt;
+&lt;p&gt;I guest this is it about GSoC for now :)&lt;&#x2F;p&gt;
+&lt;p&gt;I would also like to say to those who followed me here, we have at least
+three Brazilians interns in GNOME this year: &lt;a href=&quot;https:&#x2F;&#x2F;15experience.wordpress.com&#x2F;&quot;&gt;Rafael
+Fonseca&lt;&#x2F;a&gt;, &lt;a href=&quot;https:&#x2F;&#x2F;wiki.gnome.org&#x2F;MelissaWen&quot;&gt;Melissa
+Wen&lt;&#x2F;a&gt; and myself. Brazil is in such
+crazy historical moment right now.&lt;&#x2F;p&gt;
+&lt;p&gt;If you know absolute nothing about it please do :)&lt;&#x2F;p&gt;
+&lt;p&gt;To finish this post, this beautiful GNOME cup that my girlfriend gave to
+me in my birthday.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;1304-02-gnome-cup.png&quot; alt=&quot;GNOME cup&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+</description>
+            </item>
+        
+            <item>
+                <title>Lua, Lyrics and GUADEC</title>
+                <pubDate>Sun, 09 Jun 2013 00:00:00 +0000</pubDate>
+                <link>https%3A//victortoso.com/blog-1303/</link>
+                <guid>https%3A//victortoso.com/blog-1303/</guid>
+                <description>&lt;p&gt;First of all, as a good beginner in blogging I have promised that&lt;&#x2F;p&gt;
+&lt;pre style=&quot;background-color:#2b303b;&quot;&gt;
+&lt;span style=&quot;color:#c0c5ce;&quot;&gt;I&amp;#39;ll make a proper introducing of the project later this week
+&lt;&#x2F;span&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;which I did not. Sorry for that. I hope to do it soon.&lt;&#x2F;p&gt;
+&lt;p&gt;I&#x27;ve been studying Lua since last weekend with the good guidance of the
+&lt;a href=&quot;http:&#x2F;&#x2F;www.lua.org&#x2F;pil&#x2F;&quot;&gt;Programming in Lua&lt;&#x2F;a&gt; (written by &lt;a href=&quot;http:&#x2F;&#x2F;www.inf.puc-rio.br&#x2F;%7Eroberto&#x2F;&quot;&gt;Roberto
+Ierusalimschy&lt;&#x2F;a&gt; as a way to improve
+my lua skills. Actually, before starting reading this book I thought my
+knowledge of lua was _&lt;a href=&quot;https:&#x2F;&#x2F;victortoso.com&#x2F;blog-1303&#x2F;&quot;&gt;ok&lt;&#x2F;a&gt; because it is easy to understand and make
+some code. Naive!&lt;&#x2F;p&gt;
+&lt;p&gt;Lua is simple but we can do a lot with it. The book is helping me to
+really understand how powerful Lua can be. Actually, I don&#x27;t think that
+all I&#x27;m learning is necessary to implement plugins. I keep studying
+because I&#x27;m enjoying Lua. :)&lt;&#x2F;p&gt;
+&lt;p&gt;I&#x27;ve started the lua-plugin that I&#x27;ll be using in the next steps of my
+GSoC project. It&#x27;ll be about Lyrics, using an available API of
+&lt;a href=&quot;http:&#x2F;&#x2F;www.metrolyrics.com&#x2F;&quot;&gt;Metrolyrics&lt;&#x2F;a&gt;. This plugin will help me for
+the next 4 weeks or so with a subset of Grilo functions.&lt;&#x2F;p&gt;
+&lt;p&gt;Good news is that I&#x27;ll attend to GUADEC in Brno, Czech Republic in
+August. It will be an amazing trip and I&#x27;ll hopefully meet some of the
+people that helped me to achieve all this.&lt;&#x2F;p&gt;
+</description>
+            </item>
+        
+            <item>
+                <title>Magnatune upstream and GSoC</title>
+                <pubDate>Tue, 28 May 2013 00:00:00 +0000</pubDate>
+                <link>https%3A//victortoso.com/blog-1302/</link>
+                <guid>https%3A//victortoso.com/blog-1302/</guid>
+                <description>&lt;p&gt;I was having a busy week until this Sunday which happened to be my
+birthday!&lt;&#x2F;p&gt;
+&lt;p&gt;I just made 25 years old and the celebration with my family was
+remarkable.&lt;&#x2F;p&gt;
+&lt;p&gt;I&#x27;m just happy with such great family.&lt;&#x2F;p&gt;
+&lt;p&gt;But besides my family, two amazing things made this last three days
+quite unforgettable.&lt;&#x2F;p&gt;
+&lt;p&gt;First, my first code to an open source community reached the upstream!
+&lt;a href=&quot;http:&#x2F;&#x2F;blogs.igalia.com&#x2F;jasuarez&#x2F;2013&#x2F;05&#x2F;25&#x2F;grilo-plugins-0-2-8-released&#x2F;&quot;&gt;As posted by
+Juan&lt;&#x2F;a&gt;,
+within the 0.2.8 release of grilo-plugins is included the Magnatune
+plugin.&lt;&#x2F;p&gt;
+&lt;p&gt;I&#x27;m really glad about it! Thanks to
+&lt;a href=&quot;https:&#x2F;&#x2F;wiki.gnome.org&#x2F;JuanSuarez&quot;&gt;Juan&lt;&#x2F;a&gt; and
+&lt;a href=&quot;https:&#x2F;&#x2F;wiki.gnome.org&#x2F;BastienNocera&quot;&gt;Bastien&lt;&#x2F;a&gt; for all suggestions and
+for reviewing the patches!&lt;&#x2F;p&gt;
+&lt;p&gt;Second, I was accepted at Google Summer of Code program to keep working
+with grilo! I&#x27;ll make a proper introducing of the project later this
+week but the reader can have an idea at the abstract page.&lt;&#x2F;p&gt;
+&lt;p&gt;Thanks to &lt;a href=&quot;https:&#x2F;&#x2F;www.gnome.org&#x2F;&quot;&gt;GNOME&lt;&#x2F;a&gt; and Google for it.&lt;&#x2F;p&gt;
+&lt;p&gt;A lot is happening and I&#x27;m full of good expectations.&lt;&#x2F;p&gt;
+&lt;p&gt;:)&lt;&#x2F;p&gt;
+</description>
+            </item>
+        
+            <item>
+                <title>Step by step</title>
+                <pubDate>Tue, 14 May 2013 00:00:00 +0000</pubDate>
+                <link>https%3A//victortoso.com/blog-1301/</link>
+                <guid>https%3A//victortoso.com/blog-1301/</guid>
+                <description>&lt;p&gt;Time goes by when you finally finish your 18 years studying things that
+people said you need to learn. Finally you start doing more and more
+things that you want to do. Learning what you think is interesting and
+working with what you love.&lt;&#x2F;p&gt;
+&lt;p&gt;I&#x27;m entering in a new phase of my life.&lt;&#x2F;p&gt;
+&lt;p&gt;I&#x27;ve been working in a few projects that made most of my days goes by in
+a blink of an eye. Which is something that would make most of us really
+happy.&lt;&#x2F;p&gt;
+&lt;p&gt;But it was recently that I felt a different kind of happiness with my
+work.&lt;&#x2F;p&gt;
+&lt;p&gt;I was studying how &lt;a href=&quot;https:&#x2F;&#x2F;live.gnome.org&#x2F;Grilo&quot;&gt;Grilo&lt;&#x2F;a&gt; works to use it
+in small project of mine.&lt;&#x2F;p&gt;
+&lt;p&gt;Out of curiosity, I began to have more interest in how exactly Grilo
+works and the features that were expected to its future. It was about
+time to
+&lt;a href=&quot;http:&#x2F;&#x2F;www.google-melange.com&#x2F;gsoc&#x2F;homepage&#x2F;google&#x2F;gsoc2013&quot;&gt;GSoC&lt;&#x2F;a&gt;
+period start and I felt quite comfortable at seeking guidance with Grilo
+developers to share my will to help.&lt;&#x2F;p&gt;
+&lt;p&gt;A little more than a month since my first contact with the community and
+I&#x27;m still trying to make some code reach upstream &lt;a href=&quot;https:&#x2F;&#x2F;bugzilla.gnome.org&#x2F;show_bug.cgi?id=698523&quot;&gt;a
+plugin&lt;&#x2F;a&gt; but... what
+amazing experience this has been!&lt;&#x2F;p&gt;
+&lt;p&gt;I didn&#x27;t know Magnatune until Juan introducing it to me. It&#x27;s really
+nice (&lt;a href=&quot;http:&#x2F;&#x2F;magnatune.com&#x2F;&quot;&gt;check it out&lt;&#x2F;a&gt;).&lt;&#x2F;p&gt;
+&lt;p&gt;Even if some audio players have already a good Magnatune plugin (like
+&lt;a href=&quot;https:&#x2F;&#x2F;wiki.gnome.org&#x2F;Apps&#x2F;Rhythmbox&quot;&gt;Rhythmbox&lt;&#x2F;a&gt;), the plugin I&#x27;m
+working on could be useful for others applications that may be
+integrated with Grilo.&lt;&#x2F;p&gt;
+&lt;p&gt;The feeling of usefulness that I rarely felt with others projects I have
+worked, I found after this time I&#x27;ve spent with Grilo.&lt;&#x2F;p&gt;
+&lt;p&gt;I&#x27;m really excited with all this. I&#x27;m learning a lot and I truly believe
+that I can help a lot more.&lt;&#x2F;p&gt;
+&lt;p&gt;Step by step, giving back to the community what I&#x27;ve been using for so
+many years!&lt;&#x2F;p&gt;
+</description>
+            </item>
+        
+    </channel>
+</rss>

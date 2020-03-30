@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Victor Toso</title>
+        <link>https%3A//victortoso.com</link>
+        <description>Nothing relevant</description>
+        <generator>Zola</generator>
+        <language>en</language>
+        <atom:link href="https%3A//victortoso.com/tags/gtk/rss.xml" rel="self" type="application/rss+xml"/>
+        <lastBuildDate>Wed, 25 Jun 2014 00:00:00 +0000</lastBuildDate>
+        
+            <item>
+                <title>GSoC Report #4 and #5</title>
+                <pubDate>Wed, 25 Jun 2014 00:00:00 +0000</pubDate>
+                <link>https%3A//victortoso.com/blog-1406/</link>
+                <guid>https%3A//victortoso.com/blog-1406/</guid>
+                <description>&lt;h2 id=&quot;hey&quot;&gt;Hey :)&lt;&#x2F;h2&gt;
+&lt;p&gt;I usually write my posts in the weekend when I do have more time to
+think about what I&#x27;ve done and what It is interesting to share. Sadly,
+two weekends ago I was ill due something I&#x27;ve eaten and now I&#x27;ll try to
+summarize two weeks in one post!&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;the-tvdb&quot;&gt;The TVDB&lt;&#x2F;h2&gt;
+&lt;p&gt;Is &lt;a href=&quot;https:&#x2F;&#x2F;git.gnome.org&#x2F;browse&#x2F;grilo-plugins&#x2F;commit&#x2F;?id=b2b937413a26a0fe2ad18891a27a30a35b12b26b&quot;&gt;now
+upstream&lt;&#x2F;a&gt;.
+Yay!&lt;&#x2F;p&gt;
+&lt;p&gt;The main care after implementing the cache with Gom was handling
+multiple requests of the same TV Show in a short period of time
+(concurrency).&lt;&#x2F;p&gt;
+&lt;p&gt;For instance, you are browsing some TV Show using some application that
+uses Grilo to requests metadata. It may occur several requests of the
+same tv show like, episode 01, episode 02, etc.&lt;&#x2F;p&gt;
+&lt;p&gt;We are handling this by fetching the TVDB only once to gather all
+existing data and then resolve the later requests with the cache.&lt;&#x2F;p&gt;
+&lt;p&gt;Quite nice, lots of fun implementing it.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;the-integration-with-the-ui&quot;&gt;The Integration with the UI&lt;&#x2F;h2&gt;
+&lt;p&gt;I have realized I&#x27;m really bad at building UIs and I&#x27;m also recognizing
+how much effort it is necessary to make a good UI (a lot).&lt;&#x2F;p&gt;
+&lt;p&gt;For that, I would like to thank the folks from
+&lt;a href=&quot;https:&#x2F;&#x2F;glade.gnome.org&#x2F;&quot;&gt;Glade&lt;&#x2F;a&gt; with the awesome and helpful software.&lt;&#x2F;p&gt;
+&lt;p&gt;Well, at the moment I&#x27;m implementing a simple program that creates a
+Widget to show all interesting information we will be providing on GNOME
+Videos. You may check the application
+&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;victortoso&#x2F;totem-tvshows&quot;&gt;here&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;the-goal&quot;&gt;The goal:&lt;&#x2F;h2&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;1406-01-totem-widget-goal.png&quot; alt=&quot;Screenshot of goal&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;current-status&quot;&gt;Current status&lt;&#x2F;h2&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;1406-02-totem-widget-status.png&quot; alt=&quot;Screenshot of current status&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;life&quot;&gt;Life&lt;&#x2F;h2&gt;
+&lt;p&gt;World cup is going on, traffic jam everywhere but people are in quite
+good mood here in Brazil. I&#x27;m happier mostly because of my new great
+friend, Marvin.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;1406-03-marvin.png&quot; alt=&quot;Marvin is my dog :)&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+</description>
+            </item>
+        
+    </channel>
+</rss>

@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+      <!-- Enable responsiveness on mobile devices-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+      <title>Victor Toso</title>
+
+      
+
+      
+          <link rel="stylesheet" href="https://victortoso.com/site.css">
+      
+
+      
+      
+    </head>
+
+    <body class="hack dark main container">
+        
+    
+        
+                
+                    <header>
+                        <nav itemscope itemtype="http://schema.org/SiteNavigationElement">
+                        
+                            <a itemprop="url"
+                               class=""
+                               href="https:&#x2F;&#x2F;victortoso.com">
+                                <span itemprop="name">Archive
+                                </span></a>
+                        
+                            <a itemprop="url"
+                               class=""
+                               href="https:&#x2F;&#x2F;victortoso.com&#x2F;categories&#x2F;code">
+                                <span itemprop="name">Code
+                                </span></a>
+                        
+                            <a itemprop="url"
+                               class=""
+                               href="https:&#x2F;&#x2F;victortoso.com&#x2F;categories&#x2F;talks">
+                                <span itemprop="name">Talks
+                                </span></a>
+                        
+                            <a itemprop="url"
+                               class=""
+                               href="https:&#x2F;&#x2F;victortoso.com&#x2F;tags">
+                                <span itemprop="name">Tags
+                                </span></a>
+                        
+                            <a itemprop="url"
+                               class=""
+                               href="https:&#x2F;&#x2F;victortoso.com&#x2F;about">
+                                <span itemprop="name">About
+                                </span></a>
+                        
+                        </nav>
+                    </header>
+                
+            
+    
+
+<article itemscope itemtype="http://schema.org/BlogPosting">
+    <header>
+        <h1 itemprop="headline">GSoC last week, GNOME final report! :)</h1>
+        <span class="muted">
+    <svg style="margin-bottom:-3px" class="i-clock" viewBox="0 0 32 32"
+         width="16" height="16" fill="none" stroke="currentcolor"
+         stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
+        <circle cx="16" cy="16" r="14"/>
+        <path d="M16 8 L16 16 20 20"/>
+    </svg>
+    <span>4 minute read</span>
+    <svg style="margin-bottom: -3px" class="i-edit" viewBox="0 0 32 32"
+         width="16" height="16" fill="none" stroke="currentcolor"
+         stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
+        <path d="M30 7 L25 2 5 22 3 29 10 27 Z M21 6 L26 11 Z M5 22 L10 27 Z"/>
+    </svg>
+
+    Published: 2013-09-21
+</span>
+    </header>
+    <div itemprop="articleBody">
+      <p>It's been a while since my last post just after GUADEC. I've lost some
+time in August due moving to a new place in Campinas with two friends of
+mine. It was three weeks ago and I'm still feeling tired (I'm taking
+some time to get used with this new place).</p>
+<p>Since then, I'm working on grilo-plugins and this post is all about what
+I've accomplished and what are the next steps after GSoC.</p>
+<h3 id="the-post-is-bigger-then-usual-so-grab-a-cup-of-coffee"><em>(The post is bigger then usual so... grab a cup of coffee !)</em></h3>
+<p>As <a href="http://www.victortoso.com/planet-gsoc-project-and-brazil.html">I told
+before</a>,
+Grilo has some commands that are translated to the source like Search
+and Browse operations. Good part of my project was translating this
+commands from Grilo to the Lua source and the result of this work was
+the lua-factory plugin.</p>
+<p>The subset of commands available to Lua sources are: Search, Browse,
+Query, Resolve, May Resolve, Store and Remove. I've developed two Lua
+sources that implement those commands besides the last two (Store and
+Remove) due a library dependency that will be commented bellow.</p>
+<p>Those Lua sources are <a href="http://www.metrolyrics.com/">Metrolyrics</a> and
+<a href="https://www.flickr.com/">Flickr</a> which already exists as C source.</p>
+<p>Due the limitations of the standards libraries of Lua and the need of
+interaction with Grilo itself the lua library was created. This is a set
+of lua modules that are helpful for the developers. Those modules could
+be wrappers of C librarys or custom functions.</p>
+<p>For instance, to be able to interact with Flickr web service a wrapper
+of <a href="http://en.wikipedia.org/wiki/OAuth">oauth</a> library was created;</p>
+<p>And all this were just the first steps;</p>
+<h2 id="current-issues-that-should-be-improved">Current issues that should be improved</h2>
+<p>The main goal of the GSoC project was being able to write plugins with
+Lua and them should be transparent to Grilo, making no difference
+between a C or Lua source. I feel that was accomplished but no without
+problems, lets check some of them <sup class="footnote-reference"><a href="#1">1</a></sup>:</p>
+<div class="footnote-definition" id="1"><sup class="footnote-definition-label">1</sup>
+<p>If the reader see more problems not listed, feel free to comment it!</p>
+</div>
+<ul>
+<li>
+<p>The annoying userdata: To perform the callback from Lua source to
+the Application, we need to store the userdata passed from
+lua-factory somehow. There are a couple of ways of doing it but I
+didn't made it work before GUADEC and it was kind of low priority
+after; For instance, the Search operation in Lua should be a
+function called grl_source_search() wich have two parameters:
+(1) a Table with the data that the functions need; (2) An userdata which
+is a pointer to a structure in C (which is no useful for Lua code); A
+better approach is storing this in the Lua stack, hiding from lua code;</p>
+</li>
+<li>
+<p>Improving the GrlNet library with the possibility to POST content to
+the web. This was the reason that I didn't implement Store and
+Remove in the Lua Flickr source :(</p>
+</li>
+<li>
+<p>A better callback implementation (or a totally different one). This
+is one of the topics I talked with
+<a href="http://www.igalia.com/nc/igalia-247/igalian/item/jasuarez/">Juan</a>
+in GUADEC and this could actually be expanded to Grilo itself so,
+I'll keep it to another post;</p>
+</li>
+<li>
+<p>More sources! In order to be sure that this code is trustable a few
+more sources are needed; They will be implemented after the two
+first topics! <sup class="footnote-reference"><a href="#2">2</a></sup>)</p>
+</li>
+<div class="footnote-definition" id="2"><sup class="footnote-definition-label">2</sup>
+<p>If the reader want to see a source implemented to Grilo,
+tell me! I'm kind of building a small list :)</p>
+</div>
+</ul>
+<h2 id="the-last-week-of-gsoc-period">The last week of GSoC Period</h2>
+<p>This week I'm not writing much code but trying to make a useful
+documentation to help other developers.</p>
+<p>But as we can see in google's
+<a href="http://www.google-melange.com/gsoc/events/google/gsoc2013">timeline</a>,
+next week I'll be submitting the source code I've developed so far.</p>
+<p>It will be the last week of GSoC but not my last in Grilo or in this
+project. Hopefully, I'll have a few more improvements in the end of
+October!</p>
+<p>A big thanks to Juan for all the feedback, help and insights! I've made
+big steps these last three months and you help me out everytime :)</p>
+<h2 id="final-considerations">Final considerations</h2>
+<p>I've enjoyed a lot this period! I've learnt a lot! I've met amazing
+people! I've traveled more then 10'000Km to a beautiful city to attend a
+super conference! I've learnt Lua (and loving it!)</p>
+<p>I'm lucky. Thanks to GNOME and Google for that!</p>
+<p>Wow, you made it till here. You can reclaim a beer in the next GUADEC!</p>
+<p>Did you know ? Grilo is a type of bug in Brazil ? A Cricket !</p>
+<p><img src="/images/1307-01-grilo-cricket.png" alt="Grilo is a bug!" /></p>
+
+    </div>
+
+    
+        <footer>
+            <hr>
+            <p>
+                
+                    Published by Victor Toso
+                
+                
+                    
+                    in <a href="https://victortoso.com/categories/code/">code</a>
+                
+                
+                    and tagged
+                    
+                        <a href="https://victortoso.com/tags/grilo/">grilo</a>
+                        
+                            
+                                
+                                    ,
+                                
+                            
+                        
+                    
+                        <a href="https://victortoso.com/tags/gsoc/">gsoc</a>
+                        
+                            
+                                
+                                    ,
+                                
+                            
+                        
+                    
+                        <a href="https://victortoso.com/tags/gnome/">gnome</a>
+                        
+                            
+                                
+                                    ,
+                                
+                            
+                        
+                    
+                        <a href="https://victortoso.com/tags/metrolyrics/">metrolyrics</a>
+                        
+                            
+                                
+                                    and
+                                
+                            
+                        
+                    
+                        <a href="https://victortoso.com/tags/flickr/">flickr</a>
+                        
+                            
+                        
+                    
+                
+            </p>
+        </footer>
+    
+</article>
+
+
+    </body>
+
+</html>

@@ -9,7 +9,7 @@ My name is Victor Toso de Carvalho and I'm a Brazilian Software Engineer based
 in the city of [Colle di Val d'Elsa][], Italy.
 
 I'm currently working in the Virtualization team of [Red Hat][] in projects
-that relate to [QEMU][] [Libvirt][] and [KubeVirt][]. I've also worked a few
+that relate to [QEMU][], [Libvirt][] and [KubeVirt][]. I've also worked a few
 years in the [SPICE][] project together with the Red Hat's Desktop team.
 
 I've been a proud member of the [GNOME][] community and a foundation member

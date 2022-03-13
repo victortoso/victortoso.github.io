@@ -1,0 +1,13 @@
+[en]
+LanguageName = "English"
+weight = 1
+title = "Victor Toso"
+contentDir = "content/en"
+description = "Welcome!"
+
+[pt]
+LanguageName = "Portuguese"
+weight = 2
+title = "Victor Toso"
+description = "Bem vindo!"
+contentDir = "content/pt" 

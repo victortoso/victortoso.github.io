@@ -76,8 +76,7 @@ icon = "fab fa-git"
 title = "Freedesktop"
 url = "https://gitlab.freedesktop.org/victortoso/"
 
-
 [[socialIcons]]
-icon = "fab fa-envelope"
+icon = "fas fa-envelope"
 title = "e-mail"
 url = "mailto:me@victortoso.com"

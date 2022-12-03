@@ -5,7 +5,7 @@ date = "2022-03-13"
 thumbnail= "images/about.webp"
 +++
 
-My name is Victor Toso de Carvalho and I'm a Brazilian Software Engineer based
+My name is Victor Toso and I'm a Brazilian Software Engineer based
 in the city of [Colle di Val d'Elsa][], Italy.
 
 I'm currently working in the Virtualization team of [Red Hat][] in projects

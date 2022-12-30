@@ -1,20 +1,26 @@
-# [[main]]
-# name = "Home"
-# identifier = "home"
-# weight = 100
-# url = "/"
+[[main]]
+name = "Home"
+identifier = "home"
+weight = 10
+url = "/"
 
-# [[main]]
-# name = "Posts"
-# weight = 200
-# identifier = "posts"
-# url = "/post/"
+#[[main]]
+#name = "Code"
+#weight = 100
+#identifier = "code"
+#url = "/code/"
 
-# [[main]]
-# name = "Portfolio"
-# weight = 300
-# identifier = "portfolio"
-# url = "/portfolio/"
+#[[main]]
+#name = "Life"
+#weight = 200
+#identifier = "life"
+#url = "/life/"
+
+[[main]]
+name = "Media"
+weight = 200
+identifier = "media"
+url = "/media/"
 
 [[main]]
 name = "About"

@@ -1,6 +1,5 @@
 [en]
 LanguageName = "English"
 weight = 1
-title = "Victor Toso"
-contentDir = "content/en"
-description = "Welcome!"
+title = "toso"
+contentDir = "content"

@@ -1,0 +1,50 @@
+{{ define "main"}}
+{{ $intro := .Page.GetPage "_index.md" }}
+{{ if $intro }}
+    <section id="about">
+    {{ $intro.Description }}
+    </section>
+{{ end }}
+<div id="archive">
+  <ul class="post-list">
+
+  {{ $pages := .Paginator.Pages }}
+  {{ if .Site.Params.showAllPostsArchive }}
+    {{ $pages = .Pages }}
+  {{ end }}
+
+  {{ range (sort $pages "Date" "desc") }}
+    {{ $pageYear := (.Date.Format "2006") }}
+    {{ if (ne $pageYear ($.Scratch.Get "year")) }}
+    {{ $.Scratch.Set "year" $pageYear }}
+    <h2>{{ $pageYear }}</h2>
+    {{ end }}
+    <li class="post-item">
+      <div class="meta">
+        <time datetime="{{ time .Date }}" itemprop="datePublished">{{ .Date.Format (.Site.Params.dateFormat | default "2006-01-02") }}</time>
+      </div>
+      <div class="subtype">
+        {{ if .Params.Categories }}
+          {{ range (first 1 .Params.Categories) }}
+            {{ . }}
+          {{ end }}
+        {{ else }}
+          {{ .Section }}
+        {{ end }}
+      </div>
+      <span>    
+        <a class="" href="{{ .Permalink }}">{{ if .Title }} {{ .Title }} {{ else }} Untitled {{ end }}</a>
+      </span>
+    </li>
+    {{ end }}
+  </ul>
+  {{ if eq .Site.Params.showAllPostsArchive false }}
+    {{ partial "pagination.html" . }}
+  {{ end }}
+</div>
+
+{{ if $intro }}
+    <span class="h1">For the future</span>
+    {{ $intro.Content }}
+{{ end }}
+{{ end }}

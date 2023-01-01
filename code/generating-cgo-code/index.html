@@ -1,0 +1,368 @@
+<!doctype html><html lang=en><head><link rel=preload href=/lib/font-awesome/webfonts/fa-brands-400.woff2 as=font type=font/woff2 crossorigin=anonymous><link rel=preload href=/lib/font-awesome/webfonts/fa-regular-400.woff2 as=font type=font/woff2 crossorigin=anonymous><link rel=preload href=/lib/font-awesome/webfonts/fa-solid-900.woff2 as=font type=font/woff2 crossorigin=anonymous><link rel=preload href=/lib/JetBrainsMono/web/woff2/JetBrainsMono-Regular.woff2 as=font type=font/woff2 crossorigin=anonymous><script type=text/javascript src=https://latest.cactus.chat/cactus.js></script>
+<link rel=stylesheet href=https://latest.cactus.chat/style.css type=text/css><meta charset=utf-8><meta http-equiv=x-ua-compatible content="IE=edge"><title>Generating Cgo for libvirt | toso</title><link rel=canonical href=https://victortoso.com/code/generating-cgo-code/><meta name=description content="May all beings be happy."><meta name=viewport content="width=device-width,initial-scale=1"><meta name=robots content="all,follow"><meta name=googlebot content="index,follow,snippet,archive"><meta property="og:title" content="Generating Cgo for libvirt"><meta property="og:description" content="Preface The libvirt-go-module project provides Go bindings to use libvirt&rsquo;s library. It wraps libvirt&rsquo;s C types and APIs into Go types and methods. The wrapping involves writing a bit of Cgo code that looks like the following:
+759 760 761 762 763 764 765 766 767 768 769 /* connect_wrapper.go from libvirt-go-module version v1.8009.0 */ virConnectPtr virConnectOpenWrapper(const char *name, virErrorPtr err) { virConnectPtr ret = virConnectOpen(name); if (!ret) { virCopyLastError(err); } return ret; } In this example, we are calling libvirt&rsquo;s virConnectOpen() to stablish connection with the underlying hypervisor."><meta property="og:type" content="article"><meta property="og:url" content="https://victortoso.com/code/generating-cgo-code/"><meta property="og:image" content="https://victortoso.com/images/site-feature-image.png"><meta property="article:section" content="code"><meta property="article:published_time" content="2023-01-01T00:00:00+00:00"><meta property="article:modified_time" content="2023-01-01T00:00:00+00:00"><meta property="og:site_name" content="toso"><meta name=twitter:card content="summary_large_image"><meta name=twitter:image content="https://victortoso.com/images/site-feature-image.png"><meta name=twitter:title content="Generating Cgo for libvirt"><meta name=twitter:description content="Preface The libvirt-go-module project provides Go bindings to use libvirt&rsquo;s library. It wraps libvirt&rsquo;s C types and APIs into Go types and methods. The wrapping involves writing a bit of Cgo code that looks like the following:
+759 760 761 762 763 764 765 766 767 768 769 /* connect_wrapper.go from libvirt-go-module version v1.8009.0 */ virConnectPtr virConnectOpenWrapper(const char *name, virErrorPtr err) { virConnectPtr ret = virConnectOpen(name); if (!ret) { virCopyLastError(err); } return ret; } In this example, we are calling libvirt&rsquo;s virConnectOpen() to stablish connection with the underlying hypervisor."><link rel=stylesheet href=https://victortoso.com/css/styles.9a83b43707ed96edfe13a6ef419c12de640b3d28e7f210d5ce95ba6232548a53ff5886f85f70530dcc618318c1e67cf9673cdbd61f68cfa74488bb29b3f34902.css integrity="sha512-moO0Nwftlu3+E6bvQZwS3mQLPSjn8hDVzpW6YjJUilP/WIb4X3BTDcxhgxjB5nz5Zzzb1h9oz6dEiLsps/NJAg=="><!--[if lt IE 9]><script src=https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js></script>
+<script src=https://oss.maxcdn.com/respond/1.4.2/respond.min.js></script><![endif]--><link rel=icon type=image/png href=https://victortoso.com/images/favicon.ico></head><body class="max-width mx-auto px3 ltr"><div class="content index py4"><header id=header><a href=https://victortoso.com><div id=logo style=background-image:url(https://victortoso.com/images/logo.png)></div><div id=title><h1>toso</h1></div></a><div id=nav><ul><li class=icon><a href=# aria-label=Menu><i class="fas fa-bars fa-2x" aria-hidden=true></i></a></li><li><a href=/>Home</a></li><li><a href=/code/>Code</a></li><li><a href=/media/>Media</a></li><li><a href=/about/>About</a></li></ul></div></header><article class=post itemscope itemtype=http://schema.org/BlogPosting><div class=content itemprop=articleBody><h1 id=preface>Preface</h1><p>The <a href=https://gitlab.com/libvirt/libvirt-go-module/>libvirt-go-module</a> project provides Go bindings to use libvirt&rsquo;s library. It wraps libvirt&rsquo;s
+C types and APIs into Go types and methods. The wrapping involves writing a bit of <a href=https://go.dev/blog/cgo>Cgo code</a> that
+looks like the following:</p><div class=highlight><div style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid><table style=border-spacing:0;padding:0;margin:0;border:0><tr><td style=vertical-align:top;padding:0;margin:0;border:0><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid><code><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">759
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">760
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">761
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">762
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">763
+</span><span style=background-color:#3c3d38><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">764
+</span></span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">765
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">766
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">767
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">768
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">769
+</span></code></pre></td><td style=vertical-align:top;padding:0;margin:0;border:0;width:100%><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid><code class=language-c data-lang=c><span style=display:flex><span><span style=color:#75715e>/* connect_wrapper.go from libvirt-go-module version v1.8009.0 */</span>
+</span></span><span style=display:flex><span>virConnectPtr
+</span></span><span style=display:flex><span><span style=color:#a6e22e>virConnectOpenWrapper</span>(<span style=color:#66d9ef>const</span> <span style=color:#66d9ef>char</span> <span style=color:#f92672>*</span>name,
+</span></span><span style=display:flex><span>                      virErrorPtr err)
+</span></span><span style=display:flex><span>{
+</span></span><span style=display:flex;background-color:#3c3d38><span>    virConnectPtr ret <span style=color:#f92672>=</span> <span style=color:#a6e22e>virConnectOpen</span>(name);
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>if</span> (<span style=color:#f92672>!</span>ret) {
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>virCopyLastError</span>(err);
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>return</span> ret;
+</span></span><span style=display:flex><span>}</span></span></code></pre></td></tr></table></div></div><p>In this example, we are calling libvirt&rsquo;s <a href=https://libvirt.org/html/libvirt-libvirt-host.html#virConnectOpen>virConnectOpen()</a> to stablish connection with the
+underlying hypervisor. The <code>virConnectOpenWrapper()</code> is a helper function, to be consumed by the
+<code>NewConnect()</code> API, which returns a pointer of Go struct type <code>Connect</code> to the caller or sets the
+error if unsuccessful. The actual code:</p><div class=highlight><div style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid><table style=border-spacing:0;padding:0;margin:0;border:0><tr><td style=vertical-align:top;padding:0;margin:0;border:0><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid><code><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">328
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">329
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">330
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">331
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">332
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">333
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">334
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">335
+</span><span style=background-color:#3c3d38><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">336
+</span></span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">337
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">338
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">339
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">340
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">341
+</span></code></pre></td><td style=vertical-align:top;padding:0;margin:0;border:0;width:100%><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid><code class=language-go data-lang=go><span style=display:flex><span><span style=color:#75715e>/* connect.go from libvirt-go-module version v1.8009.0 */</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>func</span> <span style=color:#a6e22e>NewConnect</span>(<span style=color:#a6e22e>uri</span> <span style=color:#66d9ef>string</span>) (<span style=color:#f92672>*</span><span style=color:#a6e22e>Connect</span>, <span style=color:#66d9ef>error</span>) {
+</span></span><span style=display:flex><span>	<span style=color:#66d9ef>var</span> <span style=color:#a6e22e>cUri</span> <span style=color:#f92672>*</span><span style=color:#a6e22e>C</span>.<span style=color:#a6e22e>char</span>
+</span></span><span style=display:flex><span>	<span style=color:#66d9ef>if</span> <span style=color:#a6e22e>uri</span> <span style=color:#f92672>!=</span> <span style=color:#e6db74>&#34;&#34;</span> {
+</span></span><span style=display:flex><span>		<span style=color:#a6e22e>cUri</span> = <span style=color:#a6e22e>C</span>.<span style=color:#a6e22e>CString</span>(<span style=color:#a6e22e>uri</span>)
+</span></span><span style=display:flex><span>		<span style=color:#66d9ef>defer</span> <span style=color:#a6e22e>C</span>.<span style=color:#a6e22e>free</span>(<span style=color:#a6e22e>unsafe</span>.<span style=color:#a6e22e>Pointer</span>(<span style=color:#a6e22e>cUri</span>))
+</span></span><span style=display:flex><span>	}
+</span></span><span style=display:flex><span>	<span style=color:#66d9ef>var</span> <span style=color:#a6e22e>err</span> <span style=color:#a6e22e>C</span>.<span style=color:#a6e22e>virError</span>
+</span></span><span style=display:flex;background-color:#3c3d38><span>	<span style=color:#a6e22e>ptr</span> <span style=color:#f92672>:=</span> <span style=color:#a6e22e>C</span>.<span style=color:#a6e22e>virConnectOpenWrapper</span>(<span style=color:#a6e22e>cUri</span>, <span style=color:#f92672>&amp;</span><span style=color:#a6e22e>err</span>)
+</span></span><span style=display:flex><span>	<span style=color:#66d9ef>if</span> <span style=color:#a6e22e>ptr</span> <span style=color:#f92672>==</span> <span style=color:#66d9ef>nil</span> {
+</span></span><span style=display:flex><span>		<span style=color:#66d9ef>return</span> <span style=color:#66d9ef>nil</span>, <span style=color:#a6e22e>makeError</span>(<span style=color:#f92672>&amp;</span><span style=color:#a6e22e>err</span>)
+</span></span><span style=display:flex><span>	}
+</span></span><span style=display:flex><span>	<span style=color:#66d9ef>return</span> <span style=color:#f92672>&amp;</span><span style=color:#a6e22e>Connect</span>{<span style=color:#a6e22e>ptr</span>: <span style=color:#a6e22e>ptr</span>}, <span style=color:#66d9ef>nil</span>
+</span></span><span style=display:flex><span>}</span></span></code></pre></td></tr></table></div></div><h1 id=the-problem>The problem</h1><p><a href=https://libvirt.org/>Libvirt</a> is a big project created in 2005, currently with over 1.1M lines of code<sup id=fnref:1><a href=#fn:1 class=footnote-ref role=doc-noteref>1</a></sup> with an
+average of 3800 commits per year<sup id=fnref:2><a href=#fn:2 class=footnote-ref role=doc-noteref>2</a></sup>. New APIs are constantly being added to handle new features
+which raises the need of <code>libvirt-go-module</code> to be patched constantly with Cgo to wrap around
+libvirt&rsquo;s new additions plus the actual Go code that will expose it to Go applications.</p><p>Reducing this work as much as possible would help with the maintenance of <code>libvirt-go-module</code> while
+making it easier to keep go bindings up to date with libvirt.</p><p>Luckily, libvirt&rsquo;s API is <a href=https://libvirt.org/html/index.html>thoroughly documented</a> in a format that we can take advantage of in
+order to generate almost all of the Cgo code, leaving developers able to focus on how to expose
+libvirt&rsquo;s new features.</p><h1 id=the-input>The input</h1><p>Libvirt&rsquo;s <code>scripts/apibuild.py</code> parses the source code to gather all the metadata it can to build
+its API documentation which produces four XMLs, one per module. The <code>&lt;api></code> section has two
+subsections, <code>&lt;files></code> and <code>&lt;symbols></code>. The symbols part is what we are mostly interested in order
+to generate those Cgo wrappers.</p><p>Taking the <code>virDomainSetLaunchSecurityState()</code> function as example. We have know when it was
+introduced, what are the return and arguments type and the correct argument order.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-xml data-lang=xml><span style=display:flex><span>    <span style=color:#f92672>&lt;function</span> <span style=color:#a6e22e>name=</span><span style=color:#e6db74>&#39;virDomainSetLaunchSecurityState&#39;</span>
+</span></span><span style=display:flex><span>              <span style=color:#a6e22e>file=</span><span style=color:#e6db74>&#39;libvirt-domain&#39;</span>
+</span></span><span style=display:flex><span>              <span style=color:#a6e22e>module=</span><span style=color:#e6db74>&#39;libvirt-domain&#39;</span>
+</span></span><span style=display:flex><span>              <span style=color:#a6e22e>version=</span><span style=color:#e6db74>&#39;8.0.0&#39;</span><span style=color:#f92672>&gt;</span>
+</span></span><span style=display:flex><span>      <span style=color:#f92672>&lt;info&gt;</span><span style=color:#75715e>&lt;![CDATA[
+</span></span></span><span style=display:flex><span><span style=color:#75715e>Set a launch security secret in the guest&#39;s memory. The guest must be
+</span></span></span><span style=display:flex><span><span style=color:#75715e>in a paused state, e.g. in state VIR_DOMIAN_PAUSED as reported by
+</span></span></span><span style=display:flex><span><span style=color:#75715e>virDomainGetState. On success, the guest can be transitioned to a
+</span></span></span><span style=display:flex><span><span style=color:#75715e>running state. On failure, the guest should be destroyed.]]&gt;</span><span style=color:#f92672>&lt;/info&gt;</span>
+</span></span><span style=display:flex><span>      <span style=color:#f92672>&lt;return</span> <span style=color:#a6e22e>type=</span><span style=color:#e6db74>&#39;int&#39;</span>
+</span></span><span style=display:flex><span>              <span style=color:#a6e22e>info=</span><span style=color:#e6db74>&#39;-1 in case of failure, 0 in case of success.&#39;</span><span style=color:#f92672>/&gt;</span>
+</span></span><span style=display:flex><span>      <span style=color:#f92672>&lt;arg</span> <span style=color:#a6e22e>name=</span><span style=color:#e6db74>&#39;domain&#39;</span>
+</span></span><span style=display:flex><span>           <span style=color:#a6e22e>type=</span><span style=color:#e6db74>&#39;virDomainPtr&#39;</span>
+</span></span><span style=display:flex><span>           <span style=color:#a6e22e>info=</span><span style=color:#e6db74>&#39;a domain object&#39;</span><span style=color:#f92672>/&gt;</span>
+</span></span><span style=display:flex><span>      <span style=color:#f92672>&lt;arg</span> <span style=color:#a6e22e>name=</span><span style=color:#e6db74>&#39;params&#39;</span>
+</span></span><span style=display:flex><span>           <span style=color:#a6e22e>type=</span><span style=color:#e6db74>&#39;virTypedParameterPtr&#39;</span>
+</span></span><span style=display:flex><span>           <span style=color:#a6e22e>info=</span><span style=color:#e6db74>&#39;pointer to launch security parameter objects&#39;</span><span style=color:#f92672>/&gt;</span>
+</span></span><span style=display:flex><span>      <span style=color:#f92672>&lt;arg</span> <span style=color:#a6e22e>name=</span><span style=color:#e6db74>&#39;nparams&#39;</span>
+</span></span><span style=display:flex><span>           <span style=color:#a6e22e>type=</span><span style=color:#e6db74>&#39;int&#39;</span>
+</span></span><span style=display:flex><span>           <span style=color:#a6e22e>info=</span><span style=color:#e6db74>&#39;number of launch security parameters&#39;</span><span style=color:#f92672>/&gt;</span>
+</span></span><span style=display:flex><span>      <span style=color:#f92672>&lt;arg</span> <span style=color:#a6e22e>name=</span><span style=color:#e6db74>&#39;flags&#39;</span>
+</span></span><span style=display:flex><span>           <span style=color:#a6e22e>type=</span><span style=color:#e6db74>&#39;unsigned int&#39;</span>
+</span></span><span style=display:flex><span>           <span style=color:#a6e22e>info=</span><span style=color:#e6db74>&#39;currently used, set to 0.&#39;</span><span style=color:#f92672>/&gt;</span>
+</span></span><span style=display:flex><span>    <span style=color:#f92672>&lt;/function&gt;</span></span></span></code></pre></div><h1 id=adding-version-metadata>Adding version metadata</h1><p>As one of <code>libvirt-go-module</code>&rsquo;s goals is to be able to compile and run in platforms supported by
+libvirt itself. This means we need to be aware of libvirt&rsquo;s version at compile and running time. At
+compile time, we might need libvirt symbols that are not included in older versions of its headers;
+At run time, to avoid calling functions that are not yet implement, like <code>SetIdentity</code> below:</p><div class=highlight><div style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><table style=border-spacing:0;padding:0;margin:0;border:0><tr><td style=vertical-align:top;padding:0;margin:0;border:0><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">582
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">583
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">584
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">585
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">586
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">587
+</span></code></pre></td><td style=vertical-align:top;padding:0;margin:0;border:0;width:100%><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-go data-lang=go><span style=display:flex><span><span style=color:#75715e>// See also https://libvirt.org/html/libvirt-libvirt-host.html#virConnectSetIdentity
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#66d9ef>func</span> (<span style=color:#a6e22e>c</span> <span style=color:#f92672>*</span><span style=color:#a6e22e>Connect</span>) <span style=color:#a6e22e>SetIdentity</span>(<span style=color:#a6e22e>ident</span> <span style=color:#f92672>*</span><span style=color:#a6e22e>ConnectIdentity</span>, <span style=color:#a6e22e>flags</span> <span style=color:#66d9ef>uint32</span>) <span style=color:#66d9ef>error</span> {
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>if</span> <span style=color:#a6e22e>C</span>.<span style=color:#a6e22e>LIBVIR_VERSION_NUMBER</span> &lt; <span style=color:#ae81ff>5008000</span> {
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>return</span> <span style=color:#a6e22e>makeNotImplementedError</span>(<span style=color:#e6db74>&#34;virConnectSetIdentity&#34;</span>)
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>    <span style=color:#75715e>/* implements the function  */</span></span></span></code></pre></td></tr></table></div></div><p>Starting in libvirt&rsquo;s v8.3.0, the version information was included in all the symbols exported in
+XML. This involved patching <code>scripts/apibuild.py</code> to parse a <code>Since:</code> tag from that symbol&rsquo;s
+comments plus adding the <code>Since: $version</code> to all exported symbols. <a href=https://listman.redhat.com/archives/libvir-list/2022-April/230357.html>This last bit alone</a> made me
+learn a few new <code>git</code> and <code>regular expressions</code> tricks.</p><h1 id=the-code-generator>The code generator</h1><p>The logic of code generator is relatively simple:</p><ol><li>Locate the path of XMLs with <code>pkg-config --variable</code></li><li>Loading the XMLs into Go Structus</li><li>Preparing the loaded data (e.g: sorting, do some calculations)</li><li>Opening output files</li><li>Generate code by running the templates</li></ol><p>The <code>encoding/xml</code> Go module makes it very easy to <a href=https://pkg.go.dev/encoding/xml#Unmarshal>Unmarshal</a> XML into structs and I decided to
+use <code>text/template</code> to write Cgo templates for each symbol. The base <code>API struct</code> below is used to
+load the XML and as argument for each of the templates.</p><div class=highlight><div style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><table style=border-spacing:0;padding:0;margin:0;border:0><tr><td style=vertical-align:top;padding:0;margin:0;border:0><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">43
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">44
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">45
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">46
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">47
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">48
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">49
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">50
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">51
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">52
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">53
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">54
+</span></code></pre></td><td style=vertical-align:top;padding:0;margin:0;border:0;width:100%><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-go data-lang=go><span style=display:flex><span><span style=color:#66d9ef>type</span> <span style=color:#a6e22e>API</span> <span style=color:#66d9ef>struct</span> {
+</span></span><span style=display:flex><span>	<span style=color:#a6e22e>XMLName</span>   <span style=color:#a6e22e>xml</span>.<span style=color:#a6e22e>Name</span>      <span style=color:#e6db74>`xml:&#34;api&#34;`</span>
+</span></span><span style=display:flex><span>	<span style=color:#a6e22e>Name</span>      <span style=color:#66d9ef>string</span>        <span style=color:#e6db74>`xml:&#34;name,attr&#34;`</span>
+</span></span><span style=display:flex><span>	<span style=color:#a6e22e>Files</span>     []<span style=color:#a6e22e>APIFile</span>     <span style=color:#e6db74>`xml:&#34;files&gt;file&#34;`</span>
+</span></span><span style=display:flex><span>	<span style=color:#a6e22e>Macros</span>    []<span style=color:#a6e22e>APIMacro</span>    <span style=color:#e6db74>`xml:&#34;symbols&gt;macro&#34;`</span>
+</span></span><span style=display:flex><span>	<span style=color:#a6e22e>Typedefs</span>  []<span style=color:#a6e22e>APITypedef</span>  <span style=color:#e6db74>`xml:&#34;symbols&gt;typedef&#34;`</span>
+</span></span><span style=display:flex><span>	<span style=color:#a6e22e>Enums</span>     []<span style=color:#a6e22e>APIEnum</span>     <span style=color:#e6db74>`xml:&#34;symbols&gt;enum&#34;`</span>
+</span></span><span style=display:flex><span>	<span style=color:#a6e22e>Structs</span>   []<span style=color:#a6e22e>APIStruct</span>   <span style=color:#e6db74>`xml:&#34;symbols&gt;struct&#34;`</span>
+</span></span><span style=display:flex><span>	<span style=color:#a6e22e>Functions</span> []<span style=color:#a6e22e>APIFunction</span> <span style=color:#e6db74>`xml:&#34;symbols&gt;function&#34;`</span>
+</span></span><span style=display:flex><span>	<span style=color:#a6e22e>Functypes</span> []<span style=color:#a6e22e>APIFunctype</span> <span style=color:#e6db74>`xml:&#34;symbols&gt;functype&#34;`</span>
+</span></span><span style=display:flex><span>	<span style=color:#a6e22e>Variables</span> []<span style=color:#a6e22e>APIVariable</span> <span style=color:#e6db74>`xml:&#34;symbols&gt;variable&#34;`</span>
+</span></span><span style=display:flex><span>}</span></span></code></pre></td></tr></table></div></div><p>Just to give an example, the <a href=https://gitlab.com/libvirt/libvirt-go-module/-/blob/master/gen/api_generated_enums.h.tmpl>template for enums</a> has less than 20 lines of code to generate more
+than 3400 lines of <a href=https://gitlab.com/libvirt/libvirt-go-module/-/blob/master/libvirt_generated_enums.h>C header</a> with proper version checking.</p><div class=highlight><div style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><table style=border-spacing:0;padding:0;margin:0;border:0><tr><td style=vertical-align:top;padding:0;margin:0;border:0><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">31
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">32
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">33
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">34
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">35
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">36
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">37
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">38
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">39
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">40
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">41
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">42
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">43
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">44
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">45
+</span></code></pre></td><td style=vertical-align:top;padding:0;margin:0;border:0;width:100%><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-go-text-template data-lang=go-text-template><span style=display:flex><span>#pragma once
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>{{-</span> <span style=color:#66d9ef>with</span> <span style=color:#a6e22e>.Enums</span> <span style=color:#75715e>}}</span>
+</span></span><span style=display:flex><span>    <span style=color:#75715e>{{-</span> <span style=color:#a6e22e>$lastTypeDefined</span> <span style=color:#f92672>:=</span> <span style=color:#e6db74>&#34;&#34;</span> <span style=color:#75715e>}}</span>
+</span></span><span style=display:flex><span>    <span style=color:#75715e>{{-</span> <span style=color:#66d9ef>range</span> <span style=color:#a6e22e>.</span> <span style=color:#75715e>}}</span>
+</span></span><span style=display:flex><span>        <span style=color:#75715e>{{-</span> <span style=color:#66d9ef>if</span> <span style=color:#66d9ef>ne</span> <span style=color:#a6e22e>$lastTypeDefined</span> <span style=color:#a6e22e>.Type</span> <span style=color:#75715e>}}</span>
+</span></span><span style=display:flex><span>            <span style=color:#75715e>{{-</span> <span style=color:#a6e22e>$lastTypeDefined</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>.Type</span> <span style=color:#75715e>}}</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>/* enum <span style=color:#75715e>{{</span> <span style=color:#a6e22e>.Type</span> <span style=color:#75715e>}}</span> */
+</span></span><span style=display:flex><span>        <span style=color:#75715e>{{-</span> <span style=color:#66d9ef>end</span> <span style=color:#75715e>}}</span>
+</span></span><span style=display:flex><span>#  if !LIBVIR_CHECK_VERSION(<span style=color:#75715e>{{</span> <span style=color:#a6e22e>getVersionMajor</span> <span style=color:#a6e22e>.Version</span> <span style=color:#75715e>}}</span>, <span style=color:#75715e>{{</span> <span style=color:#a6e22e>getVersionMinor</span> <span style=color:#a6e22e>.Version</span> <span style=color:#75715e>}}</span>, <span style=color:#75715e>{{</span> <span style=color:#a6e22e>getVersionMicro</span> <span style=color:#a6e22e>.Version</span> <span style=color:#75715e>}}</span>)
+</span></span><span style=display:flex><span>#    define <span style=color:#75715e>{{</span> <span style=color:#a6e22e>.Name</span> <span style=color:#75715e>}}</span> <span style=color:#75715e>{{</span> <span style=color:#a6e22e>getEnumString</span> <span style=color:#a6e22e>.</span> <span style=color:#75715e>}}</span>
+</span></span><span style=display:flex><span>#  endif
+</span></span><span style=display:flex><span>    <span style=color:#75715e>{{-</span> <span style=color:#66d9ef>end</span> <span style=color:#75715e>}}</span>
+</span></span><span style=display:flex><span><span style=color:#75715e>{{</span> <span style=color:#66d9ef>end</span> <span style=color:#75715e>}}</span></span></span></code></pre></td></tr></table></div></div><p>Enums are generated in blocks like:</p><div class=highlight><div style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><table style=border-spacing:0;padding:0;margin:0;border:0><tr><td style=vertical-align:top;padding:0;margin:0;border:0><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">68
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">69
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">70
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">71
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">72
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">73
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">74
+</span></code></pre></td><td style=vertical-align:top;padding:0;margin:0;border:0;width:100%><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>/* enum virConnectBaselineCPUFlags */
+</span></span><span style=display:flex><span><span style=color:#75715e>#  if !LIBVIR_CHECK_VERSION(1, 1, 2)</span>
+</span></span><span style=display:flex><span><span style=color:#75715e>#    define VIR_CONNECT_BASELINE_CPU_EXPAND_FEATURES (1 &lt;&lt; 0)</span>
+</span></span><span style=display:flex><span><span style=color:#75715e>#  endif</span>
+</span></span><span style=display:flex><span><span style=color:#75715e>#  if !LIBVIR_CHECK_VERSION(1, 2, 14)</span>
+</span></span><span style=display:flex><span><span style=color:#75715e>#    define VIR_CONNECT_BASELINE_CPU_MIGRATABLE (1 &lt;&lt; 1)</span>
+</span></span><span style=display:flex><span><span style=color:#75715e>#  endif</span></span></span></code></pre></td></tr></table></div></div><h1 id=compiling-without-libvirt-headers>Compiling without libvirt headers</h1><p>The title of the <a href=https://gitlab.com/libvirt/libvirt-go-module/-/merge_requests/7>actual merge request</a> was <code>Generate Wrapper code that uses dlopen/dlsym</code> but
+after a few exchanges, we decided to take the feature of loading libvirt at runtime as a compile
+time option and disabled by default.</p><p>There are two major benefit of using <a href=https://man7.org/linux/man-pages/man3/dlopen.3.html>dlopen/dlsym</a>.</p><ol><li>Build the application consuming libvirt-go-module without worrying about libvirt as build-time
+dependency. For example, this can benefit <a href=http://kubevirt.io/>KubeVirt</a> to reduce the amount of rpm&rsquo;s they need to
+track for their Bazel builds.</li><li>Run the application consuming libvirt-go-module on any system and only install and load libvirt
+if needed. This can benefit applications where the binary offers libvirt as an option between
+other technologies.</li></ol><p>To use the <code>dlopen/dlsym</code> feature, one needs to build <code>libvirt-go-module</code> with <code>libvirt_dlopen</code> tag
+(e.g: <code>go build -tags libvirt_dlopen</code>).</p><p>Let&rsquo;s take a look at the generated functions of <code>virDomainSetLaunchSecurityState()</code> that we put the
+XML in <code>The input</code> section.</p><p>First, the <a href=https://gitlab.com/libvirt/libvirt-go-module/-/blob/master/libvirt_generated_functions_static_domain.go#L3378>static version</a>:</p><div class=highlight><div style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid><table style=border-spacing:0;padding:0;margin:0;border:0><tr><td style=vertical-align:top;padding:0;margin:0;border:0><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid><code><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">3378
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">3379
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">3380
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">3381
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">3382
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">3383
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">3384
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">3385
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">3386
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">3387
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">3388
+</span><span style=background-color:#3c3d38><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">3389
+</span></span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">3390
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">3391
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">3392
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">3393
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">3394
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">3395
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">3396
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">3397
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">3398
+</span></code></pre></td><td style=vertical-align:top;padding:0;margin:0;border:0;width:100%><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid><code class=language-c data-lang=c><span style=display:flex><span><span style=color:#66d9ef>int</span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>virDomainSetLaunchSecurityStateWrapper</span>(virDomainPtr domain,
+</span></span><span style=display:flex><span>                                       virTypedParameterPtr params,
+</span></span><span style=display:flex><span>                                       <span style=color:#66d9ef>int</span> nparams,
+</span></span><span style=display:flex><span>                                       <span style=color:#66d9ef>unsigned</span> <span style=color:#66d9ef>int</span> flags,
+</span></span><span style=display:flex><span>                                       virErrorPtr err)
+</span></span><span style=display:flex><span>{
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>int</span> ret <span style=color:#f92672>=</span> <span style=color:#f92672>-</span><span style=color:#ae81ff>1</span>;
+</span></span><span style=display:flex><span><span style=color:#75715e>#if !LIBVIR_CHECK_VERSION(8, 0, 0)
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>    <span style=color:#a6e22e>setVirError</span>(err, <span style=color:#e6db74>&#34;Function virDomainSetLaunchSecurityState not available prior to libvirt version 8.0.0&#34;</span>);
+</span></span><span style=display:flex><span><span style=color:#75715e>#else
+</span></span></span><span style=display:flex;background-color:#3c3d38><span><span style=color:#75715e></span>    ret <span style=color:#f92672>=</span> <span style=color:#a6e22e>virDomainSetLaunchSecurityState</span>(domain,
+</span></span><span style=display:flex><span>                                          params,
+</span></span><span style=display:flex><span>                                          nparams,
+</span></span><span style=display:flex><span>                                          flags);
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>if</span> (ret <span style=color:#f92672>&lt;</span> <span style=color:#ae81ff>0</span>) {
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>virCopyLastError</span>(err);
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span><span style=color:#75715e>#endif
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>    <span style=color:#66d9ef>return</span> ret;
+</span></span><span style=display:flex><span>}</span></span></code></pre></td></tr></table></div></div><p>At build time we check if libvirt&rsquo;s version is new enough to contain that function. At runtime we
+either call it or set the error appropriately. This is basically how it was working before but now
+it is generated.</p><p>The <a href=https://gitlab.com/libvirt/libvirt-go-module/-/blob/master/libvirt_generated_functions_dlopen_domain.go#L5375>dlopen version</a>:</p><div class=highlight><div style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid><table style=border-spacing:0;padding:0;margin:0;border:0><tr><td style=vertical-align:top;padding:0;margin:0;border:0><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid><code><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">5375
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">5376
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">5377
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">5378
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">5379
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">5380
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">5381
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">5382
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">5383
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">5384
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">5385
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">5386
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">5387
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">5388
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">5389
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">5390
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">5391
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">5392
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">5393
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">5394
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">5395
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">5396
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">5397
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">5398
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">5399
+</span><span style=background-color:#3c3d38><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">5400
+</span></span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">5401
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">5402
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">5403
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">5404
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">5405
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">5406
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">5407
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">5408
+</span></code></pre></td><td style=vertical-align:top;padding:0;margin:0;border:0;width:100%><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid><code class=language-c data-lang=c><span style=display:flex><span><span style=color:#66d9ef>typedef</span> <span style=color:#a6e22e>int</span>
+</span></span><span style=display:flex><span>(<span style=color:#f92672>*</span>virDomainSetLaunchSecurityStateType)(virDomainPtr domain,
+</span></span><span style=display:flex><span>                                       virTypedParameterPtr params,
+</span></span><span style=display:flex><span>                                       <span style=color:#66d9ef>int</span> nparams,
+</span></span><span style=display:flex><span>                                       <span style=color:#66d9ef>unsigned</span> <span style=color:#66d9ef>int</span> flags);
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>int</span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>virDomainSetLaunchSecurityStateWrapper</span>(virDomainPtr domain,
+</span></span><span style=display:flex><span>                                       virTypedParameterPtr params,
+</span></span><span style=display:flex><span>                                       <span style=color:#66d9ef>int</span> nparams,
+</span></span><span style=display:flex><span>                                       <span style=color:#66d9ef>unsigned</span> <span style=color:#66d9ef>int</span> flags,
+</span></span><span style=display:flex><span>                                       virErrorPtr err)
+</span></span><span style=display:flex><span>{
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>int</span> ret <span style=color:#f92672>=</span> <span style=color:#f92672>-</span><span style=color:#ae81ff>1</span>;
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>static</span> virDomainSetLaunchSecurityStateType virDomainSetLaunchSecurityStateSymbol;
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>static</span> <span style=color:#66d9ef>bool</span> once;
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>static</span> <span style=color:#66d9ef>bool</span> success;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>if</span> (<span style=color:#f92672>!</span><span style=color:#a6e22e>libvirtSymbol</span>(<span style=color:#e6db74>&#34;virDomainSetLaunchSecurityState&#34;</span>,
+</span></span><span style=display:flex><span>                       (<span style=color:#66d9ef>void</span><span style=color:#f92672>**</span>)<span style=color:#f92672>&amp;</span>virDomainSetLaunchSecurityStateSymbol,
+</span></span><span style=display:flex><span>                       <span style=color:#f92672>&amp;</span>once,
+</span></span><span style=display:flex><span>                       <span style=color:#f92672>&amp;</span>success,
+</span></span><span style=display:flex><span>                       err)) {
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>return</span> ret;
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex;background-color:#3c3d38><span>    ret <span style=color:#f92672>=</span> <span style=color:#a6e22e>virDomainSetLaunchSecurityStateSymbol</span>(domain,
+</span></span><span style=display:flex><span>                                                params,
+</span></span><span style=display:flex><span>                                                nparams,
+</span></span><span style=display:flex><span>                                                flags);
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>if</span> (ret <span style=color:#f92672>&lt;</span> <span style=color:#ae81ff>0</span>) {
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>virCopyLastErrorWrapper</span>(err);
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>return</span> ret;
+</span></span><span style=display:flex><span>}</span></span></code></pre></td></tr></table></div></div><p>Here we have to actually define the function type and then load the function into
+<code>virDomainSetLaunchSecurityStateSymbol</code> variable, before we can call it.</p><p>The <code>libvirtSymbol()</code> function is the helper to <code>dlopen()</code> the library once and <code>dlsym()</code> its
+symbol. Let&rsquo;s take a peek at it.</p><div class=highlight><div style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid><table style=border-spacing:0;padding:0;margin:0;border:0><tr><td style=vertical-align:top;padding:0;margin:0;border:0><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid><code><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 75
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 76
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 77
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 78
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 79
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 80
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 81
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 82
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 83
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 84
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 85
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 86
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 87
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 88
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 89
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 90
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 91
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 92
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 93
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 94
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 95
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 96
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 97
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 98
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 99
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">100
+</span><span style=background-color:#3c3d38><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">101
+</span></span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">102
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">103
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">104
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">105
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">106
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">107
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">108
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">109
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">110
+</span></code></pre></td><td style=vertical-align:top;padding:0;margin:0;border:0;width:100%><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid><code class=language-c data-lang=c><span style=display:flex><span><span style=color:#66d9ef>bool</span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>libvirtSymbol</span>(<span style=color:#66d9ef>const</span> <span style=color:#66d9ef>char</span> <span style=color:#f92672>*</span>name,
+</span></span><span style=display:flex><span>              <span style=color:#66d9ef>void</span> <span style=color:#f92672>**</span>symbol,
+</span></span><span style=display:flex><span>              <span style=color:#66d9ef>bool</span> <span style=color:#f92672>*</span>once,
+</span></span><span style=display:flex><span>              <span style=color:#66d9ef>bool</span> <span style=color:#f92672>*</span>success,
+</span></span><span style=display:flex><span>              virErrorPtr err)
+</span></span><span style=display:flex><span>{
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>char</span> <span style=color:#f92672>*</span>errMsg;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>if</span> (<span style=color:#f92672>!</span><span style=color:#a6e22e>libvirtLoad</span>(err)) {
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>return</span> <span style=color:#f92672>*</span>success;
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>if</span> (<span style=color:#f92672>*</span>once) {
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>if</span> (<span style=color:#f92672>!*</span>success) {
+</span></span><span style=display:flex><span>            <span style=color:#75715e>// Set error for successive calls
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>            <span style=color:#66d9ef>char</span> msg[<span style=color:#ae81ff>100</span>];
+</span></span><span style=display:flex><span>            <span style=color:#a6e22e>snprintf</span>(msg, <span style=color:#ae81ff>100</span>, <span style=color:#e6db74>&#34;Failed to load %s&#34;</span>, name);
+</span></span><span style=display:flex><span>            <span style=color:#a6e22e>setVirError</span>(err, msg);
+</span></span><span style=display:flex><span>        }
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>return</span> <span style=color:#f92672>*</span>success;
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#75715e>// Documentation of dlsym says we should use dlerror() to check for failure
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>    <span style=color:#75715e>// in dlsym() as a NULL might be the right address for a given symbol.
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>    <span style=color:#75715e>// This is also the reason to have the @success argument.
+</span></span></span><span style=display:flex;background-color:#3c3d38><span><span style=color:#75715e></span>    <span style=color:#f92672>*</span>symbol <span style=color:#f92672>=</span> <span style=color:#a6e22e>dlsym</span>(handle, name);
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>if</span> ((errMsg <span style=color:#f92672>=</span> <span style=color:#a6e22e>dlerror</span>()) <span style=color:#f92672>!=</span> NULL) {
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>setVirError</span>(err, errMsg);
+</span></span><span style=display:flex><span>        <span style=color:#f92672>*</span>once <span style=color:#f92672>=</span> true;
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>return</span> <span style=color:#f92672>*</span>success;
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>    <span style=color:#f92672>*</span>once <span style=color:#f92672>=</span> true;
+</span></span><span style=display:flex><span>    <span style=color:#f92672>*</span>success <span style=color:#f92672>=</span> true;
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>return</span> <span style=color:#f92672>*</span>success;
+</span></span><span style=display:flex><span>}</span></span></code></pre></td></tr></table></div></div><p>It is more error handling than anything else :)</p><p>This process is similar for <code>lxc</code>, <code>qemu</code> and <code>admin</code> drivers with all this code being generated.</p><div class=footnotes role=doc-endnotes><hr><ol><li id=fn:1><p>Tokei</p><table><thead><tr><th style=text-align:left>Language</th><th style=text-align:right>Files</th><th style=text-align:right>Lines</th><th style=text-align:right>Code</th><th style=text-align:right>Comments</th><th style=text-align:right>Blanks</th></tr></thead><tbody><tr><td style=text-align:left>Alex</td><td style=text-align:right>9</td><td style=text-align:right>8118</td><td style=text-align:right>6710</td><td style=text-align:right>0</td><td style=text-align:right>1408</td></tr><tr><td style=text-align:left>Autoconf</td><td style=text-align:right>86</td><td style=text-align:right>8080</td><td style=text-align:right>5190</td><td style=text-align:right>1886</td><td style=text-align:right>1004</td></tr><tr><td style=text-align:left>BASH</td><td style=text-align:right>1</td><td style=text-align:right>94</td><td style=text-align:right>81</td><td style=text-align:right>1</td><td style=text-align:right>12</td></tr><tr><td style=text-align:left>C</td><td style=text-align:right>635</td><td style=text-align:right>658853</td><td style=text-align:right>474652</td><td style=text-align:right>69777</td><td style=text-align:right>114424</td></tr><tr><td style=text-align:left>C Header</td><td style=text-align:right>484</td><td style=text-align:right>157396</td><td style=text-align:right>106061</td><td style=text-align:right>22425</td><td style=text-align:right>28910</td></tr><tr><td style=text-align:left>C++</td><td style=text-align:right>1</td><td style=text-align:right>40</td><td style=text-align:right>22</td><td style=text-align:right>8</td><td style=text-align:right>10</td></tr><tr><td style=text-align:left>CSS</td><td style=text-align:right>5</td><td style=text-align:right>890</td><td style=text-align:right>757</td><td style=text-align:right>6</td><td style=text-align:right>127</td></tr><tr><td style=text-align:left>D</td><td style=text-align:right>2</td><td style=text-align:right>101</td><td style=text-align:right>84</td><td style=text-align:right>0</td><td style=text-align:right>17</td></tr><tr><td style=text-align:left>Dockerfile</td><td style=text-align:right>34</td><td style=text-align:right>3673</td><td style=text-align:right>3358</td><td style=text-align:right>170</td><td style=text-align:right>145</td></tr><tr><td style=text-align:left>JavaScript</td><td style=text-align:right>1</td><td style=text-align:right>141</td><td style=text-align:right>116</td><td style=text-align:right>1</td><td style=text-align:right>24</td></tr><tr><td style=text-align:left>JSON</td><td style=text-align:right>304</td><td style=text-align:right>46250</td><td style=text-align:right>46095</td><td style=text-align:right>0</td><td style=text-align:right>155</td></tr><tr><td style=text-align:left>Makefile</td><td style=text-align:right>3</td><td style=text-align:right>2057</td><td style=text-align:right>1378</td><td style=text-align:right>405</td><td style=text-align:right>274</td></tr><tr><td style=text-align:left>Meson</td><td style=text-align:right>74</td><td style=text-align:right>9318</td><td style=text-align:right>7767</td><td style=text-align:right>429</td><td style=text-align:right>1122</td></tr><tr><td style=text-align:left>Perl</td><td style=text-align:right>4</td><td style=text-align:right>3620</td><td style=text-align:right>2915</td><td style=text-align:right>283</td><td style=text-align:right>422</td></tr><tr><td style=text-align:left>Python</td><td style=text-align:right>41</td><td style=text-align:right>13427</td><td style=text-align:right>10000</td><td style=text-align:right>1272</td><td style=text-align:right>2155</td></tr><tr><td style=text-align:left>ReStructuredText</td><td style=text-align:right>159</td><td style=text-align:right>59502</td><td style=text-align:right>44465</td><td style=text-align:right>0</td><td style=text-align:right>15037</td></tr><tr><td style=text-align:left>Rust</td><td style=text-align:right>1</td><td style=text-align:right>28</td><td style=text-align:right>22</td><td style=text-align:right>0</td><td style=text-align:right>6</td></tr><tr><td style=text-align:left>Shell</td><td style=text-align:right>61</td><td style=text-align:right>5871</td><td style=text-align:right>4822</td><td style=text-align:right>513</td><td style=text-align:right>536</td></tr><tr><td style=text-align:left>SVG</td><td style=text-align:right>18</td><td style=text-align:right>7223</td><td style=text-align:right>6915</td><td style=text-align:right>301</td><td style=text-align:right>7</td></tr><tr><td style=text-align:left>Plain Text</td><td style=text-align:right>12</td><td style=text-align:right>173</td><td style=text-align:right>0</td><td style=text-align:right>162</td><td style=text-align:right>11</td></tr><tr><td style=text-align:left>TOML</td><td style=text-align:right>1</td><td style=text-align:right>10</td><td style=text-align:right>7</td><td style=text-align:right>1</td><td style=text-align:right>2</td></tr><tr><td style=text-align:left>XSL</td><td style=text-align:right>3</td><td style=text-align:right>1116</td><td style=text-align:right>1029</td><td style=text-align:right>25</td><td style=text-align:right>62</td></tr><tr><td style=text-align:left>XML</td><td style=text-align:right>3464</td><td style=text-align:right>180883</td><td style=text-align:right>180134</td><td style=text-align:right>452</td><td style=text-align:right>297</td></tr><tr><td style=text-align:left>YAML</td><td style=text-align:right>10</td><td style=text-align:right>2151</td><td style=text-align:right>1655</td><td style=text-align:right>170</td><td style=text-align:right>326</td></tr><tr><td style=text-align:left>Total</td><td style=text-align:right>5413</td><td style=text-align:right>1169015</td><td style=text-align:right>904235</td><td style=text-align:right>98287</td><td style=text-align:right>166493</td></tr></tbody></table>&#160;<a href=#fnref:1 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></li><li id=fn:2><p>Commits in the last 5 Years by gitstats</p><table><thead><tr><th style=text-align:center>Year</th><th style=text-align:right>Commits (% of all)</th><th style=text-align:right>Lines added</th><th style=text-align:right>Lines removed</th></tr></thead><tbody><tr><td style=text-align:center>2022</td><td style=text-align:right>2891 (6.11%)</td><td style=text-align:right>628760</td><td style=text-align:right>755641</td></tr><tr><td style=text-align:center>2021</td><td style=text-align:right>4005 (8.46%)</td><td style=text-align:right>1364990</td><td style=text-align:right>1232564</td></tr><tr><td style=text-align:center>2020</td><td style=text-align:right>4357 (9.20%)</td><td style=text-align:right>1914844</td><td style=text-align:right>393243</td></tr><tr><td style=text-align:center>2019</td><td style=text-align:right>4299 (9.08%)</td><td style=text-align:right>563890</td><td style=text-align:right>273553</td></tr><tr><td style=text-align:center>2018</td><td style=text-align:right>3567 (7.54%)</td><td style=text-align:right>2329146</td><td style=text-align:right>5983747</td></tr></tbody></table>&#160;<a href=#fnref:2 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></li></ol></div></div></article><footer id=footer><div class=footer-left>Copyright &copy; 2023 toso</div><div class=footer-right><nav><ul><li><a href=/>Home</a></li><li><a href=/code/>Code</a></li><li><a href=/media/>Media</a></li><li><a href=/about/>About</a></li></ul></nav></div></footer></div></body><link rel=stylesheet href=/lib/font-awesome/css/all.min.css><script src=/lib/jquery/jquery.min.js></script>
+<script src=/js/main.js></script></html>

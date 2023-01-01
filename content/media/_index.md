@@ -174,6 +174,15 @@ description: Content that I have watched, read or listened.
 | :---: | :---: | :---------: |
 | 01.12.2021 | [Vinland Saga][] | ? |
 
+
+## Movies
+
+| Added | Title | Recommended |
+| :---: | :---: | :---------: |
+| 01.01.2023 | [Apollo 10½][] | [Thiago][] |
+
+[Apollo 10½]: https://www.imdb.com/title/tt7978758/
+
 <!--- Thanks to who recommended -->
 [Thiago]: https://tmendes.gitlab.io/28lbackpack/
 [Paul Cooper]: https://www.paulmmcooper.com/
@@ -344,3 +353,6 @@ description: Content that I have watched, read or listened.
 
 <!--- Manga, Manhwa & Comics -->
 [Vinland Saga]: https://en.wikipedia.org/wiki/Vinland_Saga_(manga)
+
+<!--- Movies -->
+[Apollo 10½]: https://www.imdb.com/title/tt7978758/

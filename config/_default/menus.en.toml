@@ -4,11 +4,11 @@ identifier = "home"
 weight = 10
 url = "/"
 
-#[[main]]
-#name = "Code"
-#weight = 100
-#identifier = "code"
-#url = "/code/"
+[[main]]
+name = "Code"
+weight = 100
+identifier = "code"
+url = "/code/"
 
 #[[main]]
 #name = "Life"

@@ -1,9 +1,7 @@
 ---
 title: The Recruit
 author: Alexi Hawley 
-wikiurl: https://en.wikipedia.org/wiki/The_Recruit_(American_TV_series)
 date: 2022-12-22
-tipo: tv series
 categories:
     - tv shows
 tags:

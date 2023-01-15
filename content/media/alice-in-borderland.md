@@ -1,7 +1,6 @@
 ---
 title: Alice in Borderland
 author: Yoshiki Watabe, Yasuko Kuramitsu, Shinsuke Sato
-wikiurl: https://en.wikipedia.org/wiki/Alice_in_Borderland_(TV_series)
 date: 2022-12-27
 categories:
     - tv shows

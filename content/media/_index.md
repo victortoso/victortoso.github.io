@@ -8,6 +8,7 @@ description: Content that I have watched, read or listened.
 
 | Added | Title | Recommended |
 | :---: | :---: | :---------: |
+| 15.01.2023 | [Crescere nell'era digitale][] | La Formica |
 | 31.12.2022 | [Why We Sleep: Unlocking the Power of Sleep and Dreams][] | [Thiago][] |
 | 31.12.2022 | [The Power of Now][] | [Thiago][] |
 | 31.12.2022 | [True Love: A Practice for Awakening the Heart][] | [Thiago][] |
@@ -192,6 +193,7 @@ description: Content that I have watched, read or listened.
 [Kahneman]: https://en.wikipedia.org/wiki/Daniel_Kahneman
 
 <!--- Books -->
+[Crescere nell'era digitale]: https://www.goodreads.com/book/show/42973344-crescere-nell-era-digitale
 [Why We Sleep: Unlocking the Power of Sleep and Dreams]: https://www.goodreads.com/book/show/34466963-why-we-sleep
 [The Power of Now]: https://www.goodreads.com/book/show/6708.The_Power_of_Now
 [True Love: A Practice for Awakening the Heart]: https://www.goodreads.com/book/show/609614.True_Love

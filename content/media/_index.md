@@ -8,6 +8,7 @@ description: Content that I have watched, read or listened.
 
 | Added | Title | Recommended |
 | :---: | :---: | :---------: |
+| 17.01.2023 | [Solaris][] | Laszlo |
 | 15.01.2023 | [The Outsiders][] | [Watched the Movie]({{< ref "the-outsiders" >}}) |
 | 15.01.2023 | [Crescere nell'era digitale][] | La Formica |
 | 31.12.2022 | [Why We Sleep: Unlocking the Power of Sleep and Dreams][] | [Thiago][] |
@@ -194,6 +195,7 @@ description: Content that I have watched, read or listened.
 [Kahneman]: https://en.wikipedia.org/wiki/Daniel_Kahneman
 
 <!--- Books -->
+[Solaris]: https://www.goodreads.com/book/show/95558.Solaris
 [The Outsiders]: https://www.goodreads.com/book/show/231804.The_Outsiders
 [Crescere nell'era digitale]: https://www.goodreads.com/book/show/42973344-crescere-nell-era-digitale
 [Why We Sleep: Unlocking the Power of Sleep and Dreams]: https://www.goodreads.com/book/show/34466963-why-we-sleep

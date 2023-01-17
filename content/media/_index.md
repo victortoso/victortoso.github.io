@@ -8,6 +8,7 @@ description: Content that I have watched, read or listened.
 
 | Added | Title | Recommended |
 | :---: | :---: | :---------: |
+| 17.01.2023 | [Phantoms in the brain][] | Dave |
 | 17.01.2023 | [Solaris][] | Laszlo |
 | 15.01.2023 | [The Outsiders][] | [Watched the Movie]({{< ref "the-outsiders" >}}) |
 | 15.01.2023 | [Crescere nell'era digitale][] | La Formica |
@@ -195,6 +196,7 @@ description: Content that I have watched, read or listened.
 [Kahneman]: https://en.wikipedia.org/wiki/Daniel_Kahneman
 
 <!--- Books -->
+[Phantoms in the brain]: https://www.goodreads.com/book/show/31555.Phantoms_in_the_Brain
 [Solaris]: https://www.goodreads.com/book/show/95558.Solaris
 [The Outsiders]: https://www.goodreads.com/book/show/231804.The_Outsiders
 [Crescere nell'era digitale]: https://www.goodreads.com/book/show/42973344-crescere-nell-era-digitale
